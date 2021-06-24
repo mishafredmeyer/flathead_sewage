@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" DateLastUpdated="06/23/2020 12:29:11">
+  <Version Major="6" Minor="1" Build="7088" Revision="31257" />
+  <Application />
+  <Objects>
+    <Item Id="fd107d88-c935-40c4-b172-9e7d67991306" Name="ProjectManager" Type="Slb.Waterloo.AquaMod.Business.Managers.ProjectManager" IsChild="true" ParentId="00000000-0000-0000-0000-000000000000" Manifest="Managers.dll">
+      <Item Id="b041c66b-d52b-4a83-a278-b9dbf5467b56" Name="Project" Type="Slb.Waterloo.AquaMod.Business.Model.Project" IsChild="true" ParentId="fd107d88-c935-40c4-b172-9e7d67991306" Manifest="Model.dll" Caption="flathead_flow_model" />
+      <Item Id="8fe13f4d-0847-46ca-9d51-55baff57d90f" Name="DataManager" Type="Slb.Waterloo.AquaMod.Business.Managers.DataManager" IsChild="true" ParentId="fd107d88-c935-40c4-b172-9e7d67991306" Manifest="Managers.dll" Caption="DataManager">
+        <Item Id="bfbfc032-b0cd-4125-9486-9481585a4645" Name="PolygonDataPlugin" Type="Slb.Waterloo.AquaMod.Business.Plugins.PolygonDataPlugin" IsChild="true" ParentId="8fe13f4d-0847-46ca-9d51-55baff57d90f" Manifest="Plugins.dll" Caption="flathead_basin" />
+      </Item>
+      <Item Id="ccb06f97-6644-469e-96c3-f059ecc75093" Name="CMManager" Type="Slb.Waterloo.AquaMod.Business.Managers.CMManager" IsChild="true" ParentId="fd107d88-c935-40c4-b172-9e7d67991306" Manifest="Managers.dll" Caption="CMManager" />
+      <Item Id="d82c8722-7af1-4fa5-afd6-4af4e199dd82" Name="WindowManager" Type="Slb.Waterloo.AquaMod.Business.Managers.WindowManager" IsChild="true" ParentId="fd107d88-c935-40c4-b172-9e7d67991306" Manifest="Managers.dll" Caption="WindowManager" />
+    </Item>
+    <Item Id="947411b8-fdba-4ca3-a9b0-fa9ac94c1a12" Name="PluginManager" Type="Slb.Waterloo.AquaMod.Business.Managers.PluginManager" IsChild="true" ParentId="00000000-0000-0000-0000-000000000000" Manifest="Managers.dll" Caption="PluginManager">
+      <Item Id="bfbfc032-b0cd-4125-9486-9481585a4645" Name="PolygonDataPlugin" Type="Slb.Waterloo.AquaMod.Business.Plugins.PolygonDataPlugin" IsChild="true" ParentId="947411b8-fdba-4ca3-a9b0-fa9ac94c1a12" Manifest="Plugins.dll" Caption="flathead_basin" />
+    </Item>
+  </Objects>
+  <Directory>
+    <Entry Id="fd107d88-c935-40c4-b172-9e7d67991306" Name="ProjectManager" />
+    <Entry Id="947411b8-fdba-4ca3-a9b0-fa9ac94c1a12" Name="PluginManager" />
+  </Directory>
+</Project>

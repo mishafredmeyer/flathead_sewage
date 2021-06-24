@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SequenceGeneratorService xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <configSections>
+    <sectionGroup>Sequences</sectionGroup>
+    <sectionGroup>Sequences</sectionGroup>
+  </configSections>
+  <Sequences>
+    <BareNameSequence BareName="flathead_basin" SequenceId="0" />
+  </Sequences>
+  <NewProject>true</NewProject>
+  <SetNewSequence>false</SetNewSequence>
+</SequenceGeneratorService>

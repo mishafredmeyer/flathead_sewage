@@ -3,15 +3,16 @@
     
     # Likelihood: 
     # Level-1 of the model
-    for (i in 1:74){ 
+    for (i in 1:118){ 
     y[i] ~ dnorm(mu[i], tau)               
     mu[i] <- beta0 + site[i] + month[i]     
     } 
     
+    
      # Priors
     beta0 ~ dnorm(0, 0.0001)
     sigma.e ~ dunif(0, 1)
-    sigma.site ~ dunif(0,2)
+    sigma.site ~ dunif(0,1)
     sigma.month ~ dunif(0,1)
     sigma.site.month ~ dunif(0,1)
     

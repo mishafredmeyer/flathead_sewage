@@ -10,11 +10,13 @@ test_plot <- mcmc_df %>%
          sigma_label = ifelse(parameter_est == "sigma.site", "spatial", sigma_label),
          sigma_label = ifelse(parameter_est == "sigma.site.month", "spatio-temporal", sigma_label),
          sigma_label = ifelse(parameter_est == "sigma.e", "residual", sigma_label)) %>%
+  filter(sigma_label != "residual") %>%
   ggplot(aes(sigma_label, value)) +
-  geom_boxplot() +
+  geom_violin() +
+  geom_boxplot(width = 0.1) +
   ylab("Sigma")
 
-ggsave("../figures_tables/test_plot.png", test_plot)
+ggsave("../figures_tables/fatty_acid_sigma_boxplot.png", test_plot)
 
 
 test_df <- mcmc_df %>%
@@ -23,3 +25,7 @@ test_df <- mcmc_df %>%
 
 aov_results <- aov(value ~ parameter_est, data = test_df)
 anova(aov_results)
+
+ggplot(data.frame(dat_numeric), aes(time_point, y)) +
+  geom_point() +
+  facet_wrap(~ SITE)

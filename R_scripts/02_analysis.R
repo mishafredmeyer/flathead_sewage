@@ -1,41 +1,52 @@
-library(tidyverse)
-library(vegan)
-library(lubridate)
-library(stringi)
+## This script is associated with an analysis of spatially and 
+## and temporally heterogeneous nutrient loading into Flathead
+## Lake's nearshore zone. This script is a piece of the 
+## overarching analysis and looks mostly at relating 
+## sewage indicators with wastewater treatment infrastructure
+## and a sampling point's temporal position to the tourist 
+## season. Questions about this script should be directed to 
+## Michael F. Meyer (michael.f.meyer@wsu.edu). 
 
-afdm <- read.csv("../cleaned_data/AFDM.csv", header = TRUE)
-stoich <- read.csv("../cleaned_data/stoichiometry.csv", header = TRUE)
-ppcp <- read.csv("../cleaned_data/ppcp.csv", header = TRUE)
-utilities <- read.csv("../cleaned_data/utilities.csv", header = TRUE)
-nutrients <- read.csv("../cleaned_data/nutrients.csv", header = TRUE)
-fatty_acids <- read.csv("../cleaned_data/fatty_acids.csv")
+ggplot(afdm_edit, #%>%
+         #filter(MONTH != "JUNE",
+        #        SITE != "YB"), 
+       aes(tourist_season, mean_afdm)) +
+  geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
+  geom_jitter() +
+  facet_wrap(~stt) +
+  theme_bw()
 
-afdm <- afdm %>%
-  rename("MONTH" = "month") %>%
-  mutate(SITE = trimws(site)) %>%
-  mutate(SITE = ifelse(site == "Beardance", "BD", SITE),
-         SITE = ifelse(site == "Blue Bay", "BB", SITE),
-         SITE = ifelse(site == "Boettcher", "BO", SITE),
-         SITE = ifelse(site == "Dayton", "DA", SITE),
-         SITE = ifelse(site == "Finley Point", "FI", SITE),
-         SITE = ifelse(site == "FLBS", "FLBS", SITE),
-         SITE = ifelse(site == "Lakeside", "LK", SITE),
-         SITE = ifelse(site == "Sacajawea", "SJ", SITE),
-         SITE = ifelse(site == "Salish Park", "SA", SITE),
-         SITE = ifelse(site == "Wayfarers", "WF", SITE),
-         SITE = ifelse(site == "West Shore", "WS", SITE),
-         SITE = ifelse(site == "Woods Bay", "WB", SITE),
-         SITE = ifelse(site == "Yellow Bay", "YB", SITE)) %>%
-  mutate(AFDM = dry_weight - after_ignition) %>%
-  group_by(SITE, MONTH) %>%
-  summarise(mean_afdm = mean(AFDM)) %>%
-  mutate(z_scored_afdm = scale(mean_afdm))
+afdm_lm <- lm(mean_afdm ~ stt*tourist_season, 
+              data = afdm_edit)
+
+Anova(afdm_lm, type = "II")
 
 fatty_acids <- fatty_acids %>%
   rename("SITE" = "LOC") %>%
   mutate(MONTH = ifelse(MONTH == 9, "SEPTEMBER", MONTH),
          MONTH = ifelse(MONTH == 8, "AUGUST", MONTH),
          MONTH = ifelse(MONTH == 7, "JULY", MONTH))
+
+SAFA <- c("C12.0", "C14.0", "C15.0", "C16.0", "C17.0", "C18.0", "C20.0", "C22.0", "iso.C15.0", "C24.0", "C26.0", "C28.0")
+MUFA <- c( "C15.1", "C14.1n5", "C15.1w7", "C16.1w5", "C16.1w6", "C16.1w7", "C16.1w7c",  "C16.1w8", "C16.1w9", "C17.1n7", "C18.1w7", "C18.1w7c", 
+           "C18.1w9", "C18.1w9c", "C20.1w7", "C20.1w9", "C22.1w7", "C22.1w9", "C22.1w9c")
+LUFA <- c("C16.2", "C16.2w4",  "C16.2w6",  "C16.2w7",  "C16.3w3",  "C16.3w4",  "C16.3w6",  "C18.2w6",  "C18.2w6t", "C18.2w6c",
+          "C18.3w3",  "C18.3w6", "C20.2w6",  "C20.3w3",  "C20.3w6",  "C22.2w6",  "C22.3w3")
+HUFA <- c("C16.4w1", "C16.4w3", "C18.4w3", "C18.4w4", "C18.5w3", "C20.4w2", "C20.4w3", "C20.4w6", "C20.5w3", "C22.4w3", 
+          "C22.4w6", "C22.5w3", "C22.5w6", "C22.6w3")
+SCUFA_LUFA <- c("C16.2", "C16.2w4",  "C16.2w6",  "C16.2w7",  "C16.3w3",  "C16.3w4",  "C16.3w6",  "C18.2w6", "C18.2w6c", 
+                "C18.2w6t", "C18.3w3",  "C18.3w6")
+LCUFA_LUFA <- c("C20.2w6",  "C20.3w3",  "C20.3w6",  "C22.2w6",  "C22.3w3")
+SCUFA_HUFA <- c("C16.4w1", "C16.4w3", "C18.4w3", "C18.4w4", "C18.5w3")
+LCUFA_HUFA <- c( "C20.4w2", "C20.4w3", "C20.4w6", "C20.5w3", "C22.4w3", 
+                 "C22.4w6", "C22.5w3", "C22.5w6", "C22.6w3")
+SCUFA <- c("C16.2w4",  "C16.2w6",  "C16.2w7",  "C16.3w3",  "C16.3w4",  "C16.3w6",  "C18.2w6",  "C18.2w6t", "C18.2w6t",
+           "C18.3w3",  "C18.3w6", "C16.4w1", "C16.4w3", "C18.4w3", "C18.4w4", "C18.5w3")
+LCUFA <- c( "C20.4w2", "C20.4w3", "C20.4w6", "C20.5w3", "C22.4w3", 
+            "C22.4w6", "C22.5w3", "C22.5w6", "C22.6w3", "C20.2w6",  "C20.3w3",  "C20.3w6",  "C22.2w6",  "C22.3w3")
+
+C18PUFA <- c("C18.2w6",  "C18.2w6t", "C18.3w3",  "C18.3w6", "C18.4w3", "C18.4w4", "C18.5w3")
+C20PUFA <- c("C20.4w3", "C20.4w6", "C20.5w3", "C20.2w6",  "C20.3w3",  "C20.3w6")
 
 fatty_acids_reduced <- fatty_acids %>%
   select(-C19.0) %>%
@@ -56,26 +67,8 @@ fatty_acids_reduced <- fatty_acids %>%
   dplyr::select(-TOTAL_FA_OVERALL, -TOTAL_FA_TYPE) %>%
   spread(TYPE, PROP_FA)
 
-utilities <- utilities %>%
-  mutate(SITE = ifelse(Site == "Big_Fork", "WF", NA),
-         SITE = ifelse(Site == "Lakeside", "LK", SITE),
-         SITE = ifelse(Site == "Woods_Bay", "WB", SITE),
-         MONTH = ifelse(Time == "Aug", "AUGUST", Time),
-         MONTH = ifelse(Time == "Jun", "JUNE", MONTH),
-         MONTH = ifelse(Time == "Jul", "JULY", MONTH),
-         MONTH = ifelse(Time == "Sep", "SEPTEMBER", MONTH),
-         MONTH = ifelse(Time == "May", "MAY", MONTH)) %>%
-  group_by(SITE) %>%
-  mutate(z_Scored_usage = scale(Cum_usage))
 
-ppcp <- ppcp %>%
-  group_by(SITE, MONTH) %>%
-  summarize(total_ppcp = sum(CONCENTRATION, na.rm = TRUE)) %>%
-  ungroup() %>%
-  group_by(SITE) %>%
-  mutate(z_scored_conc = scale(total_ppcp))
-
-nutrients <- nutrients %>%
+nutrients_edit <- nutrients %>%
   mutate(SITE = trimws(Sample_ID)) %>%
   separate(SITE, c("SITE", "REP")) %>%
   mutate(SITE = ifelse(SITE == "Beardance", "BD", SITE),
@@ -98,92 +91,23 @@ nutrients <- nutrients %>%
             mean_NO3 = mean(NO3),
             mean_TN = mean(TN),
             mean_SRP = mean(SRP),
-            mean_TP = mean(TP))
+            mean_TP = mean(TP)) %>%
+  pivot_longer(cols = c(mean_nh3:mean_TP), names_to = "nutrient_type", values_to = "concentration") %>%
+  mutate(stt = ifelse(SITE %in% c("WF", "YB", "WB"), "Centralized", "Decentralized"),
+         tourist_season = ifelse(MONTH %in% c("JUNE", "JULY", "AUGUST"), "In Season", "Out of Season"))
 
-stoich_cleaned <- stoich[-c(1:3),] %>%
-  rename("SITE_full" = "X",
-         "date_collected" = "X.1",
-         "total_dry_mass_carbon_mg" = "Particulate.Carbon",
-         "carbon_mg" = "X.3",
-         "total_dry_mass_nitrogen_mg" = "Particulate.Nitrogen",
-         "nitrogen_mg" = "X.4",
-         "total_dry_mass_phosphorus_mg" = "Particulate.Phosphorus",
-         "phosphorus_ug" = "X.5") %>%
-  select(-contains("X")) %>%
-  mutate(MONTH = toupper(month(mdy(date_collected), label = TRUE, abbr = FALSE)),
-         SITE = unlist(str_extract_all(SITE_full,  "(?<=\\().+?(?=\\))"))) %>%
-  mutate_at(.vars = c("total_dry_mass_carbon_mg", "carbon_mg",
-                      "total_dry_mass_nitrogen_mg", "nitrogen_mg",
-                      "total_dry_mass_phosphorus_mg", "phosphorus_ug"), 
-            as.numeric)
 
-rda_data <- inner_join(fatty_acids, utilities) %>%
-  inner_join(., ppcp) %>%
-  inner_join(., afdm) %>%
-  inner_join(., nutrients) %>%
-  inner_join(., fatty_acids_reduced) %>%
-  inner_join(., stoich_cleaned) %>%
-  mutate(carbon_mol_per_mg_tissue = log10(((carbon_mg/1000)/12.01)/total_dry_mass_carbon_mg),
-         nitrogen_mol_per_mg_tissue = log10(((nitrogen_mg/1000)/14)/total_dry_mass_nitrogen_mg),
-         phosphorus_mol_per_mg_tissue = log10(((phosphorus_ug/1000000)/30.97)/total_dry_mass_phosphorus_mg)) %>%
-  select(SITE, MONTH, total_ppcp, z_scored_conc, mean_afdm, z_scored_afdm, Cum_usage,
-                mean_nh3, mean_NO3, mean_TN, mean_SRP, mean_TP, LCUFA_HUFA:SCUFA_LUFA,
-         carbon_mol_per_mg_tissue, nitrogen_mol_per_mg_tissue, phosphorus_mol_per_mg_tissue, z_Scored_usage) %>%
-  drop_na()
+ggplot(nutrients_edit, 
+       aes(tourist_season, log10(concentration), fill = stt)) +
+  geom_boxplot(outlier.alpha = 0) +
+  geom_jitter(aes(color = stt)) +
+  scale_y_log10() +
+  facet_wrap(~nutrient_type) +
+  theme_bw()
 
-rda_results <- dbrda(rda_data[ , c(12, 13:15)] ~  z_Scored_usage + mean_NO3 + z_scored_conc + mean_SRP, 
-                     data = rda_data, distance = "euclidean")
-rda_results
-plot(rda_results)
-anova(rda_results, permutations = 5000)
-anova(rda_results, by="axis")
-anova(rda_results, by="terms", permu=5000)
+phos_lm <- lm(log10(concentration) ~ stt*tourist_season, 
+              data = nutrients_edit %>%
+                filter(nutrient_type == "mean_NO3"))
 
-combined_data <- #inner_join(fatty_acids, utilities) %>%
-  inner_join(fatty_acids, ppcp) %>%
-  inner_join(., afdm) %>%
-  inner_join(., nutrients) %>%
-  inner_join(., fatty_acids_reduced) %>%
-  inner_join(., stoich_cleaned) %>%
-  mutate(carbon_mol_per_mg_tissue = log10(((carbon_mg/1000)/12.01)/total_dry_mass_carbon_mg),
-         nitrogen_mol_per_mg_tissue = log10(((nitrogen_mg/1000)/14)/total_dry_mass_nitrogen_mg),
-         phosphorus_mol_per_mg_tissue = log10(((phosphorus_ug/1000000)/30.97)/total_dry_mass_phosphorus_mg)) %>%
-  select(SITE, MONTH, total_ppcp, z_scored_conc, mean_afdm, z_scored_afdm, 
-          mean_NO3, mean_SRP, LCUFA_HUFA:SCUFA_LUFA,
-         carbon_mol_per_mg_tissue, nitrogen_mol_per_mg_tissue, phosphorus_mol_per_mg_tissue) %>%
-  drop_na()
+Anova(phos_lm, type = "II")
 
-combined_data <- inner_join(fatty_acids, utilities) %>%
-  inner_join(nutrients, ppcp) %>%
-  inner_join(., afdm) %>%
-  inner_join(., nutrients) %>%
-  inner_join(., fatty_acids_reduced) %>%
-  inner_join(., stoich_cleaned) %>%
-  mutate(carbon_mol_per_mg_tissue = log10(((carbon_mg/1000)/12.01)/total_dry_mass_carbon_mg),
-        nitrogen_mol_per_mg_tissue = log10(((nitrogen_mg/1000)/14)/total_dry_mass_nitrogen_mg),
-        phosphorus_mol_per_mg_tissue = log10(((phosphorus_ug/1000000)/30.97)/total_dry_mass_phosphorus_mg)) %>%
-  select(SITE, MONTH, total_ppcp, z_scored_conc, mean_afdm, z_scored_afdm,
-      LCUFA_HUFA:SCUFA_LUFA, mean_SRP, mean_NO3,
-        carbon_mol_per_mg_tissue, nitrogen_mol_per_mg_tissue, phosphorus_mol_per_mg_tissue) %>%
-  drop_na()
-ggplot(combined_data, aes(x = log10(total_ppcp),
-                          y = SCUFA_LUFA,
-                          color = MONTH)) +
-  geom_point() +
-  geom_smooth(method = "lm")
-
-ggplot(rda_data %>% filter(z_scored_conc < 3), aes(x = log10(Cum_usage),
-                          y = log10(total_ppcp))) +
-  geom_point(aes(color = SITE, shape = MONTH)) +
-  geom_smooth(method = "lm")
-
-kendall_data <- combined_data %>% 
-  filter(MONTH == "AUGUST") %>%
-  mutate(log10_ppcp = log10(total_ppcp),
-         FA_response = (nitrogen_mol_per_mg_tissue/phosphorus_mol_per_mg_tissue))
-
-kendall_results <- Kendall(kendall_data$FA_response, 
-                           kendall_data$log10_ppcp)
-summary(kendall_results)
-
-summary(glm(FA_response ~ log10_ppcp, data = kendall_data))
