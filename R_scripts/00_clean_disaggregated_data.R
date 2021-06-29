@@ -869,3 +869,17 @@ zoom_map <- autoplot.OpenStreetMap(base_map_zoom) +
         axis.title = element_text(size = 24),
         axis.text = element_text(size = 14),
         strip.text = element_text(size = 20))
+
+
+# 9. Periphyton -----------------------------------------------------------
+
+periphyton <- read.csv(file = "../raw_data/flathead_periphyton_abundance.csv")
+
+head(periphyton)
+
+periphyton_clean <- periphyton %>%
+  rename("chlorophyta_filamentts" = "chlorophyta_filamnets")
+
+write.csv(x = periphyton_clean, 
+          file = "../cleaned_disaggregated_data/periphyton_abundance.csv", 
+          row.names = FALSE)

@@ -97,3 +97,16 @@ write.csv(x = tsidw_pop,
           file = "../cleaned_data/temporally_scaled_inverse_distance_weighted_population_metrics.csv",
           row.names = FALSE)
 
+
+# 8. Periphyton Abundance -------------------------------------------------
+
+periphyton <- read.csv(file = "../cleaned_disaggregated_data/periphyton_abundance.csv",
+                       header = TRUE)
+
+head(periphyton)
+
+periphyton_clean <- periphyton
+
+write.csv(x = periphyton_clean, 
+          file = "../cleaned_data/periphyton_abundance.csv",
+          row.names = FALSE)
