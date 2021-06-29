@@ -1,1163 +1,1163 @@
-"site","month","sampling_event","ppcp","concentration"
-"BD","august","1","acetaminophen",0
-"BD","august","1","acetaminophen",0
-"DU","august","1","acetaminophen",0
-"DU","august","1","acetaminophen",0
-"DU","september","1","acetaminophen",0
-"DU","september","1","acetaminophen",0
-"LK","july","1","acetaminophen",0
-"LK","july","1","acetaminophen",0
-"LK","september","1","acetaminophen",0
-"LK","september","1","acetaminophen",0
-"SL","august","1","acetaminophen",0
-"SL","august","1","acetaminophen",0
-"SL","june","1","acetaminophen",0.0147013371729398
-"SL","june","1","acetaminophen",0
-"SJ","june","1","acetaminophen",0
-"WB","august","1","acetaminophen",0
-"WB","august","1","acetaminophen",0
-"WB","july","1","acetaminophen",0
-"WS","august","1","acetaminophen",0
-"WS","august","1","acetaminophen",0
-"YB","august","1","acetaminophen",0
-"YB","august","1","acetaminophen",0
-"YB","september","1","acetaminophen",0
-"YB","september","1","acetaminophen",0
-"BB","july","2","acetaminophen",0
-"BB","july","2","acetaminophen",0
-"BD","july","2","acetaminophen",0
-"BD","july","2","acetaminophen",0
-"BO","september","2","acetaminophen",0
-"DA","july","2","acetaminophen",0.000183171062574368
-"DA","july","2","acetaminophen",0
-"SL","september","2","acetaminophen",0
-"SJ","july","2","acetaminophen",3.14625663879796e-05
-"SJ","july","2","acetaminophen",0
-"BO","september","1","acetaminophen",0
-"BO","september","1","acetaminophen",0
-"SL","june","1","acetaminophen",0
-"SL","june","1","acetaminophen",0
-"SJ","july","1","acetaminophen",0
-"SJ","july","1","acetaminophen",0
-"WB","july","1","acetaminophen",0.0111411765047434
-"WB","july","1","acetaminophen",0
-"WF","july","2","acetaminophen",0.00180609506357233
-"WF","july","2","acetaminophen",0
-"BD","july","1","acetaminophen",0
-"BO","may","1","acetaminophen",0
-"BO","may","1","acetaminophen",0
-"FI","july","1","acetaminophen",0
-"FI","july","1","acetaminophen",0
-"SL","september","1","acetaminophen",0.0558486402215114
-"SL","september","1","acetaminophen",0
-"BB","august","1","caffeine",0.506006063194371
-"BB","july","1","caffeine",0.316652545718895
-"BB","june","1","caffeine",0.179158072822671
-"BB","september","1","caffeine",0.196803122596777
-"BD","july","1","caffeine",0.397276043598261
-"BD","june","1","caffeine",0.048613596342409
-"BD","september","1","caffeine",0.215046661034172
-"BO","august","1","caffeine",0.298187393669985
-"BO","july","1","caffeine",0.873592330408991
-"BO","june","1","caffeine",0.0539923604066369
-"BO","september","1","caffeine",0.312791764831465
-"DA","august","1","caffeine",2.12170949064106
-"DA","july","1","caffeine",0.460008246531165
-"DA","june","1","caffeine",0.362862453055975
-"DA","september","1","caffeine",0.24598014371089
-"DU","august","1","caffeine",0.102262779081444
-"DU","july","1","caffeine",0.310243245535974
-"DU","september","1","caffeine",0.520075448208602
-"FI","august","1","caffeine",2.3871314368585
-"FI","july","1","caffeine",3.06949659662944
-"FI","september","1","caffeine",246.082051405868
-"FLBS","august","1","caffeine",0.134997080770703
-"FLBS","july","1","caffeine",0.040510850627507
-"FLBS","june","1","caffeine",0.0878511843823589
-"FLBS","september","1","caffeine",0.182352071633161
-"HO","august","1","caffeine",0.220728108896645
-"HO","july","1","caffeine",0.0690672848688803
-"HO","june","1","caffeine",0.0426330459240517
-"HO","september","1","caffeine",0.212332013732204
-"LK","august","1","caffeine",8.73223402853924
-"LK","july","1","caffeine",0.0393870978504184
-"LK","september","1","caffeine",0.104385247821374
-"SL","august","1","caffeine",0.270072485617977
-"SL","july","1","caffeine",0.0598571174890869
-"SL","june","1","caffeine",0.0617380642394884
-"SL","september","1","caffeine",198.608649356646
-"SJ","august","1","caffeine",3.12379020688761
-"SJ","july","1","caffeine",8.5976594624982
-"SJ","june","1","caffeine",0.0541065277420464
-"SJ","september","1","caffeine",0.506570050312771
-"WB","august","1","caffeine",0.123466286345631
-"WB","july","1","caffeine",0.133710763617118
-"WB","september","1","caffeine",2.0868521020855
-"WF","august","1","caffeine",0.0691711204647624
-"WF","july","1","caffeine",0.0875520451411962
-"WF","june","1","caffeine",0.173029833448061
-"WF","september","1","caffeine",0.167161609346236
-"WS","august","1","caffeine",1.5704291924126
-"WS","july","1","caffeine",0.16396081640056
-"WS","june","1","caffeine",0.112723160646983
-"YB","august","1","caffeine",0.0662531169578786
-"YB","july","1","caffeine",0.43954024567823
-"YB","june","1","caffeine",0.391065967122025
-"YB","september","1","caffeine",0.397243131462849
-"BB","august","2","caffeine",0.22414940185756
-"BB","july","2","caffeine",0.918138733680192
-"BB","june","1","caffeine",4.23373148885898
-"BB","september","2","caffeine",0.628232354307582
-"BD","august","2","caffeine",0.0505167603870764
-"BD","july","2","caffeine",6.9448442096754
-"BD","june","1","caffeine",0.223179483409785
-"BD","september","2","caffeine",0.263638773920547
-"BO","august","2","caffeine",0.109301126419447
-"BO","july","2","caffeine",0.225592206235656
-"BO","june","1","caffeine",0.856560841081102
-"BO","september","2","caffeine",0.466717112970311
-"DA","august","2","caffeine",3.98011897036835
-"DA","july","2","caffeine",0.357613276399939
-"DA","july","2","caffeine",1.26124237670562
-"DA","june","1","caffeine",1.21437780143618
-"DA","september","2","caffeine",0.422942948838004
-"DU","august","2","caffeine",0.308416848400427
-"DU","june","1","caffeine",0.709409536928488
-"DU","september","2","caffeine",0.132515808503391
-"FI","august","2","caffeine",0.0688468890906935
-"FI","july","2","caffeine",0.202315113190776
-"FI","june","1","caffeine",0.471622217040327
-"FI","september","2","caffeine",0.245873148032384
-"FLBS","june","1","caffeine",0.204456245604723
-"FLBS","september","2","caffeine",0.442825325783824
-"HO","august","2","caffeine",0.202711388022993
-"HO","july","2","caffeine",0.141917310870506
-"HO","june","1","caffeine",0.0990893693937118
-"HO","september","2","caffeine",0.107568302679373
-"LK","august","2","caffeine",0.215326719951569
-"LK","july","2","caffeine",0.23743457559741
-"LK","june","1","caffeine",0.132597220691961
-"LK","september","2","caffeine",0.126998677672213
-"SL","august","2","caffeine",59.6785434589025
-"SL","july","2","caffeine",0.731141570361882
-"SL","june","1","caffeine",1.49974396151894
-"SL","september","2","caffeine",1.8014289886096
-"SJ","august","2","caffeine",0.231837239134531
-"SJ","july","2","caffeine",1.37943393723137
-"SJ","june","1","caffeine",3.67073035351948
-"SJ","september","2","caffeine",0.639664678124362
-"WB","july","2","caffeine",0.567948317759072
-"WB","june","1","caffeine",0.561828948544933
-"WB","september","2","caffeine",0.0710076100803782
-"WF","august","2","caffeine",0.386609636206784
-"WF","july","2","caffeine",3.17087222243473
-"WF","june","1","caffeine",0.134241820395665
-"WF","september","2","caffeine",0.153542002077581
-"WS","august","2","caffeine",0.344114992940799
-"WS","july","2","caffeine",0.247732552893731
-"WS","june","1","caffeine",0.0846281387545097
-"WS","september","2","caffeine",0.236502543082949
-"YB","august","2","caffeine",0.0877798150714982
-"YB","july","2","caffeine",0.32271253563095
-"YB","july","2","caffeine",0.235086301804106
-"YB","june","1","caffeine",0.299667259876104
-"YB","september","2","caffeine",0.151194122986009
-"BB","july","2","caffeine",0.13610588760553
-"BB","july","1","caffeine",0.175069096418501
-"BB","june","1","caffeine",0.800124343640245
-"BB","september","2","caffeine",0.758984511063716
-"BD","august","1","caffeine",0.105524687182183
-"BD","july","2","caffeine",0.162714530912837
-"BD","july","2","caffeine",0.211816085050773
-"BD","july","1","caffeine",0.282126887823006
-"BD","july","1","caffeine",0.331537368323512
-"BD","june","1","caffeine",0.2003588974916
-"BD","june","1","caffeine",0.229980510709167
-"BO","july","1","caffeine",0.0967452996068677
-"BO","june","1","caffeine",0.463601578531682
-"BO","june","1","caffeine",0.0668409814620285
-"BO","september","1","caffeine",1.0172046964246
-"DA","september","1","caffeine",0.648547476047885
-"DU","august","1","caffeine",0.125905663412172
-"DU","september","1","caffeine",0.18772865574605
-"FI","july","2","caffeine",0.770478429520826
-"FI","june","1","caffeine",0.197981865730579
-"FI","september","1","caffeine",0.125379720393838
-"FLBS","july","2","caffeine",0.255815284539044
-"FLBS","july","2","caffeine",0.285946208445163
-"HO","august","1","caffeine",0.116291309174505
-"HO","july","1","caffeine",1.38829552035869
-"HO","june","1","caffeine",0.0419677034000283
-"LK","july","1","caffeine",0.0910340467605989
-"LK","july","1","caffeine",0.206323221122186
-"LK","september","2","caffeine",4.08383358161606
-"LK","september","1","caffeine",0.0531766892692158
-"LK","september","1","caffeine",0.0761567956915869
-"SL","july","1","caffeine",2.47548315338743
-"SL","july","1","caffeine",0.216319351265426
-"SL","june","1","caffeine",0.081600796536123
-"SL","september","2","caffeine",1.83443693406794
-"SJ","august","1","caffeine",0.427421242569065
-"SJ","july","1","caffeine",1.86012700458428
-"SJ","june","1","caffeine",0.17625614672209
-"SJ","june","1","caffeine",0.0742124244084519
-"WB","july","1","caffeine",0.797499081202716
-"WB","july","1","caffeine",0.106489936321288
-"WB","june","1","caffeine",0.158147500593989
-"WB","september","2","caffeine",0.145902175054582
-"WF","july","2","caffeine",0.783829974546282
-"WF","june","1","caffeine",0.375127857899798
-"WF","june","1","caffeine",0.176062818169902
-"WF","september","2","caffeine",21.2000786188902
-"WF","september","2","caffeine",0.0604455867683037
-"WF","september","1","caffeine",0.363841347707771
-"WS","july","1","caffeine",0.0998214332297407
-"BB","august","2","caffeine",0.100879754117891
-"BB","august","1","caffeine",0.051118435821078
-"BB","july","1","caffeine",0.188370639428054
-"BB","may","1","caffeine",0.190898567535373
-"BB","september","1","caffeine",0.0957858285656877
-"BD","july","2","caffeine",0.0493682288705875
-"BD","july","1","caffeine",0.209728448707384
-"BD","may","1","caffeine",0.386814428007315
-"BD","september","1","caffeine",0.102354957100477
-"BD","september","1","caffeine",0.164526543237138
-"BO","august","2","caffeine",0.104354546464136
-"BO","may","1","caffeine",0.223427094370149
-"BO","september","1","caffeine",0.181863960344498
-"BO","september","1","caffeine",0.148051799320064
-"DA","august","2","caffeine",0.779814218063802
-"DA","july","1","caffeine",0.318146454212678
-"DA","june","1","caffeine",1.85331502829867
-"DA","june","1","caffeine",2.13682217815183
-"DA","may","1","caffeine",8.67563720019167
-"DA","september","2","caffeine",1.26020494107041
-"DA","september","2","caffeine",0.412807819892116
-"DU","august","2","caffeine",0.152495860124272
-"DU","july","2","caffeine",0.36293922336068
-"DU","july","1","caffeine",0.262513512415424
-"DU","june","1","caffeine",0.973913008865355
-"DU","may","1","caffeine",0.467692207249984
-"DU","september","2","caffeine",0.18537477222066
-"FI","august","2","caffeine",0.103946824009527
-"FI","august","1","caffeine",1.14839909496579
-"FI","july","1","caffeine",0.826201310397951
-"FI","may","1","caffeine",0.0642567474062705
-"FLBS","august","1","caffeine",0.338992540628666
-"FLBS","july","1","caffeine",0.0652216704544731
-"FLBS","may","1","caffeine",0.174246384454845
-"FLBS","september","2","caffeine",0.0601030178520157
-"FLBS","september","1","caffeine",0.381633153193736
-"FLBS","september","2","caffeine",1.12749563787124
-"HO","august","1","caffeine",0.203972157653093
-"HO","july","1","caffeine",0.208047258835568
-"HO","june","1","caffeine",0.0649226102987318
-"HO","may","1","caffeine",1.55955587571048
-"HO","september","2","caffeine",0.08825308073575
-"LK","august","1","caffeine",0.488039778008979
-"LK","july","1","caffeine",0.0605845192643432
-"LK","may","1","caffeine",8.64376830304041
-"SL","august","2","caffeine",0.149516453320116
-"SL","july","2","caffeine",0.720741899283852
-"SL","may","1","caffeine",0.288882789935328
-"SL","may","1","caffeine",0.14002657229436
-"SL","september","2","caffeine",0.132889666258064
-"SL","september","1","caffeine",0.414847869320623
-"SJ","august","2","caffeine",0.187479944890305
-"SJ","july","1","caffeine",0.226542600665681
-"SJ","may","1","caffeine",0.0478023697199435
-"SJ","september","1","caffeine",0.980152673446279
-"SJ","september","2","caffeine",3.55708572900925
-"WB","august","1","caffeine",0.349159743961785
-"WB","july","1","caffeine",0.152149773100479
-"WB","may","1","caffeine",0.10008275849426
-"WB","september","1","caffeine",0.798378378149042
-"WF","august","1","caffeine",0.0979185099689463
-"WF","may","1","caffeine",0.865112652109145
-"WS","august","1","caffeine",0.333165431667147
-"WS","august","1","caffeine",0.4478815913495
-"WS","july","1","caffeine",0.109490531081611
-"WS","june","1","caffeine",0.415788761289849
-"WS","may","1","caffeine",0.831275569996363
-"WS","september","1","caffeine",0.16391952109822
-"WS","september","2","caffeine",0.271681120170002
-"YB","august","1","caffeine",0.174092543215198
-"YB","july","2","caffeine",0.140954574079386
-"YB","july","1","caffeine",0.11314923293422
-"YB","june","1","caffeine",0.372362517243756
-"YB","september","1","caffeine",0.0996661585733481
-"YB","september","1","caffeine",13.5404226815819
-"BB","august","1","carbamezapine",0
-"BB","august","1","carbamezapine",0
-"BB","august","1","carbamezapine",0
-"BB","august","1","carbamezapine",0
-"BB","july","1","carbamezapine",0
-"BB","july","1","carbamezapine",0.000201149388731441
-"BB","july","1","carbamezapine",0.00130266412232242
-"BB","july","1","carbamezapine",0
-"BB","june","1","carbamezapine",0
-"BB","june","1","carbamezapine",3.63685028920129e-07
-"BB","june","1","carbamezapine",0.000285053545484412
-"BB","june","1","carbamezapine",0
-"BB","september","1","carbamezapine",0
-"BB","september","1","carbamezapine",0
-"BB","september","1","carbamezapine",0
-"BB","september","1","carbamezapine",0
-"BD","august","1","carbamezapine",0
-"BD","august","1","carbamezapine",0
-"BD","august","1","carbamezapine",0
-"BD","august","1","carbamezapine",0
-"BD","july","1","carbamezapine",0
-"BD","july","1","carbamezapine",0.000432769715217691
-"BD","july","1","carbamezapine",0.00194489059685575
-"BD","july","1","carbamezapine",0
-"BD","june","1","carbamezapine",0
-"BD","june","1","carbamezapine",0
-"BD","september","1","carbamezapine",0
-"BD","september","1","carbamezapine",2.8342067451498e-05
-"BD","september","1","carbamezapine",0
-"BD","september","1","carbamezapine",0
-"BO","august","1","carbamezapine",0
-"BO","august","1","carbamezapine",0
-"BO","july","1","carbamezapine",0
-"BO","july","1","carbamezapine",0
-"BO","july","1","carbamezapine",0
-"BO","july","1","carbamezapine",0
-"BO","june","1","carbamezapine",0
-"BO","june","1","carbamezapine",0
-"BO","june","1","carbamezapine",0
-"BO","june","1","carbamezapine",0
-"BO","september","1","carbamezapine",0
-"BO","september","1","carbamezapine",0
-"BO","september","1","carbamezapine",0
-"BO","september","1","carbamezapine",0
-"DA","august","1","carbamezapine",0
-"DA","august","1","carbamezapine",0
-"DA","august","1","carbamezapine",0
-"DA","august","1","carbamezapine",0
-"DA","july","1","carbamezapine",0
-"DA","july","1","carbamezapine",0
-"DA","july","1","carbamezapine",0
-"DA","july","1","carbamezapine",0
-"DA","september","1","carbamezapine",0
-"DA","september","1","carbamezapine",2.47607960110602e-06
-"DA","september","1","carbamezapine",0.000351082635160417
-"DA","september","1","carbamezapine",0
-"DU","august","1","carbamezapine",0
-"DU","august","1","carbamezapine",0
-"DU","august","1","carbamezapine",0
-"DU","july","1","carbamezapine",1.58237986768085e-05
-"DU","july","1","carbamezapine",0.000709617260227864
-"DU","july","1","carbamezapine",0
-"DU","september","1","carbamezapine",0
-"DU","september","1","carbamezapine",0
-"DU","september","1","carbamezapine",0
-"FI","august","1","carbamezapine",0
-"FI","august","1","carbamezapine",0
-"FI","august","1","carbamezapine",0
-"FI","august","1","carbamezapine",0
-"FI","july","1","carbamezapine",0
-"FI","july","1","carbamezapine",0
-"FI","july","1","carbamezapine",0
-"FI","july","1","carbamezapine",0.00133979119080823
-"FI","september","1","carbamezapine",0
-"FI","september","1","carbamezapine",0
-"FI","september","1","carbamezapine",0
-"FI","september","1","carbamezapine",0
-"FLBS","august","1","carbamezapine",0
-"FLBS","august","1","carbamezapine",0
-"FLBS","august","1","carbamezapine",0
-"FLBS","august","1","carbamezapine",0
-"FLBS","july","1","carbamezapine",0
-"FLBS","july","1","carbamezapine",0.00126642493469774
-"FLBS","july","1","carbamezapine",0.00374313114545231
-"FLBS","july","1","carbamezapine",0
-"FLBS","june","1","carbamezapine",0
-"FLBS","june","1","carbamezapine",0
-"FLBS","september","1","carbamezapine",0
-"FLBS","september","1","carbamezapine",0
-"FLBS","september","1","carbamezapine",0
-"FLBS","september","1","carbamezapine",0
-"HO","august","1","carbamezapine",0
-"HO","august","1","carbamezapine",0
-"HO","august","1","carbamezapine",0
-"HO","july","1","carbamezapine",0
-"HO","july","1","carbamezapine",7.45215707697146e-06
-"HO","july","1","carbamezapine",0
-"HO","july","1","carbamezapine",0
-"HO","june","1","carbamezapine",0
-"HO","june","1","carbamezapine",0
-"HO","june","1","carbamezapine",2.63828140554791e-08
-"HO","june","1","carbamezapine",0
-"HO","september","1","carbamezapine",0
-"HO","september","1","carbamezapine",0
-"HO","september","1","carbamezapine",0.000155902994603804
-"HO","september","1","carbamezapine",0
-"LK","august","1","carbamezapine",0
-"LK","august","1","carbamezapine",0
-"LK","august","1","carbamezapine",0
-"LK","august","1","carbamezapine",0
-"LK","july","1","carbamezapine",0
-"LK","july","1","carbamezapine",0.000242744399128373
-"LK","july","1","carbamezapine",0
-"LK","july","1","carbamezapine",0
-"LK","june","1","carbamezapine",0
-"LK","june","1","carbamezapine",0
-"LK","june","1","carbamezapine",7.46816787302899e-05
-"LK","june","1","carbamezapine",0
-"LK","september","1","carbamezapine",0
-"LK","september","1","carbamezapine",7.17833356949065e-07
-"LK","september","1","carbamezapine",0
-"SL","august","1","carbamezapine",0
-"SL","august","1","carbamezapine",0
-"SL","august","1","carbamezapine",0
-"SL","july","1","carbamezapine",3.61814608923938e-06
-"SL","july","1","carbamezapine",0
-"SL","june","1","carbamezapine",0
-"SL","june","1","carbamezapine",0
-"SL","june","1","carbamezapine",5.03626977848186e-06
-"SL","june","1","carbamezapine",0
-"SL","september","1","carbamezapine",0
-"SL","september","1","carbamezapine",0
-"SL","september","1","carbamezapine",0
-"SL","september","1","carbamezapine",0
-"SJ","august","1","carbamezapine",9.40194940360795e-05
-"SJ","august","1","carbamezapine",0
-"SJ","july","1","carbamezapine",8.31066707940687e-07
-"SJ","july","1","carbamezapine",0
-"SJ","june","1","carbamezapine",0
-"SJ","june","1","carbamezapine",0
-"SJ","september","1","carbamezapine",0
-"SJ","september","1","carbamezapine",0
-"SJ","september","1","carbamezapine",0
-"SJ","september","1","carbamezapine",0
-"WB","august","1","carbamezapine",0
-"WB","august","1","carbamezapine",0
-"WB","august","1","carbamezapine",0
-"WB","july","1","carbamezapine",0.000711340772874743
-"WB","july","1","carbamezapine",0
-"WB","september","1","carbamezapine",0
-"WB","september","1","carbamezapine",0
-"WB","september","1","carbamezapine",0
-"WB","september","1","carbamezapine",0
-"WF","august","1","carbamezapine",0
-"WF","august","1","carbamezapine",0
-"WF","august","1","carbamezapine",0
-"WF","july","1","carbamezapine",0.000415390706954826
-"WF","july","1","carbamezapine",0
-"WF","june","1","carbamezapine",0.00031593717329408
-"WS","august","1","carbamezapine",0
-"WS","august","1","carbamezapine",0
-"WS","august","1","carbamezapine",0
-"WS","august","1","carbamezapine",0
-"WS","july","1","carbamezapine",0.00107737068708141
-"WS","july","1","carbamezapine",0
-"WS","june","1","carbamezapine",0
-"WS","june","1","carbamezapine",0
-"YB","august","1","carbamezapine",0
-"YB","august","1","carbamezapine",0
-"YB","august","1","carbamezapine",0
-"YB","july","1","carbamezapine",0.000463778156812162
-"YB","july","1","carbamezapine",0
-"YB","june","1","carbamezapine",0
-"YB","june","1","carbamezapine",0
-"YB","june","1","carbamezapine",0
-"YB","september","1","carbamezapine",0
-"YB","september","1","carbamezapine",1.40766387731572e-06
-"YB","september","1","carbamezapine",0
-"YB","september","1","carbamezapine",0
-"BB","july","2","carbamezapine",0
-"BB","july","2","carbamezapine",0.000396160860257279
-"BB","july","2","carbamezapine",0
-"BB","july","2","carbamezapine",0
-"BB","june","1","carbamezapine",2.48068271591964e-05
-"BB","june","1","carbamezapine",0
-"BD","august","2","carbamezapine",0
-"BD","august","2","carbamezapine",4.57435034716913e-05
-"BD","august","2","carbamezapine",0.000703372202818499
-"BD","august","2","carbamezapine",0
-"BD","july","2","carbamezapine",0
-"BD","july","2","carbamezapine",4.92787984021569e-05
-"BD","july","2","carbamezapine",0
-"BD","july","2","carbamezapine",0
-"BD","september","2","carbamezapine",6.8520332257945e-05
-"BD","september","2","carbamezapine",0
-"BO","september","2","carbamezapine",0.0117002638085202
-"BO","september","2","carbamezapine",0
-"DA","july","2","carbamezapine",0
-"DA","july","2","carbamezapine",0.000271552075950651
-"DA","july","2","carbamezapine",0
-"DA","july","2","carbamezapine",0
-"DU","august","2","carbamezapine",6.71060689274948e-05
-"DU","august","2","carbamezapine",0
-"FI","september","2","carbamezapine",0
-"FI","september","2","carbamezapine",0.000356503916927218
-"FI","september","2","carbamezapine",0
-"FLBS","june","1","carbamezapine",0
-"FLBS","june","1","carbamezapine",0
-"FLBS","june","1","carbamezapine",0
-"FLBS","june","1","carbamezapine",0
-"HO","august","2","carbamezapine",0
-"HO","august","2","carbamezapine",0.000213333029595049
-"HO","august","2","carbamezapine",0.0013406720555072
-"HO","august","2","carbamezapine",0
-"HO","july","2","carbamezapine",0
-"HO","july","2","carbamezapine",0
-"HO","july","2","carbamezapine",0
-"HO","july","2","carbamezapine",0
-"HO","june","1","carbamezapine",0
-"HO","june","1","carbamezapine",0
-"HO","june","1","carbamezapine",0
-"HO","june","1","carbamezapine",0
-"HO","september","2","carbamezapine",0
-"HO","september","2","carbamezapine",0.000189035120411958
-"HO","september","2","carbamezapine",0
-"HO","september","2","carbamezapine",0
-"LK","august","2","carbamezapine",0.000429886664636068
-"LK","august","2","carbamezapine",0
-"LK","july","2","carbamezapine",0
-"LK","july","2","carbamezapine",0
-"LK","july","2","carbamezapine",0
-"LK","july","2","carbamezapine",0
-"LK","june","1","carbamezapine",0
-"LK","june","1","carbamezapine",4.60220580037159e-06
-"LK","june","1","carbamezapine",0
-"LK","june","1","carbamezapine",0
-"LK","september","2","carbamezapine",0
-"LK","september","2","carbamezapine",0.000152859874277263
-"LK","september","2","carbamezapine",0
-"SL","august","2","carbamezapine",0
-"SL","august","2","carbamezapine",1.48031067370031e-07
-"SL","august","2","carbamezapine",0.000268816137120272
-"SL","august","2","carbamezapine",0
-"SL","july","2","carbamezapine",0
-"SL","july","2","carbamezapine",7.95357701485692e-05
-"SL","july","2","carbamezapine",0
-"SL","june","1","carbamezapine",0
-"SL","june","1","carbamezapine",0
-"SL","june","1","carbamezapine",0
-"SL","june","1","carbamezapine",0
-"SJ","july","2","carbamezapine",0
-"SJ","july","2","carbamezapine",0.000253030384547948
-"SJ","july","2","carbamezapine",0
-"SJ","june","1","carbamezapine",0
-"SJ","june","1","carbamezapine",6.48780202052473e-07
-"SJ","june","1","carbamezapine",0
-"SJ","june","1","carbamezapine",0
-"SJ","september","2","carbamezapine",1.51875350181795e-09
-"SJ","september","2","carbamezapine",0.000368000003133828
-"SJ","september","2","carbamezapine",0
-"WB","august","2","carbamezapine",0
-"WB","august","2","carbamezapine",0
-"WB","august","2","carbamezapine",0.000212641277067878
-"WB","august","2","carbamezapine",0
-"WB","july","2","carbamezapine",0
-"WB","july","2","carbamezapine",4.32165468818509e-06
-"WB","july","2","carbamezapine",0
-"WB","june","1","carbamezapine",0
-"WB","june","1","carbamezapine",3.54435294134276e-06
-"WB","june","1","carbamezapine",0
-"WB","june","1","carbamezapine",0
-"WB","september","2","carbamezapine",0
-"WB","september","2","carbamezapine",8.70533525067649e-06
-"WB","september","2","carbamezapine",0
-"WB","september","2","carbamezapine",0
-"WF","july","2","carbamezapine",0
-"WF","july","2","carbamezapine",0
-"WF","july","2","carbamezapine",0
-"WF","july","2","carbamezapine",0
-"WF","june","1","carbamezapine",0
-"WF","june","1","carbamezapine",0
-"WF","june","1","carbamezapine",0
-"WF","june","1","carbamezapine",0
-"YB","august","2","carbamezapine",0
-"YB","august","2","carbamezapine",6.8659217707717e-06
-"YB","august","2","carbamezapine",0.000419628012661365
-"YB","august","2","carbamezapine",0
-"YB","july","2","carbamezapine",0
-"YB","july","2","carbamezapine",0.00015350886983174
-"YB","july","2","carbamezapine",0
-"YB","july","2","carbamezapine",0
-"YB","june","1","carbamezapine",0
-"YB","june","1","carbamezapine",0
-"YB","june","1","carbamezapine",0
-"YB","june","1","carbamezapine",0
-"YB","september","2","carbamezapine",0
-"YB","september","2","carbamezapine",0.000159028482779724
-"YB","september","2","carbamezapine",0.0011651227418256
-"YB","september","2","carbamezapine",0
-"BO","july","1","carbamezapine",0
-"BO","july","1","carbamezapine",7.32910844897507e-07
-"BO","july","1","carbamezapine",0.000302898694700065
-"BO","july","1","carbamezapine",0
-"FI","september","1","carbamezapine",0
-"FI","september","1","carbamezapine",1.63402309110715e-05
-"FI","september","1","carbamezapine",0
-"FLBS","july","2","carbamezapine",0.850724714853099
-"FLBS","july","2","carbamezapine",3.64780244311063
-"FLBS","july","2","carbamezapine",0
-"FLBS","july","2","carbamezapine",0
-"FLBS","july","2","carbamezapine",0
-"FLBS","july","2","carbamezapine",6.67688579199785e-05
-"FLBS","july","2","carbamezapine",0
-"FLBS","july","2","carbamezapine",0
-"LK","june","1","carbamezapine",78.945282710079
-"LK","june","1","carbamezapine",108.649833993783
-"LK","june","1","carbamezapine",0
-"LK","june","1","carbamezapine",0
-"LK","september","1","carbamezapine",0
-"LK","september","1","carbamezapine",0
-"LK","september","1","carbamezapine",0.00014035870110709
-"LK","september","1","carbamezapine",0
-"SJ","august","1","carbamezapine",0
-"SJ","august","1","carbamezapine",0
-"SJ","august","1","carbamezapine",0
-"SJ","august","1","carbamezapine",0
-"WF","september","1","carbamezapine",0
-"WF","september","1","carbamezapine",0
-"WF","september","1","carbamezapine",0
-"WF","september","1","carbamezapine",0
-"BB","august","1","carbamezapine",0.000136422760301556
-"BD","september","1","carbamezapine",0
-"BD","september","1","carbamezapine",0
-"BD","september","1","carbamezapine",0.000604441654162267
-"BO","may","1","carbamezapine",0.001403099048905
-"BO","may","1","carbamezapine",0.00467671035938072
-"BO","may","1","carbamezapine",0
-"BO","september","1","carbamezapine",0.000578622774570423
-"BO","september","1","carbamezapine",0
-"BO","september","1","carbamezapine",0
-"BO","september","1","carbamezapine",0
-"BO","september","1","carbamezapine",0
-"DA","july","1","carbamezapine",0.00220341329783712
-"DA","june","1","carbamezapine",0
-"DA","june","1","carbamezapine",0
-"DA","june","1","carbamezapine",0
-"DA","june","1","carbamezapine",0
-"DA","september","2","carbamezapine",0
-"DA","september","2","carbamezapine",0
-"DA","september","2","carbamezapine",0
-"DA","september","2","carbamezapine",0
-"DU","august","2","carbamezapine",0.000300220713700021
-"DU","july","2","carbamezapine",3.38549317217544e-05
-"DU","july","2","carbamezapine",0
-"DU","july","1","carbamezapine",0
-"DU","july","1","carbamezapine",0.000752213225773953
-"DU","july","1","carbamezapine",0.00268878320918975
-"DU","july","1","carbamezapine",0
-"DU","june","1","carbamezapine",0
-"DU","june","1","carbamezapine",0.000378649418754555
-"DU","june","1","carbamezapine",0.00180626598991046
-"DU","june","1","carbamezapine",0
-"DU","may","1","carbamezapine",0
-"DU","may","1","carbamezapine",0
-"DU","may","1","carbamezapine",0
-"DU","may","1","carbamezapine",0
-"FI","august","2","carbamezapine",0.000372941923863981
-"FI","august","1","carbamezapine",0.000264123495074713
-"FLBS","july","1","carbamezapine",0
-"FLBS","july","1","carbamezapine",1.29495456184931e-08
-"FLBS","july","1","carbamezapine",0
-"FLBS","september","2","carbamezapine",0
-"FLBS","september","2","carbamezapine",0
-"FLBS","september","1","carbamezapine",0.000395423836229241
-"HO","august","1","carbamezapine",0
-"HO","august","1","carbamezapine",0
-"LK","august","1","carbamezapine",3.48103725627546e-07
-"LK","august","1","carbamezapine",0
-"LK","july","1","carbamezapine",0.00176688818799739
-"SJ","august","2","carbamezapine",0
-"SJ","august","2","carbamezapine",0
-"WB","july","1","carbamezapine",0
-"WB","july","1","carbamezapine",0
-"WB","july","1","carbamezapine",0
-"WB","july","1","carbamezapine",0
-"WB","september","1","carbamezapine",0.000897556155686879
-"WF","august","1","carbamezapine",0.000225838677236109
-"WS","august","1","carbamezapine",0
-"WS","august","1","carbamezapine",0
-"WS","august","1","carbamezapine",0
-"WS","august","1","carbamezapine",0
-"YB","august","1","carbamezapine",0.000269738583364307
-"YB","september","1","carbamezapine",0.00068451403209665
-"BD","september","1","cotinine",0
-"BD","september","1","cotinine",0
-"LK","august","1","cotinine",0
-"LK","august","1","cotinine",0
-"LK","august","1","cotinine",0
-"SL","september","1","cotinine",0
-"SL","september","1","cotinine",0
-"SJ","september","1","cotinine",0
-"SJ","september","1","cotinine",0
-"SJ","september","1","cotinine",0
-"DU","august","2","cotinine",0
-"BO","may","1","cotinine",0
-"BO","may","1","cotinine",0
-"DU","july","1","cotinine",0
-"DU","july","1","cotinine",0
-"BB","july","1","paraxanthine",0.0732542653147073
-"BD","july","1","paraxanthine",0.154847151747415
-"BO","july","1","paraxanthine",0.0933136795802209
-"DA","august","1","paraxanthine",0.362885688772361
-"DA","july","1","paraxanthine",0.185377507024978
-"HO","august","1","paraxanthine",0.128804822405331
-"LK","august","1","paraxanthine",0.613095029219965
-"SL","august","1","paraxanthine",0.111512956139132
-"SJ","august","1","paraxanthine",0.126641551688642
-"SJ","july","1","paraxanthine",1.87522504364446
-"WS","august","1","paraxanthine",0.417307589963904
-"YB","july","1","paraxanthine",0.512138699049574
-"BB","august","2","paraxanthine",0.091451782046499
-"BB","july","2","paraxanthine",0.355463093427517
-"BB","june","1","paraxanthine",2.20664909465476
-"BB","september","2","paraxanthine",0.256058496134181
-"BD","july","2","paraxanthine",1.28756904868367
-"BO","july","2","paraxanthine",0.0743708829639289
-"BO","june","1","paraxanthine",0.280328921173786
-"BO","september","2","paraxanthine",0.134635739143208
-"DA","august","2","paraxanthine",1.14200953361623
-"DA","july","2","paraxanthine",0.0898393960190183
-"DA","july","2","paraxanthine",0.495878965085029
-"DA","june","1","paraxanthine",0.0746546782702787
-"DA","september","2","paraxanthine",0.24764857791545
-"DU","june","1","paraxanthine",0.198390206961236
-"DU","september","2","paraxanthine",0.196888554251524
-"FI","july","2","paraxanthine",0.132629696545909
-"FI","june","1","paraxanthine",0.501490399652406
-"FI","september","2","paraxanthine",0.0855070767523612
-"FLBS","june","1","paraxanthine",0.0742433507780199
-"FLBS","september","2","paraxanthine",0.109149675363757
-"LK","august","2","paraxanthine",0.0823898903660483
-"SL","august","2","paraxanthine",0.13222992092958
-"SL","july","2","paraxanthine",0.176474134496392
-"SL","june","1","paraxanthine",0.941384192905713
-"SL","september","2","paraxanthine",0.916058856351693
-"SJ","august","2","paraxanthine",0.127224118057132
-"SJ","july","2","paraxanthine",0.387974248427342
-"SJ","june","1","paraxanthine",2.38249252911019
-"SJ","september","2","paraxanthine",0.188343966256007
-"WB","july","2","paraxanthine",0.216470960096776
-"WB","june","1","paraxanthine",0.342938373398082
-"WF","august","2","paraxanthine",0.113377280678338
-"WF","july","2","paraxanthine",1.28336093000681
-"WF","june","1","paraxanthine",0.0904872261206417
-"WS","august","2","paraxanthine",0.0859100721847322
-"WS","july","2","paraxanthine",0.146875100253196
-"WS","september","2","paraxanthine",0.140008017425379
-"YB","july","2","paraxanthine",0.135531443137882
-"YB","june","1","paraxanthine",0.123556625118021
-"BB","july","1","paraxanthine",0.0919251767331355
-"BB","june","1","paraxanthine",0.391313404789801
-"BD","july","2","paraxanthine",0.0893785647536112
-"BD","july","1","paraxanthine",0.0981925230834222
-"BD","july","1","paraxanthine",0.350486687675607
-"BD","june","1","paraxanthine",0.093817690077969
-"BO","june","1","paraxanthine",0.137632551605243
-"BO","september","1","paraxanthine",0.212159771801086
-"DA","september","1","paraxanthine",0.453085467657127
-"FI","july","2","paraxanthine",0.161455370049682
-"FLBS","july","2","paraxanthine",0.1169697500616
-"HO","august","1","paraxanthine",0.205828914590849
-"HO","july","1","paraxanthine",5.65518587938602
-"LK","july","1","paraxanthine",0.0707824982261905
-"LK","september","2","paraxanthine",0.569859334675488
-"SL","july","1","paraxanthine",0.275523065929837
-"SL","july","1","paraxanthine",0.140360151056132
-"SL","june","1","paraxanthine",0.0717718532734628
-"SJ","august","1","paraxanthine",0.136628209945503
-"SJ","july","1","paraxanthine",1.17234073214769
-"SJ","june","1","paraxanthine",0.110463259239462
-"WB","july","1","paraxanthine",0.479795354035122
-"WB","september","2","paraxanthine",0.0777993373439909
-"WF","july","2","paraxanthine",0.561064345801401
-"WF","september","1","paraxanthine",0.517891830851233
-"BO","august","2","paraxanthine",0.0791797749293135
-"BO","may","1","paraxanthine",0.0806712393435019
-"BO","september","1","paraxanthine",0.0767570102895807
-"DA","august","2","paraxanthine",0.280804286233552
-"DA","july","1","paraxanthine",0.377981277025747
-"DA","june","1","paraxanthine",0.592727155026734
-"DA","may","1","paraxanthine",0.469002906031269
-"DA","september","2","paraxanthine",0.552051128477506
-"DU","june","1","paraxanthine",0.279142726757308
-"FI","july","1","paraxanthine",0.251552662235472
-"FLBS","july","1","paraxanthine",0.0818784438041002
-"FLBS","september","2","paraxanthine",0.199650541863836
-"LK","august","1","paraxanthine",0.144145173983149
-"LK","july","1","paraxanthine",0.0703083932358277
-"LK","may","1","paraxanthine",0.127421333725606
-"SL","july","2","paraxanthine",0.32121900906381
-"SL","september","1","paraxanthine",0.121760041057082
-"SJ","july","1","paraxanthine",0.0742806291986846
-"SJ","september","1","paraxanthine",0.389971980469686
-"WB","july","1","paraxanthine",0.0808042903641984
-"WB","september","1","paraxanthine",0.124104544127153
-"WS","august","1","paraxanthine",0.138449454224456
-"WS","july","1","paraxanthine",0.128087496575998
-"WS","june","1","paraxanthine",0.138660849967347
-"YB","june","1","paraxanthine",0.136676178854795
-"BB","september","1","warfarin",0
-"BB","september","1","warfarin",0
-"BB","september","1","warfarin",0
-"BB","september","1","warfarin",0
-"BD","june","1","warfarin",0
-"BD","june","1","warfarin",0
-"BD","june","1","warfarin",0
-"DA","august","1","warfarin",0
-"DA","august","1","warfarin",0
-"DA","august","1","warfarin",0
-"DA","august","1","warfarin",0
-"DA","july","1","warfarin",0
-"DA","july","1","warfarin",0
-"DA","july","1","warfarin",0
-"DA","july","1","warfarin",0
-"DA","june","1","warfarin",0
-"DA","june","1","warfarin",0
-"DA","june","1","warfarin",0
-"DA","june","1","warfarin",0
-"WS","july","1","warfarin",0
-"WS","july","1","warfarin",0
-"BB","august","2","warfarin",0.00166566336352479
-"BB","august","2","warfarin",0
-"BB","july","2","warfarin",0.000962578596064668
-"BB","july","2","warfarin",0.000482270023703479
-"BB","july","2","warfarin",0
-"BB","july","2","warfarin",0
-"BB","june","1","warfarin",0.000148227205646695
-"BB","june","1","warfarin",0.00161156895298222
-"BB","june","1","warfarin",0
-"BB","september","2","warfarin",4.18705600027691e-05
-"BB","september","2","warfarin",0
-"BD","august","2","warfarin",3.88648751242327e-08
-"BD","august","2","warfarin",1.79629530475527e-05
-"BD","august","2","warfarin",0.00108168706473287
-"BD","august","2","warfarin",0
-"BD","july","2","warfarin",0.00293210802225887
-"BD","july","2","warfarin",0.0020086126436812
-"BD","july","2","warfarin",0
-"BD","july","2","warfarin",0
-"BD","june","1","warfarin",0.000268716257403871
-"BD","june","1","warfarin",5.86705176274638e-05
-"BD","june","1","warfarin",0
-"BD","june","1","warfarin",0
-"BD","september","2","warfarin",0
-"BD","september","2","warfarin",0.000690733250233316
-"BD","september","2","warfarin",0
-"BO","august","2","warfarin",5.64739321650422e-05
-"BO","august","2","warfarin",0.00123796770610784
-"BO","august","2","warfarin",0
-"BO","july","2","warfarin",0
-"BO","july","2","warfarin",0.00203088913374767
-"BO","july","2","warfarin",0
-"BO","june","1","warfarin",1.86032175286378e-05
-"BO","june","1","warfarin",0.00100581323028732
-"BO","june","1","warfarin",0
-"BO","september","2","warfarin",7.76721975191025e-05
-"BO","september","2","warfarin",0
-"DA","august","2","warfarin",0.000560686162870528
-"DA","august","2","warfarin",0
-"DA","july","2","warfarin",0.00013527561418329
-"DA","july","2","warfarin",9.66761621859309e-06
-"DA","july","2","warfarin",0
-"DA","july","2","warfarin",0
-"DA","july","2","warfarin",0
-"DA","july","2","warfarin",0.00216532741224834
-"DA","july","2","warfarin",0
-"DA","june","1","warfarin",0
-"DA","june","1","warfarin",0
-"DA","june","1","warfarin",0
-"DA","june","1","warfarin",0
-"DA","september","2","warfarin",0
-"DA","september","2","warfarin",5.85289644719416e-07
-"DA","september","2","warfarin",0.000839292799156435
-"DA","september","2","warfarin",0
-"DU","june","1","warfarin",0
-"DU","june","1","warfarin",0
-"DU","june","1","warfarin",0
-"DU","june","1","warfarin",0
-"DU","september","2","warfarin",0
-"DU","september","2","warfarin",0
-"DU","september","2","warfarin",0.000356344178119009
-"DU","september","2","warfarin",0
-"FI","august","2","warfarin",8.34275789104575e-05
-"FI","august","2","warfarin",0.0013628718734703
-"FI","august","2","warfarin",0
-"FI","july","2","warfarin",0
-"FI","july","2","warfarin",0.00102714079641124
-"FI","july","2","warfarin",0
-"FI","june","1","warfarin",0
-"FI","june","1","warfarin",0
-"FI","june","1","warfarin",0
-"FI","june","1","warfarin",0
-"FI","september","2","warfarin",0
-"FI","september","2","warfarin",0.000980520773033232
-"FI","september","2","warfarin",0
-"FLBS","august","2","warfarin",7.45988783998821e-05
-"FLBS","august","2","warfarin",0.00132399382164351
-"FLBS","august","2","warfarin",0
-"FLBS","june","1","warfarin",0
-"FLBS","june","1","warfarin",0
-"FLBS","june","1","warfarin",0
-"FLBS","june","1","warfarin",0
-"FLBS","september","2","warfarin",2.42072267262065e-06
-"FLBS","september","2","warfarin",0.000820165412135859
-"FLBS","september","2","warfarin",0
-"HO","august","2","warfarin",0
-"HO","august","2","warfarin",0
-"HO","august","2","warfarin",0.000754441017286764
-"HO","august","2","warfarin",0
-"HO","july","2","warfarin",0
-"HO","july","2","warfarin",0
-"HO","july","2","warfarin",0
-"HO","july","2","warfarin",0
-"HO","june","1","warfarin",0.000178776488949053
-"HO","june","1","warfarin",2.26415542376682e-05
-"HO","june","1","warfarin",0
-"HO","june","1","warfarin",0
-"HO","september","2","warfarin",0.000205737620107742
-"HO","september","2","warfarin",3.23564699960784e-05
-"HO","september","2","warfarin",0
-"HO","september","2","warfarin",0
-"LK","august","2","warfarin",0.000108477920738781
-"LK","august","2","warfarin",0.0014654120838325
-"LK","august","2","warfarin",0
-"LK","july","2","warfarin",0
-"LK","july","2","warfarin",0
-"LK","july","2","warfarin",0
-"LK","july","2","warfarin",0
-"LK","june","1","warfarin",0.000470280340698618
-"LK","june","1","warfarin",0.000163882933447797
-"LK","june","1","warfarin",0
-"LK","june","1","warfarin",0
-"LK","september","2","warfarin",0
-"LK","september","2","warfarin",0.00161078228503258
-"LK","september","2","warfarin",0
-"SL","august","2","warfarin",1.28034843579081e-05
-"SL","august","2","warfarin",6.14103174433359e-05
-"SL","august","2","warfarin",0.0013537252724718
-"SL","august","2","warfarin",0
-"SL","july","2","warfarin",0
-"SL","july","2","warfarin",0.00223590062603894
-"SL","july","2","warfarin",0
-"SL","june","1","warfarin",0
-"SL","june","1","warfarin",0
-"SL","june","1","warfarin",0
-"SL","june","1","warfarin",0
-"SL","september","2","warfarin",8.86592724248725e-06
-"SL","september","2","warfarin",0.000914459525099426
-"SL","september","2","warfarin",0
-"SJ","august","2","warfarin",2.00096078652823e-06
-"SJ","august","2","warfarin",3.10121996170394e-05
-"SJ","august","2","warfarin",0.00117946724604514
-"SJ","august","2","warfarin",0
-"SJ","july","2","warfarin",9.62830388578782e-06
-"SJ","july","2","warfarin",0.00301880957096758
-"SJ","july","2","warfarin",0
-"SJ","june","1","warfarin",9.87488725080425e-05
-"SJ","june","1","warfarin",2.35010390968416e-06
-"SJ","june","1","warfarin",0
-"SJ","june","1","warfarin",0
-"SJ","september","2","warfarin",0
-"SJ","september","2","warfarin",0.0016159172986814
-"SJ","september","2","warfarin",0
-"WB","august","2","warfarin",0
-"WB","august","2","warfarin",0
-"WB","august","2","warfarin",0.000425257741647083
-"WB","august","2","warfarin",0
-"WB","july","2","warfarin",0
-"WB","july","2","warfarin",0.00180006261005518
-"WB","july","2","warfarin",0
-"WB","june","1","warfarin",0.000454581188279931
-"WB","june","1","warfarin",0.000154890443320722
-"WB","june","1","warfarin",0
-"WB","june","1","warfarin",0
-"WB","september","2","warfarin",0.00021286013400221
-"WB","september","2","warfarin",3.50972472264366e-05
-"WB","september","2","warfarin",0
-"WB","september","2","warfarin",0
-"WF","august","2","warfarin",0.000203224962305081
-"WF","august","2","warfarin",0
-"WF","july","2","warfarin",0
-"WF","july","2","warfarin",0
-"WF","july","2","warfarin",0
-"WF","july","2","warfarin",0
-"WF","june","1","warfarin",0
-"WF","june","1","warfarin",0
-"WF","june","1","warfarin",0
-"WF","june","1","warfarin",0
-"WF","september","2","warfarin",0
-"WF","september","2","warfarin",0
-"WF","september","2","warfarin",0.000455397053632266
-"WF","september","2","warfarin",0
-"WS","august","2","warfarin",0
-"WS","august","2","warfarin",0.000777966261390989
-"WS","august","2","warfarin",0
-"WS","july","2","warfarin",0
-"WS","july","2","warfarin",0.00135228554088358
-"WS","july","2","warfarin",0
-"WS","june","1","warfarin",0
-"WS","june","1","warfarin",0
-"WS","june","1","warfarin",0
-"WS","june","1","warfarin",0
-"WS","september","2","warfarin",9.06118568839798e-05
-"WS","september","2","warfarin",0.0013933492486279
-"WS","september","2","warfarin",0
-"YB","august","2","warfarin",1.43428815243958e-06
-"YB","august","2","warfarin",2.84849443394242e-05
-"YB","august","2","warfarin",0.00116220671434618
-"YB","august","2","warfarin",0
-"YB","july","2","warfarin",6.91891399333104e-05
-"YB","july","2","warfarin",9.44771413323789e-09
-"YB","july","2","warfarin",0
-"YB","july","2","warfarin",0
-"YB","july","2","warfarin",5.23070583231289e-06
-"YB","july","2","warfarin",4.2128041270356e-05
-"YB","july","2","warfarin",0.00124911755246214
-"YB","july","2","warfarin",0
-"YB","june","1","warfarin",0
-"YB","june","1","warfarin",0
-"YB","june","1","warfarin",0
-"YB","june","1","warfarin",0
-"YB","september","2","warfarin",0
-"YB","september","2","warfarin",0
-"YB","september","2","warfarin",0.00073633269063387
-"YB","september","2","warfarin",0
-"BB","july","2","warfarin",0
-"BB","july","2","warfarin",0
-"BB","july","2","warfarin",0
-"BB","july","2","warfarin",0
-"BB","july","1","warfarin",0
-"BB","july","1","warfarin",0.000230075700251973
-"BB","july","1","warfarin",0
-"BD","august","1","warfarin",0
-"BD","august","1","warfarin",0
-"BD","august","1","warfarin",0
-"BD","august","1","warfarin",0
-"BD","july","2","warfarin",0
-"BD","july","2","warfarin",0.000110886060545266
-"BD","july","2","warfarin",0
-"BD","july","1","warfarin",0
-"BD","july","1","warfarin",0
-"BD","july","1","warfarin",0
-"BD","july","1","warfarin",0
-"BO","july","1","warfarin",0
-"BO","july","1","warfarin",6.13898158476886e-05
-"BO","july","1","warfarin",0
-"BO","july","1","warfarin",0
-"BO","july","1","warfarin",0
-"BO","july","1","warfarin",0
-"BO","july","1","warfarin",0
-"BO","june","1","warfarin",0
-"BO","june","1","warfarin",8.21913296044422e-06
-"BO","june","1","warfarin",0
-"BO","september","1","warfarin",0
-"BO","september","1","warfarin",0
-"BO","september","1","warfarin",0
-"BO","september","1","warfarin",0
-"DU","september","1","warfarin",0.0187035506218071
-"DU","september","1","warfarin",0.0200791840215778
-"DU","september","1","warfarin",0.0301066782629856
-"DU","september","1","warfarin",0
-"FI","september","1","warfarin",0
-"FI","september","1","warfarin",0
-"FI","september","1","warfarin",0
-"FLBS","july","2","warfarin",126.030838470274
-"FLBS","july","2","warfarin",138.984274548419
-"FLBS","july","2","warfarin",0
-"FLBS","july","2","warfarin",0
-"FLBS","july","2","warfarin",0
-"FLBS","july","2","warfarin",0
-"FLBS","july","2","warfarin",0
-"FLBS","july","2","warfarin",0
-"FLBS","july","2","warfarin",0.00423869727412386
-"FLBS","july","2","warfarin",0.00310109625121228
-"FLBS","july","2","warfarin",0
-"FLBS","july","2","warfarin",0
-"HO","july","1","warfarin",0
-"HO","july","1","warfarin",0
-"HO","july","1","warfarin",0
-"HO","july","1","warfarin",0
-"LK","june","1","warfarin",407.661863029105
-"LK","june","1","warfarin",431.335533363165
-"LK","june","1","warfarin",0
-"LK","june","1","warfarin",0
-"LK","september","2","warfarin",0
-"LK","september","2","warfarin",5.33833951072444e-06
-"LK","september","2","warfarin",0
-"LK","september","1","warfarin",0
-"LK","september","1","warfarin",0.000100905353849714
-"LK","september","1","warfarin",0
-"SL","july","1","warfarin",0
-"SL","july","1","warfarin",0
-"SL","july","1","warfarin",2.90998948317865e-05
-"SL","july","1","warfarin",0
-"SL","september","2","warfarin",0
-"SL","september","2","warfarin",0
-"SL","september","2","warfarin",0
-"SL","september","2","warfarin",0
-"SJ","august","1","warfarin",0
-"SJ","august","1","warfarin",0
-"SJ","august","1","warfarin",0
-"SJ","august","1","warfarin",0
-"SJ","july","1","warfarin",0
-"SJ","july","1","warfarin",0
-"SJ","july","1","warfarin",0
-"SJ","july","1","warfarin",0
-"SJ","june","1","warfarin",0
-"SJ","june","1","warfarin",0
-"SJ","june","1","warfarin",3.4712489567946e-05
-"SJ","june","1","warfarin",0
-"WB","july","1","warfarin",0
-"WB","july","1","warfarin",0.000213962017743642
-"WB","july","1","warfarin",0
-"WB","september","2","warfarin",0
-"WB","september","2","warfarin",0.000443003240295853
-"WB","september","2","warfarin",0
-"WF","july","2","warfarin",0
-"WF","july","2","warfarin",0
-"WF","july","2","warfarin",0.000183867769751912
-"WF","july","2","warfarin",0
-"WF","june","1","warfarin",0
-"WF","june","1","warfarin",6.55343743110191e-06
-"WF","june","1","warfarin",0
-"WF","september","1","warfarin",0
-"WF","september","1","warfarin",0
-"WF","september","1","warfarin",0
-"WF","september","1","warfarin",0
-"WS","june","1","warfarin",0
-"WS","june","1","warfarin",0
-"WS","june","1","warfarin",0
-"WS","june","1","warfarin",0
-"BB","may","1","warfarin",0
-"BB","may","1","warfarin",0
-"BB","may","1","warfarin",0
-"BB","may","1","warfarin",0
-"BO","may","1","warfarin",0.0638521531171501
-"BO","may","1","warfarin",0.0965916774479225
-"BO","may","1","warfarin",0
-"BO","september","1","warfarin",0
-"BO","september","1","warfarin",0
-"BO","september","1","warfarin",0
-"BO","september","1","warfarin",0
-"DA","june","1","warfarin",0
-"DA","june","1","warfarin",0
-"DA","june","1","warfarin",0
-"DA","june","1","warfarin",0
-"DA","september","2","warfarin",0
-"DA","september","2","warfarin",0
-"DA","september","2","warfarin",0
-"DA","september","2","warfarin",0
-"HO","september","2","warfarin",0
-"HO","september","2","warfarin",0
-"HO","september","2","warfarin",0
-"HO","september","2","warfarin",0
-"WB","july","1","warfarin",0
-"WB","july","1","warfarin",0
-"WB","july","1","warfarin",0
-"WB","july","1","warfarin",0
-"WS","september","2","warfarin",0
-"WS","september","2","warfarin",0
-"WS","september","2","warfarin",0
-"WS","september","2","warfarin",0
-"YB","september","1","warfarin",0.347963090667035
-"YB","september","1","warfarin",0
+"site","sampling_event","ppcp","concentration","peri_sampling","month","time","stt","tourist_season"
+"BD","july_2","acetaminophen",0,"peri_2","august",2,"decentralized","In Season"
+"BD","july_2","acetaminophen",0,"peri_2","august",2,"decentralized","In Season"
+"DU","july_2","acetaminophen",0,"peri_2","august",2,"decentralized","In Season"
+"DU","july_2","acetaminophen",0,"peri_2","august",2,"decentralized","In Season"
+"DU","august_2","acetaminophen",0,"peri_3","september",2,"decentralized","In Season"
+"DU","august_2","acetaminophen",0,"peri_3","september",2,"decentralized","In Season"
+"LK","june_2","acetaminophen",0,"peri_1","july",2,"decentralized","In Season"
+"LK","june_2","acetaminophen",0,"peri_1","july",2,"decentralized","In Season"
+"LK","august_2","acetaminophen",0,"peri_3","september",2,"decentralized","In Season"
+"LK","august_2","acetaminophen",0,"peri_3","september",2,"decentralized","In Season"
+"SL","july_2","acetaminophen",0,"peri_2","august",2,"decentralized","In Season"
+"SL","july_2","acetaminophen",0,"peri_2","august",2,"decentralized","In Season"
+"SL","may_1","acetaminophen",0.0147013371729398,NA,"june",2,"decentralized","In Season"
+"SL","may_1","acetaminophen",0,NA,"june",2,"decentralized","In Season"
+"SJ","may_1","acetaminophen",0,NA,"june",2,"decentralized","In Season"
+"WB","july_2","acetaminophen",0,"peri_2","august",2,"decentralized","In Season"
+"WB","july_2","acetaminophen",0,"peri_2","august",2,"decentralized","In Season"
+"WB","june_2","acetaminophen",0,"peri_1","july",2,"decentralized","In Season"
+"WS","july_2","acetaminophen",0,"peri_2","august",2,"decentralized","In Season"
+"WS","july_2","acetaminophen",0,"peri_2","august",2,"decentralized","In Season"
+"YB","july_2","acetaminophen",0,"peri_2","august",2,"centralized","In Season"
+"YB","july_2","acetaminophen",0,"peri_2","august",2,"centralized","In Season"
+"YB","august_2","acetaminophen",0,"peri_3","september",2,"centralized","In Season"
+"YB","august_2","acetaminophen",0,"peri_3","september",2,"centralized","In Season"
+"BB","june_2","acetaminophen",0,"peri_1","july",1,"decentralized","In Season"
+"BB","june_2","acetaminophen",0,"peri_1","july",1,"decentralized","In Season"
+"BD","june_2","acetaminophen",0,"peri_1","july",1,"decentralized","In Season"
+"BD","june_2","acetaminophen",0,"peri_1","july",1,"decentralized","In Season"
+"BO","august_2","acetaminophen",0,"peri_3","september",1,"decentralized","In Season"
+"DA","june_2","acetaminophen",0.000183171062574368,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","acetaminophen",0,"peri_1","july",1,"decentralized","In Season"
+"SL","august_2","acetaminophen",0,"peri_3","september",1,"decentralized","In Season"
+"SJ","june_2","acetaminophen",3.14625663879796e-05,"peri_1","july",1,"decentralized","In Season"
+"SJ","june_2","acetaminophen",0,"peri_1","july",1,"decentralized","In Season"
+"BO","september_1","acetaminophen",0,"peri_4","september",15,"decentralized","Out of Season"
+"BO","september_1","acetaminophen",0,"peri_4","september",15,"decentralized","Out of Season"
+"SL","june_2","acetaminophen",0,"peri_1","june",29,"decentralized","In Season"
+"SL","june_2","acetaminophen",0,"peri_1","june",29,"decentralized","In Season"
+"SJ","july_1","acetaminophen",0,"peri_2","july",20,"decentralized","In Season"
+"SJ","july_1","acetaminophen",0,"peri_2","july",20,"decentralized","In Season"
+"WB","july_2","acetaminophen",0.0111411765047434,"peri_2","july",25,"decentralized","In Season"
+"WB","july_2","acetaminophen",0,"peri_2","july",25,"decentralized","In Season"
+"WF","july_1","acetaminophen",0.00180609506357233,"peri_2","july",18,"centralized","In Season"
+"WF","july_1","acetaminophen",0,"peri_2","july",18,"centralized","In Season"
+"BD","july_2","acetaminophen",0,"peri_2","july",30,"decentralized","In Season"
+"BO","may_1","acetaminophen",0,NA,"may",24,"decentralized","In Season"
+"BO","may_1","acetaminophen",0,NA,"may",24,"decentralized","In Season"
+"FI","july_1","acetaminophen",0,"peri_2","july",20,"decentralized","In Season"
+"FI","july_1","acetaminophen",0,"peri_2","july",20,"decentralized","In Season"
+"SL","september_1","acetaminophen",0.0558486402215114,"peri_4","september",15,"decentralized","Out of Season"
+"SL","september_1","acetaminophen",0,"peri_4","september",15,"decentralized","Out of Season"
+"BB","july_2","caffeine",0.506006063194371,"peri_2","august",2,"decentralized","In Season"
+"BB","june_2","caffeine",0.316652545718895,"peri_1","july",2,"decentralized","In Season"
+"BB","may_1","caffeine",0.179158072822671,NA,"june",2,"decentralized","In Season"
+"BB","august_2","caffeine",0.196803122596777,"peri_3","september",2,"decentralized","In Season"
+"BD","june_2","caffeine",0.397276043598261,"peri_1","july",2,"decentralized","In Season"
+"BD","may_1","caffeine",0.048613596342409,NA,"june",2,"decentralized","In Season"
+"BD","august_2","caffeine",0.215046661034172,"peri_3","september",2,"decentralized","In Season"
+"BO","july_2","caffeine",0.298187393669985,"peri_2","august",2,"decentralized","In Season"
+"BO","june_2","caffeine",0.873592330408991,"peri_1","july",2,"decentralized","In Season"
+"BO","may_1","caffeine",0.0539923604066369,NA,"june",2,"decentralized","In Season"
+"BO","august_2","caffeine",0.312791764831465,"peri_3","september",2,"decentralized","In Season"
+"DA","july_2","caffeine",2.12170949064106,"peri_2","august",2,"decentralized","In Season"
+"DA","june_2","caffeine",0.460008246531165,"peri_1","july",2,"decentralized","In Season"
+"DA","may_1","caffeine",0.362862453055975,NA,"june",2,"decentralized","In Season"
+"DA","august_2","caffeine",0.24598014371089,"peri_3","september",2,"decentralized","In Season"
+"DU","july_2","caffeine",0.102262779081444,"peri_2","august",2,"decentralized","In Season"
+"DU","june_2","caffeine",0.310243245535974,"peri_1","july",2,"decentralized","In Season"
+"DU","august_2","caffeine",0.520075448208602,"peri_3","september",2,"decentralized","In Season"
+"FI","july_2","caffeine",2.3871314368585,"peri_2","august",2,"decentralized","In Season"
+"FI","june_2","caffeine",3.06949659662944,"peri_1","july",2,"decentralized","In Season"
+"FI","august_2","caffeine",246.082051405868,"peri_3","september",2,"decentralized","In Season"
+"FLBS","july_2","caffeine",0.134997080770703,"peri_2","august",2,"centralized","In Season"
+"FLBS","june_2","caffeine",0.040510850627507,"peri_1","july",2,"centralized","In Season"
+"FLBS","may_1","caffeine",0.0878511843823589,NA,"june",2,"centralized","In Season"
+"FLBS","august_2","caffeine",0.182352071633161,"peri_3","september",2,"centralized","In Season"
+"HO","july_2","caffeine",0.220728108896645,"peri_2","august",2,"centralized","In Season"
+"HO","june_2","caffeine",0.0690672848688803,"peri_1","july",2,"centralized","In Season"
+"HO","may_1","caffeine",0.0426330459240517,NA,"june",2,"centralized","In Season"
+"HO","august_2","caffeine",0.212332013732204,"peri_3","september",2,"centralized","In Season"
+"LK","july_2","caffeine",8.73223402853924,"peri_2","august",2,"decentralized","In Season"
+"LK","june_2","caffeine",0.0393870978504184,"peri_1","july",2,"decentralized","In Season"
+"LK","august_2","caffeine",0.104385247821374,"peri_3","september",2,"decentralized","In Season"
+"SL","july_2","caffeine",0.270072485617977,"peri_2","august",2,"decentralized","In Season"
+"SL","june_2","caffeine",0.0598571174890869,"peri_1","july",2,"decentralized","In Season"
+"SL","may_1","caffeine",0.0617380642394884,NA,"june",2,"decentralized","In Season"
+"SL","august_2","caffeine",198.608649356646,"peri_3","september",2,"decentralized","In Season"
+"SJ","july_2","caffeine",3.12379020688761,"peri_2","august",2,"decentralized","In Season"
+"SJ","june_2","caffeine",8.5976594624982,"peri_1","july",2,"decentralized","In Season"
+"SJ","may_1","caffeine",0.0541065277420464,NA,"june",2,"decentralized","In Season"
+"SJ","august_2","caffeine",0.506570050312771,"peri_3","september",2,"decentralized","In Season"
+"WB","july_2","caffeine",0.123466286345631,"peri_2","august",2,"decentralized","In Season"
+"WB","june_2","caffeine",0.133710763617118,"peri_1","july",2,"decentralized","In Season"
+"WB","august_2","caffeine",2.0868521020855,"peri_3","september",2,"decentralized","In Season"
+"WF","july_2","caffeine",0.0691711204647624,"peri_2","august",2,"centralized","In Season"
+"WF","june_2","caffeine",0.0875520451411962,"peri_1","july",2,"centralized","In Season"
+"WF","may_1","caffeine",0.173029833448061,NA,"june",2,"centralized","In Season"
+"WF","august_2","caffeine",0.167161609346236,"peri_3","september",2,"centralized","In Season"
+"WS","july_2","caffeine",1.5704291924126,"peri_2","august",2,"decentralized","In Season"
+"WS","june_2","caffeine",0.16396081640056,"peri_1","july",2,"decentralized","In Season"
+"WS","may_1","caffeine",0.112723160646983,NA,"june",2,"decentralized","In Season"
+"YB","july_2","caffeine",0.0662531169578786,"peri_2","august",2,"centralized","In Season"
+"YB","june_2","caffeine",0.43954024567823,"peri_1","july",2,"centralized","In Season"
+"YB","may_1","caffeine",0.391065967122025,NA,"june",2,"centralized","In Season"
+"YB","august_2","caffeine",0.397243131462849,"peri_3","september",2,"centralized","In Season"
+"BB","july_2","caffeine",0.22414940185756,"peri_2","august",1,"decentralized","In Season"
+"BB","june_2","caffeine",0.918138733680192,"peri_1","july",1,"decentralized","In Season"
+"BB","may_1","caffeine",4.23373148885898,NA,"june",1,"decentralized","In Season"
+"BB","august_2","caffeine",0.628232354307582,"peri_3","september",1,"decentralized","In Season"
+"BD","july_2","caffeine",0.0505167603870764,"peri_2","august",1,"decentralized","In Season"
+"BD","june_2","caffeine",6.9448442096754,"peri_1","july",1,"decentralized","In Season"
+"BD","may_1","caffeine",0.223179483409785,NA,"june",1,"decentralized","In Season"
+"BD","august_2","caffeine",0.263638773920547,"peri_3","september",1,"decentralized","In Season"
+"BO","july_2","caffeine",0.109301126419447,"peri_2","august",1,"decentralized","In Season"
+"BO","june_2","caffeine",0.225592206235656,"peri_1","july",1,"decentralized","In Season"
+"BO","may_1","caffeine",0.856560841081102,NA,"june",1,"decentralized","In Season"
+"BO","august_2","caffeine",0.466717112970311,"peri_3","september",1,"decentralized","In Season"
+"DA","july_2","caffeine",3.98011897036835,"peri_2","august",1,"decentralized","In Season"
+"DA","june_2","caffeine",0.357613276399939,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","caffeine",1.26124237670562,"peri_1","july",1,"decentralized","In Season"
+"DA","may_1","caffeine",1.21437780143618,NA,"june",1,"decentralized","In Season"
+"DA","august_2","caffeine",0.422942948838004,"peri_3","september",1,"decentralized","In Season"
+"DU","july_2","caffeine",0.308416848400427,"peri_2","august",1,"decentralized","In Season"
+"DU","may_1","caffeine",0.709409536928488,NA,"june",1,"decentralized","In Season"
+"DU","august_2","caffeine",0.132515808503391,"peri_3","september",1,"decentralized","In Season"
+"FI","july_2","caffeine",0.0688468890906935,"peri_2","august",1,"decentralized","In Season"
+"FI","june_2","caffeine",0.202315113190776,"peri_1","july",1,"decentralized","In Season"
+"FI","may_1","caffeine",0.471622217040327,NA,"june",1,"decentralized","In Season"
+"FI","august_2","caffeine",0.245873148032384,"peri_3","september",1,"decentralized","In Season"
+"FLBS","may_1","caffeine",0.204456245604723,NA,"june",1,"centralized","In Season"
+"FLBS","august_2","caffeine",0.442825325783824,"peri_3","september",1,"centralized","In Season"
+"HO","july_2","caffeine",0.202711388022993,"peri_2","august",1,"centralized","In Season"
+"HO","june_2","caffeine",0.141917310870506,"peri_1","july",1,"centralized","In Season"
+"HO","may_1","caffeine",0.0990893693937118,NA,"june",1,"centralized","In Season"
+"HO","august_2","caffeine",0.107568302679373,"peri_3","september",1,"centralized","In Season"
+"LK","july_2","caffeine",0.215326719951569,"peri_2","august",1,"decentralized","In Season"
+"LK","june_2","caffeine",0.23743457559741,"peri_1","july",1,"decentralized","In Season"
+"LK","may_1","caffeine",0.132597220691961,NA,"june",1,"decentralized","In Season"
+"LK","august_2","caffeine",0.126998677672213,"peri_3","september",1,"decentralized","In Season"
+"SL","july_2","caffeine",59.6785434589025,"peri_2","august",1,"decentralized","In Season"
+"SL","june_2","caffeine",0.731141570361882,"peri_1","july",1,"decentralized","In Season"
+"SL","may_1","caffeine",1.49974396151894,NA,"june",1,"decentralized","In Season"
+"SL","august_2","caffeine",1.8014289886096,"peri_3","september",1,"decentralized","In Season"
+"SJ","july_2","caffeine",0.231837239134531,"peri_2","august",1,"decentralized","In Season"
+"SJ","june_2","caffeine",1.37943393723137,"peri_1","july",1,"decentralized","In Season"
+"SJ","may_1","caffeine",3.67073035351948,NA,"june",1,"decentralized","In Season"
+"SJ","august_2","caffeine",0.639664678124362,"peri_3","september",1,"decentralized","In Season"
+"WB","june_2","caffeine",0.567948317759072,"peri_1","july",1,"decentralized","In Season"
+"WB","may_1","caffeine",0.561828948544933,NA,"june",1,"decentralized","In Season"
+"WB","august_2","caffeine",0.0710076100803782,"peri_3","september",1,"decentralized","In Season"
+"WF","july_2","caffeine",0.386609636206784,"peri_2","august",1,"centralized","In Season"
+"WF","june_2","caffeine",3.17087222243473,"peri_1","july",1,"centralized","In Season"
+"WF","may_1","caffeine",0.134241820395665,NA,"june",1,"centralized","In Season"
+"WF","august_2","caffeine",0.153542002077581,"peri_3","september",1,"centralized","In Season"
+"WS","july_2","caffeine",0.344114992940799,"peri_2","august",1,"decentralized","In Season"
+"WS","june_2","caffeine",0.247732552893731,"peri_1","july",1,"decentralized","In Season"
+"WS","may_1","caffeine",0.0846281387545097,NA,"june",1,"decentralized","In Season"
+"WS","august_2","caffeine",0.236502543082949,"peri_3","september",1,"decentralized","In Season"
+"YB","july_2","caffeine",0.0877798150714982,"peri_2","august",1,"centralized","In Season"
+"YB","june_2","caffeine",0.32271253563095,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","caffeine",0.235086301804106,"peri_1","july",1,"centralized","In Season"
+"YB","may_1","caffeine",0.299667259876104,NA,"june",1,"centralized","In Season"
+"YB","august_2","caffeine",0.151194122986009,"peri_3","september",1,"centralized","In Season"
+"BB","june_2","caffeine",0.13610588760553,"peri_1","july",1,"decentralized","In Season"
+"BB","july_2","caffeine",0.175069096418501,"peri_2","july",25,"decentralized","In Season"
+"BB","june_1","caffeine",0.800124343640245,"peri_1","june",11,"decentralized","In Season"
+"BB","september_2","caffeine",0.758984511063716,"peri_4","october",2,"decentralized","Out of Season"
+"BD","august_1","caffeine",0.105524687182183,"peri_3","august",20,"decentralized","In Season"
+"BD","june_2","caffeine",0.162714530912837,"peri_1","july",1,"decentralized","In Season"
+"BD","july_1","caffeine",0.211816085050773,"peri_2","july",18,"decentralized","In Season"
+"BD","july_1","caffeine",0.282126887823006,"peri_2","july",20,"decentralized","In Season"
+"BD","july_2","caffeine",0.331537368323512,"peri_2","july",27,"decentralized","In Season"
+"BD","june_1","caffeine",0.2003588974916,"peri_1","june",10,"decentralized","In Season"
+"BD","june_1","caffeine",0.229980510709167,"peri_1","june",11,"decentralized","In Season"
+"BO","july_2","caffeine",0.0967452996068677,"peri_2","july",26,"decentralized","In Season"
+"BO","june_1","caffeine",0.463601578531682,"peri_1","june",11,"decentralized","In Season"
+"BO","june_2","caffeine",0.0668409814620285,"peri_1","june",30,"decentralized","In Season"
+"BO","september_1","caffeine",1.0172046964246,"peri_4","september",15,"decentralized","Out of Season"
+"DA","september_1","caffeine",0.648547476047885,"peri_4","september",15,"decentralized","Out of Season"
+"DU","august_2","caffeine",0.125905663412172,"peri_3","august",29,"decentralized","In Season"
+"DU","september_1","caffeine",0.18772865574605,"peri_4","september",15,"decentralized","Out of Season"
+"FI","june_2","caffeine",0.770478429520826,"peri_1","july",11,"decentralized","In Season"
+"FI","june_2","caffeine",0.197981865730579,"peri_1","june",29,"decentralized","In Season"
+"FI","september_1","caffeine",0.125379720393838,"peri_4","september",15,"decentralized","Out of Season"
+"FLBS","july_1","caffeine",0.255815284539044,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","caffeine",0.285946208445163,"peri_2","july",18,"centralized","In Season"
+"HO","august_2","caffeine",0.116291309174505,"peri_3","august",28,"centralized","In Season"
+"HO","july_2","caffeine",1.38829552035869,"peri_2","july",26,"centralized","In Season"
+"HO","june_1","caffeine",0.0419677034000283,"peri_1","june",11,"centralized","In Season"
+"LK","july_1","caffeine",0.0910340467605989,"peri_2","july",21,"decentralized","In Season"
+"LK","july_2","caffeine",0.206323221122186,"peri_2","july",29,"decentralized","In Season"
+"LK","august_2","caffeine",4.08383358161606,"peri_3","september",1,"decentralized","In Season"
+"LK","september_1","caffeine",0.0531766892692158,"peri_4","september",15,"decentralized","Out of Season"
+"LK","september_1","caffeine",0.0761567956915869,"peri_4","september",16,"decentralized","Out of Season"
+"SL","july_1","caffeine",2.47548315338743,"peri_2","july",21,"decentralized","In Season"
+"SL","july_2","caffeine",0.216319351265426,"peri_2","july",26,"decentralized","In Season"
+"SL","june_2","caffeine",0.081600796536123,"peri_1","june",29,"decentralized","In Season"
+"SL","september_2","caffeine",1.83443693406794,"peri_4","october",2,"decentralized","Out of Season"
+"SJ","august_2","caffeine",0.427421242569065,"peri_3","august",24,"decentralized","In Season"
+"SJ","july_1","caffeine",1.86012700458428,"peri_2","july",20,"decentralized","In Season"
+"SJ","june_1","caffeine",0.17625614672209,"peri_1","june",11,"decentralized","In Season"
+"SJ","june_2","caffeine",0.0742124244084519,"peri_1","june",29,"decentralized","In Season"
+"WB","july_1","caffeine",0.797499081202716,"peri_2","july",20,"decentralized","In Season"
+"WB","july_2","caffeine",0.106489936321288,"peri_2","july",25,"decentralized","In Season"
+"WB","june_1","caffeine",0.158147500593989,"peri_1","june",11,"decentralized","In Season"
+"WB","august_2","caffeine",0.145902175054582,"peri_3","september",1,"decentralized","In Season"
+"WF","july_1","caffeine",0.783829974546282,"peri_2","july",18,"centralized","In Season"
+"WF","june_1","caffeine",0.375127857899798,"peri_1","june",20,"centralized","In Season"
+"WF","june_1","caffeine",0.176062818169902,"peri_1","june",11,"centralized","In Season"
+"WF","september_2","caffeine",21.2000786188902,"peri_4","october",2,"centralized","Out of Season"
+"WF","august_2","caffeine",0.0604455867683037,"peri_3","september",1,"centralized","In Season"
+"WF","september_1","caffeine",0.363841347707771,"peri_4","september",15,"centralized","Out of Season"
+"WS","july_1","caffeine",0.0998214332297407,"peri_2","july",21,"decentralized","In Season"
+"BB","august_1","caffeine",0.100879754117891,"peri_3","august",12,"decentralized","In Season"
+"BB","august_2","caffeine",0.051118435821078,"peri_3","august",29,"decentralized","In Season"
+"BB","july_1","caffeine",0.188370639428054,"peri_2","july",20,"decentralized","In Season"
+"BB","may_1","caffeine",0.190898567535373,NA,"may",24,"decentralized","In Season"
+"BB","september_1","caffeine",0.0957858285656877,"peri_4","september",14,"decentralized","Out of Season"
+"BD","june_2","caffeine",0.0493682288705875,"peri_1","july",1,"decentralized","In Season"
+"BD","july_2","caffeine",0.209728448707384,"peri_2","july",30,"decentralized","In Season"
+"BD","may_1","caffeine",0.386814428007315,NA,"may",24,"decentralized","In Season"
+"BD","september_1","caffeine",0.102354957100477,"peri_4","september",14,"decentralized","Out of Season"
+"BD","september_2","caffeine",0.164526543237138,"peri_4","september",20,"decentralized","Out of Season"
+"BO","august_1","caffeine",0.104354546464136,"peri_3","august",11,"decentralized","In Season"
+"BO","may_1","caffeine",0.223427094370149,NA,"may",24,"decentralized","In Season"
+"BO","september_1","caffeine",0.181863960344498,"peri_4","september",14,"decentralized","Out of Season"
+"BO","september_2","caffeine",0.148051799320064,"peri_4","september",24,"decentralized","Out of Season"
+"DA","august_1","caffeine",0.779814218063802,"peri_3","august",14,"decentralized","In Season"
+"DA","july_2","caffeine",0.318146454212678,"peri_2","july",30,"decentralized","In Season"
+"DA","june_1","caffeine",1.85331502829867,"peri_1","june",11,"decentralized","In Season"
+"DA","june_2","caffeine",2.13682217815183,"peri_1","june",29,"decentralized","In Season"
+"DA","may_1","caffeine",8.67563720019167,NA,"may",25,"decentralized","In Season"
+"DA","august_2","caffeine",1.26020494107041,"peri_3","september",1,"decentralized","In Season"
+"DA","september_2","caffeine",0.412807819892116,"peri_4","september",30,"decentralized","Out of Season"
+"DU","august_1","caffeine",0.152495860124272,"peri_3","august",12,"decentralized","In Season"
+"DU","june_2","caffeine",0.36293922336068,"peri_1","july",1,"decentralized","In Season"
+"DU","july_2","caffeine",0.262513512415424,"peri_2","july",26,"decentralized","In Season"
+"DU","june_1","caffeine",0.973913008865355,"peri_1","june",11,"decentralized","In Season"
+"DU","may_1","caffeine",0.467692207249984,NA,"may",24,"decentralized","In Season"
+"DU","september_2","caffeine",0.18537477222066,"peri_4","october",2,"decentralized","Out of Season"
+"FI","august_1","caffeine",0.103946824009527,"peri_3","august",14,"decentralized","In Season"
+"FI","august_2","caffeine",1.14839909496579,"peri_3","august",29,"decentralized","In Season"
+"FI","july_1","caffeine",0.826201310397951,"peri_2","july",20,"decentralized","In Season"
+"FI","may_1","caffeine",0.0642567474062705,NA,"may",24,"decentralized","In Season"
+"FLBS","august_1","caffeine",0.338992540628666,"peri_3","august",18,"centralized","In Season"
+"FLBS","july_2","caffeine",0.0652216704544731,"peri_2","july",27,"centralized","In Season"
+"FLBS","may_1","caffeine",0.174246384454845,NA,"may",24,"centralized","In Season"
+"FLBS","august_2","caffeine",0.0601030178520157,"peri_3","september",1,"centralized","In Season"
+"FLBS","september_1","caffeine",0.381633153193736,"peri_4","september",14,"centralized","Out of Season"
+"FLBS","september_2","caffeine",1.12749563787124,"peri_4","september",29,"centralized","Out of Season"
+"HO","august_1","caffeine",0.203972157653093,"peri_3","august",20,"centralized","In Season"
+"HO","july_1","caffeine",0.208047258835568,"peri_2","july",21,"centralized","In Season"
+"HO","june_2","caffeine",0.0649226102987318,"peri_1","june",29,"centralized","In Season"
+"HO","may_1","caffeine",1.55955587571048,NA,"may",25,"centralized","In Season"
+"HO","september_2","caffeine",0.08825308073575,"peri_4","september",30,"centralized","Out of Season"
+"LK","august_1","caffeine",0.488039778008979,"peri_3","august",21,"decentralized","In Season"
+"LK","july_2","caffeine",0.0605845192643432,"peri_2","july",30,"decentralized","In Season"
+"LK","may_1","caffeine",8.64376830304041,NA,"may",25,"decentralized","In Season"
+"SL","august_1","caffeine",0.149516453320116,"peri_3","august",14,"decentralized","In Season"
+"SL","june_2","caffeine",0.720741899283852,"peri_1","july",11,"decentralized","In Season"
+"SL","may_1","caffeine",0.288882789935328,NA,"may",23,"decentralized","In Season"
+"SL","may_1","caffeine",0.14002657229436,NA,"may",24,"decentralized","In Season"
+"SL","august_2","caffeine",0.132889666258064,"peri_3","september",1,"decentralized","In Season"
+"SL","september_1","caffeine",0.414847869320623,"peri_4","september",15,"decentralized","Out of Season"
+"SJ","august_1","caffeine",0.187479944890305,"peri_3","august",10,"decentralized","In Season"
+"SJ","july_2","caffeine",0.226542600665681,"peri_2","july",26,"decentralized","In Season"
+"SJ","may_1","caffeine",0.0478023697199435,NA,"may",25,"decentralized","In Season"
+"SJ","september_1","caffeine",0.980152673446279,"peri_4","september",16,"decentralized","Out of Season"
+"SJ","september_2","caffeine",3.55708572900925,"peri_4","september",30,"decentralized","Out of Season"
+"WB","august_1","caffeine",0.349159743961785,"peri_3","august",20,"decentralized","In Season"
+"WB","july_2","caffeine",0.152149773100479,"peri_2","july",26,"decentralized","In Season"
+"WB","may_1","caffeine",0.10008275849426,NA,"may",24,"decentralized","In Season"
+"WB","september_2","caffeine",0.798378378149042,"peri_4","september",19,"decentralized","Out of Season"
+"WF","august_1","caffeine",0.0979185099689463,"peri_3","august",19,"centralized","In Season"
+"WF","may_1","caffeine",0.865112652109145,NA,"may",23,"centralized","In Season"
+"WS","august_1","caffeine",0.333165431667147,"peri_3","august",19,"decentralized","In Season"
+"WS","august_1","caffeine",0.4478815913495,"peri_3","august",20,"decentralized","In Season"
+"WS","july_2","caffeine",0.109490531081611,"peri_2","july",27,"decentralized","In Season"
+"WS","june_2","caffeine",0.415788761289849,"peri_1","june",28,"decentralized","In Season"
+"WS","may_1","caffeine",0.831275569996363,NA,"may",25,"decentralized","In Season"
+"WS","september_2","caffeine",0.16391952109822,"peri_4","september",26,"decentralized","Out of Season"
+"WS","september_2","caffeine",0.271681120170002,"peri_4","september",30,"decentralized","Out of Season"
+"YB","august_2","caffeine",0.174092543215198,"peri_3","august",28,"centralized","In Season"
+"YB","july_1","caffeine",0.140954574079386,"peri_2","july",18,"centralized","In Season"
+"YB","july_2","caffeine",0.11314923293422,"peri_2","july",27,"centralized","In Season"
+"YB","june_1","caffeine",0.372362517243756,"peri_1","june",11,"centralized","In Season"
+"YB","september_1","caffeine",0.0996661585733481,"peri_4","september",14,"centralized","Out of Season"
+"YB","september_2","caffeine",13.5404226815819,"peri_4","september",20,"centralized","Out of Season"
+"BB","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"BB","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"BB","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"BB","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"BB","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"BB","june_2","carbamezapine",0.000201149388731441,"peri_1","july",2,"decentralized","In Season"
+"BB","june_2","carbamezapine",0.00130266412232242,"peri_1","july",2,"decentralized","In Season"
+"BB","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"BB","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"BB","may_1","carbamezapine",3.63685028920129e-07,NA,"june",2,"decentralized","In Season"
+"BB","may_1","carbamezapine",0.000285053545484412,NA,"june",2,"decentralized","In Season"
+"BB","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"BB","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"BB","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"BB","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"BB","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"BD","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"BD","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"BD","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"BD","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"BD","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"BD","june_2","carbamezapine",0.000432769715217691,"peri_1","july",2,"decentralized","In Season"
+"BD","june_2","carbamezapine",0.00194489059685575,"peri_1","july",2,"decentralized","In Season"
+"BD","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"BD","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"BD","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"BD","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"BD","august_2","carbamezapine",2.8342067451498e-05,"peri_3","september",2,"decentralized","In Season"
+"BD","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"BD","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"BO","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"BO","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"BO","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"BO","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"BO","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"BO","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"BO","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"BO","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"BO","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"BO","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"BO","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"BO","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"BO","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"BO","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"DA","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"DA","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"DA","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"DA","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"DA","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"DA","august_2","carbamezapine",2.47607960110602e-06,"peri_3","september",2,"decentralized","In Season"
+"DA","august_2","carbamezapine",0.000351082635160417,"peri_3","september",2,"decentralized","In Season"
+"DA","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"DU","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"DU","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"DU","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"DU","june_2","carbamezapine",1.58237986768085e-05,"peri_1","july",2,"decentralized","In Season"
+"DU","june_2","carbamezapine",0.000709617260227864,"peri_1","july",2,"decentralized","In Season"
+"DU","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"DU","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"DU","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"DU","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"FI","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"FI","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"FI","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"FI","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"FI","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"FI","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"FI","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"FI","june_2","carbamezapine",0.00133979119080823,"peri_1","july",2,"decentralized","In Season"
+"FI","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"FI","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"FI","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"FI","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"FLBS","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"FLBS","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"FLBS","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"FLBS","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"FLBS","june_2","carbamezapine",0,"peri_1","july",2,"centralized","In Season"
+"FLBS","june_2","carbamezapine",0.00126642493469774,"peri_1","july",2,"centralized","In Season"
+"FLBS","june_2","carbamezapine",0.00374313114545231,"peri_1","july",2,"centralized","In Season"
+"FLBS","june_2","carbamezapine",0,"peri_1","july",2,"centralized","In Season"
+"FLBS","may_1","carbamezapine",0,NA,"june",2,"centralized","In Season"
+"FLBS","may_1","carbamezapine",0,NA,"june",2,"centralized","In Season"
+"FLBS","august_2","carbamezapine",0,"peri_3","september",2,"centralized","In Season"
+"FLBS","august_2","carbamezapine",0,"peri_3","september",2,"centralized","In Season"
+"FLBS","august_2","carbamezapine",0,"peri_3","september",2,"centralized","In Season"
+"FLBS","august_2","carbamezapine",0,"peri_3","september",2,"centralized","In Season"
+"HO","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"HO","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"HO","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"HO","june_2","carbamezapine",0,"peri_1","july",2,"centralized","In Season"
+"HO","june_2","carbamezapine",7.45215707697146e-06,"peri_1","july",2,"centralized","In Season"
+"HO","june_2","carbamezapine",0,"peri_1","july",2,"centralized","In Season"
+"HO","june_2","carbamezapine",0,"peri_1","july",2,"centralized","In Season"
+"HO","may_1","carbamezapine",0,NA,"june",2,"centralized","In Season"
+"HO","may_1","carbamezapine",0,NA,"june",2,"centralized","In Season"
+"HO","may_1","carbamezapine",2.63828140554791e-08,NA,"june",2,"centralized","In Season"
+"HO","may_1","carbamezapine",0,NA,"june",2,"centralized","In Season"
+"HO","august_2","carbamezapine",0,"peri_3","september",2,"centralized","In Season"
+"HO","august_2","carbamezapine",0,"peri_3","september",2,"centralized","In Season"
+"HO","august_2","carbamezapine",0.000155902994603804,"peri_3","september",2,"centralized","In Season"
+"HO","august_2","carbamezapine",0,"peri_3","september",2,"centralized","In Season"
+"LK","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"LK","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"LK","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"LK","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"LK","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"LK","june_2","carbamezapine",0.000242744399128373,"peri_1","july",2,"decentralized","In Season"
+"LK","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"LK","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"LK","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"LK","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"LK","may_1","carbamezapine",7.46816787302899e-05,NA,"june",2,"decentralized","In Season"
+"LK","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"LK","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"LK","august_2","carbamezapine",7.17833356949065e-07,"peri_3","september",2,"decentralized","In Season"
+"LK","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"SL","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"SL","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"SL","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"SL","june_2","carbamezapine",3.61814608923938e-06,"peri_1","july",2,"decentralized","In Season"
+"SL","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"SL","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"SL","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"SL","may_1","carbamezapine",5.03626977848186e-06,NA,"june",2,"decentralized","In Season"
+"SL","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"SL","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"SL","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"SL","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"SL","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"SJ","july_2","carbamezapine",9.40194940360795e-05,"peri_2","august",2,"decentralized","In Season"
+"SJ","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"SJ","june_2","carbamezapine",8.31066707940687e-07,"peri_1","july",2,"decentralized","In Season"
+"SJ","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"SJ","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"SJ","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"SJ","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"SJ","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"SJ","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"SJ","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"WB","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"WB","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"WB","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"WB","june_2","carbamezapine",0.000711340772874743,"peri_1","july",2,"decentralized","In Season"
+"WB","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"WB","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"WB","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"WB","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"WB","august_2","carbamezapine",0,"peri_3","september",2,"decentralized","In Season"
+"WF","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"WF","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"WF","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"WF","june_2","carbamezapine",0.000415390706954826,"peri_1","july",2,"centralized","In Season"
+"WF","june_2","carbamezapine",0,"peri_1","july",2,"centralized","In Season"
+"WF","may_1","carbamezapine",0.00031593717329408,NA,"june",2,"centralized","In Season"
+"WS","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"WS","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"WS","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"WS","july_2","carbamezapine",0,"peri_2","august",2,"decentralized","In Season"
+"WS","june_2","carbamezapine",0.00107737068708141,"peri_1","july",2,"decentralized","In Season"
+"WS","june_2","carbamezapine",0,"peri_1","july",2,"decentralized","In Season"
+"WS","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"WS","may_1","carbamezapine",0,NA,"june",2,"decentralized","In Season"
+"YB","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"YB","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"YB","july_2","carbamezapine",0,"peri_2","august",2,"centralized","In Season"
+"YB","june_2","carbamezapine",0.000463778156812162,"peri_1","july",2,"centralized","In Season"
+"YB","june_2","carbamezapine",0,"peri_1","july",2,"centralized","In Season"
+"YB","may_1","carbamezapine",0,NA,"june",2,"centralized","In Season"
+"YB","may_1","carbamezapine",0,NA,"june",2,"centralized","In Season"
+"YB","may_1","carbamezapine",0,NA,"june",2,"centralized","In Season"
+"YB","august_2","carbamezapine",0,"peri_3","september",2,"centralized","In Season"
+"YB","august_2","carbamezapine",1.40766387731572e-06,"peri_3","september",2,"centralized","In Season"
+"YB","august_2","carbamezapine",0,"peri_3","september",2,"centralized","In Season"
+"YB","august_2","carbamezapine",0,"peri_3","september",2,"centralized","In Season"
+"BB","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"BB","june_2","carbamezapine",0.000396160860257279,"peri_1","july",1,"decentralized","In Season"
+"BB","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"BB","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"BB","may_1","carbamezapine",2.48068271591964e-05,NA,"june",1,"decentralized","In Season"
+"BB","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"BD","july_2","carbamezapine",0,"peri_2","august",1,"decentralized","In Season"
+"BD","july_2","carbamezapine",4.57435034716913e-05,"peri_2","august",1,"decentralized","In Season"
+"BD","july_2","carbamezapine",0.000703372202818499,"peri_2","august",1,"decentralized","In Season"
+"BD","july_2","carbamezapine",0,"peri_2","august",1,"decentralized","In Season"
+"BD","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"BD","june_2","carbamezapine",4.92787984021569e-05,"peri_1","july",1,"decentralized","In Season"
+"BD","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"BD","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"BD","august_2","carbamezapine",6.8520332257945e-05,"peri_3","september",1,"decentralized","In Season"
+"BD","august_2","carbamezapine",0,"peri_3","september",1,"decentralized","In Season"
+"BO","august_2","carbamezapine",0.0117002638085202,"peri_3","september",1,"decentralized","In Season"
+"BO","august_2","carbamezapine",0,"peri_3","september",1,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","carbamezapine",0.000271552075950651,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"DU","july_2","carbamezapine",6.71060689274948e-05,"peri_2","august",1,"decentralized","In Season"
+"DU","july_2","carbamezapine",0,"peri_2","august",1,"decentralized","In Season"
+"FI","august_2","carbamezapine",0,"peri_3","september",1,"decentralized","In Season"
+"FI","august_2","carbamezapine",0.000356503916927218,"peri_3","september",1,"decentralized","In Season"
+"FI","august_2","carbamezapine",0,"peri_3","september",1,"decentralized","In Season"
+"FLBS","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"FLBS","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"FLBS","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"FLBS","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"HO","july_2","carbamezapine",0,"peri_2","august",1,"centralized","In Season"
+"HO","july_2","carbamezapine",0.000213333029595049,"peri_2","august",1,"centralized","In Season"
+"HO","july_2","carbamezapine",0.0013406720555072,"peri_2","august",1,"centralized","In Season"
+"HO","july_2","carbamezapine",0,"peri_2","august",1,"centralized","In Season"
+"HO","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"HO","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"HO","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"HO","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"HO","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"HO","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"HO","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"HO","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"HO","august_2","carbamezapine",0,"peri_3","september",1,"centralized","In Season"
+"HO","august_2","carbamezapine",0.000189035120411958,"peri_3","september",1,"centralized","In Season"
+"HO","august_2","carbamezapine",0,"peri_3","september",1,"centralized","In Season"
+"HO","august_2","carbamezapine",0,"peri_3","september",1,"centralized","In Season"
+"LK","july_2","carbamezapine",0.000429886664636068,"peri_2","august",1,"decentralized","In Season"
+"LK","july_2","carbamezapine",0,"peri_2","august",1,"decentralized","In Season"
+"LK","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"LK","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"LK","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"LK","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"LK","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"LK","may_1","carbamezapine",4.60220580037159e-06,NA,"june",1,"decentralized","In Season"
+"LK","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"LK","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"LK","august_2","carbamezapine",0,"peri_3","september",1,"decentralized","In Season"
+"LK","august_2","carbamezapine",0.000152859874277263,"peri_3","september",1,"decentralized","In Season"
+"LK","august_2","carbamezapine",0,"peri_3","september",1,"decentralized","In Season"
+"SL","july_2","carbamezapine",0,"peri_2","august",1,"decentralized","In Season"
+"SL","july_2","carbamezapine",1.48031067370031e-07,"peri_2","august",1,"decentralized","In Season"
+"SL","july_2","carbamezapine",0.000268816137120272,"peri_2","august",1,"decentralized","In Season"
+"SL","july_2","carbamezapine",0,"peri_2","august",1,"decentralized","In Season"
+"SL","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"SL","june_2","carbamezapine",7.95357701485692e-05,"peri_1","july",1,"decentralized","In Season"
+"SL","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"SL","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"SL","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"SL","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"SL","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"SJ","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"SJ","june_2","carbamezapine",0.000253030384547948,"peri_1","july",1,"decentralized","In Season"
+"SJ","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"SJ","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"SJ","may_1","carbamezapine",6.48780202052473e-07,NA,"june",1,"decentralized","In Season"
+"SJ","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"SJ","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"SJ","august_2","carbamezapine",1.51875350181795e-09,"peri_3","september",1,"decentralized","In Season"
+"SJ","august_2","carbamezapine",0.000368000003133828,"peri_3","september",1,"decentralized","In Season"
+"SJ","august_2","carbamezapine",0,"peri_3","september",1,"decentralized","In Season"
+"WB","july_2","carbamezapine",0,"peri_2","august",1,"decentralized","In Season"
+"WB","july_2","carbamezapine",0,"peri_2","august",1,"decentralized","In Season"
+"WB","july_2","carbamezapine",0.000212641277067878,"peri_2","august",1,"decentralized","In Season"
+"WB","july_2","carbamezapine",0,"peri_2","august",1,"decentralized","In Season"
+"WB","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"WB","june_2","carbamezapine",4.32165468818509e-06,"peri_1","july",1,"decentralized","In Season"
+"WB","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"WB","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"WB","may_1","carbamezapine",3.54435294134276e-06,NA,"june",1,"decentralized","In Season"
+"WB","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"WB","may_1","carbamezapine",0,NA,"june",1,"decentralized","In Season"
+"WB","august_2","carbamezapine",0,"peri_3","september",1,"decentralized","In Season"
+"WB","august_2","carbamezapine",8.70533525067649e-06,"peri_3","september",1,"decentralized","In Season"
+"WB","august_2","carbamezapine",0,"peri_3","september",1,"decentralized","In Season"
+"WB","august_2","carbamezapine",0,"peri_3","september",1,"decentralized","In Season"
+"WF","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"WF","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"WF","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"WF","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"WF","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"WF","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"WF","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"WF","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"YB","july_2","carbamezapine",0,"peri_2","august",1,"centralized","In Season"
+"YB","july_2","carbamezapine",6.8659217707717e-06,"peri_2","august",1,"centralized","In Season"
+"YB","july_2","carbamezapine",0.000419628012661365,"peri_2","august",1,"centralized","In Season"
+"YB","july_2","carbamezapine",0,"peri_2","august",1,"centralized","In Season"
+"YB","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","carbamezapine",0.00015350886983174,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"YB","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"YB","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"YB","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"YB","may_1","carbamezapine",0,NA,"june",1,"centralized","In Season"
+"YB","august_2","carbamezapine",0,"peri_3","september",1,"centralized","In Season"
+"YB","august_2","carbamezapine",0.000159028482779724,"peri_3","september",1,"centralized","In Season"
+"YB","august_2","carbamezapine",0.0011651227418256,"peri_3","september",1,"centralized","In Season"
+"YB","august_2","carbamezapine",0,"peri_3","september",1,"centralized","In Season"
+"BO","july_2","carbamezapine",0,"peri_2","july",26,"decentralized","In Season"
+"BO","july_2","carbamezapine",7.32910844897507e-07,"peri_2","july",26,"decentralized","In Season"
+"BO","july_2","carbamezapine",0.000302898694700065,"peri_2","july",26,"decentralized","In Season"
+"BO","july_2","carbamezapine",0,"peri_2","july",26,"decentralized","In Season"
+"FI","september_1","carbamezapine",0,"peri_4","september",15,"decentralized","Out of Season"
+"FI","september_1","carbamezapine",1.63402309110715e-05,"peri_4","september",15,"decentralized","Out of Season"
+"FI","september_1","carbamezapine",0,"peri_4","september",15,"decentralized","Out of Season"
+"FLBS","june_2","carbamezapine",0.850724714853099,"peri_1","july",1,"centralized","In Season"
+"FLBS","june_2","carbamezapine",3.64780244311063,"peri_1","july",1,"centralized","In Season"
+"FLBS","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"FLBS","june_2","carbamezapine",0,"peri_1","july",1,"centralized","In Season"
+"FLBS","july_1","carbamezapine",0,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","carbamezapine",6.67688579199785e-05,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","carbamezapine",0,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","carbamezapine",0,"peri_2","july",18,"centralized","In Season"
+"LK","june_1","carbamezapine",78.945282710079,"peri_1","june",9,"decentralized","In Season"
+"LK","june_1","carbamezapine",108.649833993783,"peri_1","june",9,"decentralized","In Season"
+"LK","june_1","carbamezapine",0,"peri_1","june",9,"decentralized","In Season"
+"LK","june_1","carbamezapine",0,"peri_1","june",9,"decentralized","In Season"
+"LK","september_1","carbamezapine",0,"peri_4","september",15,"decentralized","Out of Season"
+"LK","september_1","carbamezapine",0,"peri_4","september",15,"decentralized","Out of Season"
+"LK","september_1","carbamezapine",0.00014035870110709,"peri_4","september",15,"decentralized","Out of Season"
+"LK","september_1","carbamezapine",0,"peri_4","september",15,"decentralized","Out of Season"
+"SJ","august_2","carbamezapine",0,"peri_3","august",24,"decentralized","In Season"
+"SJ","august_2","carbamezapine",0,"peri_3","august",24,"decentralized","In Season"
+"SJ","august_2","carbamezapine",0,"peri_3","august",24,"decentralized","In Season"
+"SJ","august_2","carbamezapine",0,"peri_3","august",24,"decentralized","In Season"
+"WF","september_1","carbamezapine",0,"peri_4","september",15,"centralized","Out of Season"
+"WF","september_1","carbamezapine",0,"peri_4","september",15,"centralized","Out of Season"
+"WF","september_1","carbamezapine",0,"peri_4","september",15,"centralized","Out of Season"
+"WF","september_1","carbamezapine",0,"peri_4","september",15,"centralized","Out of Season"
+"BB","august_2","carbamezapine",0.000136422760301556,"peri_3","august",29,"decentralized","In Season"
+"BD","september_1","carbamezapine",0,"peri_4","september",14,"decentralized","Out of Season"
+"BD","september_1","carbamezapine",0,"peri_4","september",14,"decentralized","Out of Season"
+"BD","september_2","carbamezapine",0.000604441654162267,"peri_4","september",20,"decentralized","Out of Season"
+"BO","may_1","carbamezapine",0.001403099048905,NA,"may",24,"decentralized","In Season"
+"BO","may_1","carbamezapine",0.00467671035938072,NA,"may",24,"decentralized","In Season"
+"BO","may_1","carbamezapine",0,NA,"may",24,"decentralized","In Season"
+"BO","september_1","carbamezapine",0.000578622774570423,"peri_4","september",14,"decentralized","Out of Season"
+"BO","september_2","carbamezapine",0,"peri_4","september",24,"decentralized","Out of Season"
+"BO","september_2","carbamezapine",0,"peri_4","september",24,"decentralized","Out of Season"
+"BO","september_2","carbamezapine",0,"peri_4","september",24,"decentralized","Out of Season"
+"BO","september_2","carbamezapine",0,"peri_4","september",24,"decentralized","Out of Season"
+"DA","july_2","carbamezapine",0.00220341329783712,"peri_2","july",30,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","june",29,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","june",29,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","june",29,"decentralized","In Season"
+"DA","june_2","carbamezapine",0,"peri_1","june",29,"decentralized","In Season"
+"DA","september_2","carbamezapine",0,"peri_4","september",30,"decentralized","Out of Season"
+"DA","september_2","carbamezapine",0,"peri_4","september",30,"decentralized","Out of Season"
+"DA","september_2","carbamezapine",0,"peri_4","september",30,"decentralized","Out of Season"
+"DA","september_2","carbamezapine",0,"peri_4","september",30,"decentralized","Out of Season"
+"DU","august_1","carbamezapine",0.000300220713700021,"peri_3","august",12,"decentralized","In Season"
+"DU","june_2","carbamezapine",3.38549317217544e-05,"peri_1","july",1,"decentralized","In Season"
+"DU","june_2","carbamezapine",0,"peri_1","july",1,"decentralized","In Season"
+"DU","july_2","carbamezapine",0,"peri_2","july",26,"decentralized","In Season"
+"DU","july_2","carbamezapine",0.000752213225773953,"peri_2","july",26,"decentralized","In Season"
+"DU","july_2","carbamezapine",0.00268878320918975,"peri_2","july",26,"decentralized","In Season"
+"DU","july_2","carbamezapine",0,"peri_2","july",26,"decentralized","In Season"
+"DU","june_1","carbamezapine",0,"peri_1","june",11,"decentralized","In Season"
+"DU","june_1","carbamezapine",0.000378649418754555,"peri_1","june",11,"decentralized","In Season"
+"DU","june_1","carbamezapine",0.00180626598991046,"peri_1","june",11,"decentralized","In Season"
+"DU","june_1","carbamezapine",0,"peri_1","june",11,"decentralized","In Season"
+"DU","may_1","carbamezapine",0,NA,"may",24,"decentralized","In Season"
+"DU","may_1","carbamezapine",0,NA,"may",24,"decentralized","In Season"
+"DU","may_1","carbamezapine",0,NA,"may",24,"decentralized","In Season"
+"DU","may_1","carbamezapine",0,NA,"may",24,"decentralized","In Season"
+"FI","august_1","carbamezapine",0.000372941923863981,"peri_3","august",14,"decentralized","In Season"
+"FI","august_2","carbamezapine",0.000264123495074713,"peri_3","august",29,"decentralized","In Season"
+"FLBS","july_2","carbamezapine",0,"peri_2","july",27,"centralized","In Season"
+"FLBS","july_2","carbamezapine",1.29495456184931e-08,"peri_2","july",27,"centralized","In Season"
+"FLBS","july_2","carbamezapine",0,"peri_2","july",27,"centralized","In Season"
+"FLBS","august_2","carbamezapine",0,"peri_3","september",1,"centralized","In Season"
+"FLBS","august_2","carbamezapine",0,"peri_3","september",1,"centralized","In Season"
+"FLBS","september_1","carbamezapine",0.000395423836229241,"peri_4","september",14,"centralized","Out of Season"
+"HO","august_1","carbamezapine",0,"peri_3","august",20,"centralized","In Season"
+"HO","august_1","carbamezapine",0,"peri_3","august",20,"centralized","In Season"
+"LK","august_1","carbamezapine",3.48103725627546e-07,"peri_3","august",21,"decentralized","In Season"
+"LK","august_1","carbamezapine",0,"peri_3","august",21,"decentralized","In Season"
+"LK","july_2","carbamezapine",0.00176688818799739,"peri_2","july",30,"decentralized","In Season"
+"SJ","august_1","carbamezapine",0,"peri_3","august",10,"decentralized","In Season"
+"SJ","august_1","carbamezapine",0,"peri_3","august",10,"decentralized","In Season"
+"WB","july_2","carbamezapine",0,"peri_2","july",26,"decentralized","In Season"
+"WB","july_2","carbamezapine",0,"peri_2","july",26,"decentralized","In Season"
+"WB","july_2","carbamezapine",0,"peri_2","july",26,"decentralized","In Season"
+"WB","july_2","carbamezapine",0,"peri_2","july",26,"decentralized","In Season"
+"WB","september_2","carbamezapine",0.000897556155686879,"peri_4","september",19,"decentralized","Out of Season"
+"WF","august_1","carbamezapine",0.000225838677236109,"peri_3","august",19,"centralized","In Season"
+"WS","august_1","carbamezapine",0,"peri_3","august",19,"decentralized","In Season"
+"WS","august_1","carbamezapine",0,"peri_3","august",19,"decentralized","In Season"
+"WS","august_1","carbamezapine",0,"peri_3","august",20,"decentralized","In Season"
+"WS","august_1","carbamezapine",0,"peri_3","august",20,"decentralized","In Season"
+"YB","august_2","carbamezapine",0.000269738583364307,"peri_3","august",28,"centralized","In Season"
+"YB","september_2","carbamezapine",0.00068451403209665,"peri_4","september",20,"centralized","Out of Season"
+"BD","august_2","cotinine",0,"peri_3","september",2,"decentralized","In Season"
+"BD","august_2","cotinine",0,"peri_3","september",2,"decentralized","In Season"
+"LK","july_2","cotinine",0,"peri_2","august",2,"decentralized","In Season"
+"LK","july_2","cotinine",0,"peri_2","august",2,"decentralized","In Season"
+"LK","july_2","cotinine",0,"peri_2","august",2,"decentralized","In Season"
+"SL","august_2","cotinine",0,"peri_3","september",2,"decentralized","In Season"
+"SL","august_2","cotinine",0,"peri_3","september",2,"decentralized","In Season"
+"SJ","august_2","cotinine",0,"peri_3","september",2,"decentralized","In Season"
+"SJ","august_2","cotinine",0,"peri_3","september",2,"decentralized","In Season"
+"SJ","august_2","cotinine",0,"peri_3","september",2,"decentralized","In Season"
+"DU","july_2","cotinine",0,"peri_2","august",1,"decentralized","In Season"
+"BO","may_1","cotinine",0,NA,"may",24,"decentralized","In Season"
+"BO","may_1","cotinine",0,NA,"may",24,"decentralized","In Season"
+"DU","july_2","cotinine",0,"peri_2","july",26,"decentralized","In Season"
+"DU","july_2","cotinine",0,"peri_2","july",26,"decentralized","In Season"
+"BB","june_2","paraxanthine",0.0732542653147073,"peri_1","july",2,"decentralized","In Season"
+"BD","june_2","paraxanthine",0.154847151747415,"peri_1","july",2,"decentralized","In Season"
+"BO","june_2","paraxanthine",0.0933136795802209,"peri_1","july",2,"decentralized","In Season"
+"DA","july_2","paraxanthine",0.362885688772361,"peri_2","august",2,"decentralized","In Season"
+"DA","june_2","paraxanthine",0.185377507024978,"peri_1","july",2,"decentralized","In Season"
+"HO","july_2","paraxanthine",0.128804822405331,"peri_2","august",2,"centralized","In Season"
+"LK","july_2","paraxanthine",0.613095029219965,"peri_2","august",2,"decentralized","In Season"
+"SL","july_2","paraxanthine",0.111512956139132,"peri_2","august",2,"decentralized","In Season"
+"SJ","july_2","paraxanthine",0.126641551688642,"peri_2","august",2,"decentralized","In Season"
+"SJ","june_2","paraxanthine",1.87522504364446,"peri_1","july",2,"decentralized","In Season"
+"WS","july_2","paraxanthine",0.417307589963904,"peri_2","august",2,"decentralized","In Season"
+"YB","june_2","paraxanthine",0.512138699049574,"peri_1","july",2,"centralized","In Season"
+"BB","july_2","paraxanthine",0.091451782046499,"peri_2","august",1,"decentralized","In Season"
+"BB","june_2","paraxanthine",0.355463093427517,"peri_1","july",1,"decentralized","In Season"
+"BB","may_1","paraxanthine",2.20664909465476,NA,"june",1,"decentralized","In Season"
+"BB","august_2","paraxanthine",0.256058496134181,"peri_3","september",1,"decentralized","In Season"
+"BD","june_2","paraxanthine",1.28756904868367,"peri_1","july",1,"decentralized","In Season"
+"BO","june_2","paraxanthine",0.0743708829639289,"peri_1","july",1,"decentralized","In Season"
+"BO","may_1","paraxanthine",0.280328921173786,NA,"june",1,"decentralized","In Season"
+"BO","august_2","paraxanthine",0.134635739143208,"peri_3","september",1,"decentralized","In Season"
+"DA","july_2","paraxanthine",1.14200953361623,"peri_2","august",1,"decentralized","In Season"
+"DA","june_2","paraxanthine",0.0898393960190183,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","paraxanthine",0.495878965085029,"peri_1","july",1,"decentralized","In Season"
+"DA","may_1","paraxanthine",0.0746546782702787,NA,"june",1,"decentralized","In Season"
+"DA","august_2","paraxanthine",0.24764857791545,"peri_3","september",1,"decentralized","In Season"
+"DU","may_1","paraxanthine",0.198390206961236,NA,"june",1,"decentralized","In Season"
+"DU","august_2","paraxanthine",0.196888554251524,"peri_3","september",1,"decentralized","In Season"
+"FI","june_2","paraxanthine",0.132629696545909,"peri_1","july",1,"decentralized","In Season"
+"FI","may_1","paraxanthine",0.501490399652406,NA,"june",1,"decentralized","In Season"
+"FI","august_2","paraxanthine",0.0855070767523612,"peri_3","september",1,"decentralized","In Season"
+"FLBS","may_1","paraxanthine",0.0742433507780199,NA,"june",1,"centralized","In Season"
+"FLBS","august_2","paraxanthine",0.109149675363757,"peri_3","september",1,"centralized","In Season"
+"LK","july_2","paraxanthine",0.0823898903660483,"peri_2","august",1,"decentralized","In Season"
+"SL","july_2","paraxanthine",0.13222992092958,"peri_2","august",1,"decentralized","In Season"
+"SL","june_2","paraxanthine",0.176474134496392,"peri_1","july",1,"decentralized","In Season"
+"SL","may_1","paraxanthine",0.941384192905713,NA,"june",1,"decentralized","In Season"
+"SL","august_2","paraxanthine",0.916058856351693,"peri_3","september",1,"decentralized","In Season"
+"SJ","july_2","paraxanthine",0.127224118057132,"peri_2","august",1,"decentralized","In Season"
+"SJ","june_2","paraxanthine",0.387974248427342,"peri_1","july",1,"decentralized","In Season"
+"SJ","may_1","paraxanthine",2.38249252911019,NA,"june",1,"decentralized","In Season"
+"SJ","august_2","paraxanthine",0.188343966256007,"peri_3","september",1,"decentralized","In Season"
+"WB","june_2","paraxanthine",0.216470960096776,"peri_1","july",1,"decentralized","In Season"
+"WB","may_1","paraxanthine",0.342938373398082,NA,"june",1,"decentralized","In Season"
+"WF","july_2","paraxanthine",0.113377280678338,"peri_2","august",1,"centralized","In Season"
+"WF","june_2","paraxanthine",1.28336093000681,"peri_1","july",1,"centralized","In Season"
+"WF","may_1","paraxanthine",0.0904872261206417,NA,"june",1,"centralized","In Season"
+"WS","july_2","paraxanthine",0.0859100721847322,"peri_2","august",1,"decentralized","In Season"
+"WS","june_2","paraxanthine",0.146875100253196,"peri_1","july",1,"decentralized","In Season"
+"WS","august_2","paraxanthine",0.140008017425379,"peri_3","september",1,"decentralized","In Season"
+"YB","june_2","paraxanthine",0.135531443137882,"peri_1","july",1,"centralized","In Season"
+"YB","may_1","paraxanthine",0.123556625118021,NA,"june",1,"centralized","In Season"
+"BB","july_2","paraxanthine",0.0919251767331355,"peri_2","july",25,"decentralized","In Season"
+"BB","june_1","paraxanthine",0.391313404789801,"peri_1","june",11,"decentralized","In Season"
+"BD","june_2","paraxanthine",0.0893785647536112,"peri_1","july",1,"decentralized","In Season"
+"BD","july_1","paraxanthine",0.0981925230834222,"peri_2","july",20,"decentralized","In Season"
+"BD","july_2","paraxanthine",0.350486687675607,"peri_2","july",27,"decentralized","In Season"
+"BD","june_1","paraxanthine",0.093817690077969,"peri_1","june",10,"decentralized","In Season"
+"BO","june_1","paraxanthine",0.137632551605243,"peri_1","june",11,"decentralized","In Season"
+"BO","september_1","paraxanthine",0.212159771801086,"peri_4","september",15,"decentralized","Out of Season"
+"DA","september_1","paraxanthine",0.453085467657127,"peri_4","september",15,"decentralized","Out of Season"
+"FI","june_2","paraxanthine",0.161455370049682,"peri_1","july",11,"decentralized","In Season"
+"FLBS","july_1","paraxanthine",0.1169697500616,"peri_2","july",18,"centralized","In Season"
+"HO","august_2","paraxanthine",0.205828914590849,"peri_3","august",28,"centralized","In Season"
+"HO","july_2","paraxanthine",5.65518587938602,"peri_2","july",26,"centralized","In Season"
+"LK","july_2","paraxanthine",0.0707824982261905,"peri_2","july",29,"decentralized","In Season"
+"LK","august_2","paraxanthine",0.569859334675488,"peri_3","september",1,"decentralized","In Season"
+"SL","july_1","paraxanthine",0.275523065929837,"peri_2","july",21,"decentralized","In Season"
+"SL","july_2","paraxanthine",0.140360151056132,"peri_2","july",26,"decentralized","In Season"
+"SL","june_2","paraxanthine",0.0717718532734628,"peri_1","june",29,"decentralized","In Season"
+"SJ","august_2","paraxanthine",0.136628209945503,"peri_3","august",24,"decentralized","In Season"
+"SJ","july_1","paraxanthine",1.17234073214769,"peri_2","july",20,"decentralized","In Season"
+"SJ","june_1","paraxanthine",0.110463259239462,"peri_1","june",11,"decentralized","In Season"
+"WB","july_1","paraxanthine",0.479795354035122,"peri_2","july",20,"decentralized","In Season"
+"WB","august_2","paraxanthine",0.0777993373439909,"peri_3","september",1,"decentralized","In Season"
+"WF","july_1","paraxanthine",0.561064345801401,"peri_2","july",18,"centralized","In Season"
+"WF","september_1","paraxanthine",0.517891830851233,"peri_4","september",15,"centralized","Out of Season"
+"BO","august_1","paraxanthine",0.0791797749293135,"peri_3","august",11,"decentralized","In Season"
+"BO","may_1","paraxanthine",0.0806712393435019,NA,"may",24,"decentralized","In Season"
+"BO","september_1","paraxanthine",0.0767570102895807,"peri_4","september",14,"decentralized","Out of Season"
+"DA","august_1","paraxanthine",0.280804286233552,"peri_3","august",14,"decentralized","In Season"
+"DA","july_2","paraxanthine",0.377981277025747,"peri_2","july",30,"decentralized","In Season"
+"DA","june_2","paraxanthine",0.592727155026734,"peri_1","june",29,"decentralized","In Season"
+"DA","may_1","paraxanthine",0.469002906031269,NA,"may",25,"decentralized","In Season"
+"DA","august_2","paraxanthine",0.552051128477506,"peri_3","september",1,"decentralized","In Season"
+"DU","june_1","paraxanthine",0.279142726757308,"peri_1","june",11,"decentralized","In Season"
+"FI","july_1","paraxanthine",0.251552662235472,"peri_2","july",20,"decentralized","In Season"
+"FLBS","july_2","paraxanthine",0.0818784438041002,"peri_2","july",27,"centralized","In Season"
+"FLBS","september_2","paraxanthine",0.199650541863836,"peri_4","september",29,"centralized","Out of Season"
+"LK","august_1","paraxanthine",0.144145173983149,"peri_3","august",21,"decentralized","In Season"
+"LK","july_2","paraxanthine",0.0703083932358277,"peri_2","july",30,"decentralized","In Season"
+"LK","may_1","paraxanthine",0.127421333725606,NA,"may",25,"decentralized","In Season"
+"SL","june_2","paraxanthine",0.32121900906381,"peri_1","july",11,"decentralized","In Season"
+"SL","september_1","paraxanthine",0.121760041057082,"peri_4","september",15,"decentralized","Out of Season"
+"SJ","july_2","paraxanthine",0.0742806291986846,"peri_2","july",26,"decentralized","In Season"
+"SJ","september_1","paraxanthine",0.389971980469686,"peri_4","september",16,"decentralized","Out of Season"
+"WB","july_2","paraxanthine",0.0808042903641984,"peri_2","july",26,"decentralized","In Season"
+"WB","september_2","paraxanthine",0.124104544127153,"peri_4","september",19,"decentralized","Out of Season"
+"WS","august_1","paraxanthine",0.138449454224456,"peri_3","august",20,"decentralized","In Season"
+"WS","july_2","paraxanthine",0.128087496575998,"peri_2","july",27,"decentralized","In Season"
+"WS","june_2","paraxanthine",0.138660849967347,"peri_1","june",28,"decentralized","In Season"
+"YB","june_1","paraxanthine",0.136676178854795,"peri_1","june",11,"centralized","In Season"
+"BB","august_2","warfarin",0,"peri_3","september",2,"decentralized","In Season"
+"BB","august_2","warfarin",0,"peri_3","september",2,"decentralized","In Season"
+"BB","august_2","warfarin",0,"peri_3","september",2,"decentralized","In Season"
+"BB","august_2","warfarin",0,"peri_3","september",2,"decentralized","In Season"
+"BD","may_1","warfarin",0,NA,"june",2,"decentralized","In Season"
+"BD","may_1","warfarin",0,NA,"june",2,"decentralized","In Season"
+"BD","may_1","warfarin",0,NA,"june",2,"decentralized","In Season"
+"DA","july_2","warfarin",0,"peri_2","august",2,"decentralized","In Season"
+"DA","july_2","warfarin",0,"peri_2","august",2,"decentralized","In Season"
+"DA","july_2","warfarin",0,"peri_2","august",2,"decentralized","In Season"
+"DA","july_2","warfarin",0,"peri_2","august",2,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","july",2,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","july",2,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","july",2,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","july",2,"decentralized","In Season"
+"DA","may_1","warfarin",0,NA,"june",2,"decentralized","In Season"
+"DA","may_1","warfarin",0,NA,"june",2,"decentralized","In Season"
+"DA","may_1","warfarin",0,NA,"june",2,"decentralized","In Season"
+"DA","may_1","warfarin",0,NA,"june",2,"decentralized","In Season"
+"WS","june_2","warfarin",0,"peri_1","july",2,"decentralized","In Season"
+"WS","june_2","warfarin",0,"peri_1","july",2,"decentralized","In Season"
+"BB","july_2","warfarin",0.00166566336352479,"peri_2","august",1,"decentralized","In Season"
+"BB","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"BB","june_2","warfarin",0.000962578596064668,"peri_1","july",1,"decentralized","In Season"
+"BB","june_2","warfarin",0.000482270023703479,"peri_1","july",1,"decentralized","In Season"
+"BB","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"BB","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"BB","may_1","warfarin",0.000148227205646695,NA,"june",1,"decentralized","In Season"
+"BB","may_1","warfarin",0.00161156895298222,NA,"june",1,"decentralized","In Season"
+"BB","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"BB","august_2","warfarin",4.18705600027691e-05,"peri_3","september",1,"decentralized","In Season"
+"BB","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"BD","july_2","warfarin",3.88648751242327e-08,"peri_2","august",1,"decentralized","In Season"
+"BD","july_2","warfarin",1.79629530475527e-05,"peri_2","august",1,"decentralized","In Season"
+"BD","july_2","warfarin",0.00108168706473287,"peri_2","august",1,"decentralized","In Season"
+"BD","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"BD","june_2","warfarin",0.00293210802225887,"peri_1","july",1,"decentralized","In Season"
+"BD","june_2","warfarin",0.0020086126436812,"peri_1","july",1,"decentralized","In Season"
+"BD","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"BD","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"BD","may_1","warfarin",0.000268716257403871,NA,"june",1,"decentralized","In Season"
+"BD","may_1","warfarin",5.86705176274638e-05,NA,"june",1,"decentralized","In Season"
+"BD","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"BD","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"BD","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"BD","august_2","warfarin",0.000690733250233316,"peri_3","september",1,"decentralized","In Season"
+"BD","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"BO","july_2","warfarin",5.64739321650422e-05,"peri_2","august",1,"decentralized","In Season"
+"BO","july_2","warfarin",0.00123796770610784,"peri_2","august",1,"decentralized","In Season"
+"BO","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"BO","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"BO","june_2","warfarin",0.00203088913374767,"peri_1","july",1,"decentralized","In Season"
+"BO","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"BO","may_1","warfarin",1.86032175286378e-05,NA,"june",1,"decentralized","In Season"
+"BO","may_1","warfarin",0.00100581323028732,NA,"june",1,"decentralized","In Season"
+"BO","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"BO","august_2","warfarin",7.76721975191025e-05,"peri_3","september",1,"decentralized","In Season"
+"BO","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"DA","july_2","warfarin",0.000560686162870528,"peri_2","august",1,"decentralized","In Season"
+"DA","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"DA","june_2","warfarin",0.00013527561418329,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","warfarin",9.66761621859309e-06,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","warfarin",0.00216532741224834,"peri_1","july",1,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"DA","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"DA","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"DA","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"DA","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"DA","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"DA","august_2","warfarin",5.85289644719416e-07,"peri_3","september",1,"decentralized","In Season"
+"DA","august_2","warfarin",0.000839292799156435,"peri_3","september",1,"decentralized","In Season"
+"DA","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"DU","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"DU","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"DU","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"DU","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"DU","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"DU","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"DU","august_2","warfarin",0.000356344178119009,"peri_3","september",1,"decentralized","In Season"
+"DU","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"FI","july_2","warfarin",8.34275789104575e-05,"peri_2","august",1,"decentralized","In Season"
+"FI","july_2","warfarin",0.0013628718734703,"peri_2","august",1,"decentralized","In Season"
+"FI","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"FI","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"FI","june_2","warfarin",0.00102714079641124,"peri_1","july",1,"decentralized","In Season"
+"FI","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"FI","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"FI","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"FI","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"FI","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"FI","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"FI","august_2","warfarin",0.000980520773033232,"peri_3","september",1,"decentralized","In Season"
+"FI","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"FLBS","july_2","warfarin",7.45988783998821e-05,"peri_2","august",1,"centralized","In Season"
+"FLBS","july_2","warfarin",0.00132399382164351,"peri_2","august",1,"centralized","In Season"
+"FLBS","july_2","warfarin",0,"peri_2","august",1,"centralized","In Season"
+"FLBS","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"FLBS","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"FLBS","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"FLBS","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"FLBS","august_2","warfarin",2.42072267262065e-06,"peri_3","september",1,"centralized","In Season"
+"FLBS","august_2","warfarin",0.000820165412135859,"peri_3","september",1,"centralized","In Season"
+"FLBS","august_2","warfarin",0,"peri_3","september",1,"centralized","In Season"
+"HO","july_2","warfarin",0,"peri_2","august",1,"centralized","In Season"
+"HO","july_2","warfarin",0,"peri_2","august",1,"centralized","In Season"
+"HO","july_2","warfarin",0.000754441017286764,"peri_2","august",1,"centralized","In Season"
+"HO","july_2","warfarin",0,"peri_2","august",1,"centralized","In Season"
+"HO","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"HO","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"HO","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"HO","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"HO","may_1","warfarin",0.000178776488949053,NA,"june",1,"centralized","In Season"
+"HO","may_1","warfarin",2.26415542376682e-05,NA,"june",1,"centralized","In Season"
+"HO","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"HO","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"HO","august_2","warfarin",0.000205737620107742,"peri_3","september",1,"centralized","In Season"
+"HO","august_2","warfarin",3.23564699960784e-05,"peri_3","september",1,"centralized","In Season"
+"HO","august_2","warfarin",0,"peri_3","september",1,"centralized","In Season"
+"HO","august_2","warfarin",0,"peri_3","september",1,"centralized","In Season"
+"LK","july_2","warfarin",0.000108477920738781,"peri_2","august",1,"decentralized","In Season"
+"LK","july_2","warfarin",0.0014654120838325,"peri_2","august",1,"decentralized","In Season"
+"LK","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"LK","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"LK","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"LK","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"LK","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"LK","may_1","warfarin",0.000470280340698618,NA,"june",1,"decentralized","In Season"
+"LK","may_1","warfarin",0.000163882933447797,NA,"june",1,"decentralized","In Season"
+"LK","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"LK","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"LK","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"LK","august_2","warfarin",0.00161078228503258,"peri_3","september",1,"decentralized","In Season"
+"LK","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"SL","july_2","warfarin",1.28034843579081e-05,"peri_2","august",1,"decentralized","In Season"
+"SL","july_2","warfarin",6.14103174433359e-05,"peri_2","august",1,"decentralized","In Season"
+"SL","july_2","warfarin",0.0013537252724718,"peri_2","august",1,"decentralized","In Season"
+"SL","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"SL","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"SL","june_2","warfarin",0.00223590062603894,"peri_1","july",1,"decentralized","In Season"
+"SL","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"SL","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"SL","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"SL","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"SL","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"SL","august_2","warfarin",8.86592724248725e-06,"peri_3","september",1,"decentralized","In Season"
+"SL","august_2","warfarin",0.000914459525099426,"peri_3","september",1,"decentralized","In Season"
+"SL","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"SJ","july_2","warfarin",2.00096078652823e-06,"peri_2","august",1,"decentralized","In Season"
+"SJ","july_2","warfarin",3.10121996170394e-05,"peri_2","august",1,"decentralized","In Season"
+"SJ","july_2","warfarin",0.00117946724604514,"peri_2","august",1,"decentralized","In Season"
+"SJ","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"SJ","june_2","warfarin",9.62830388578782e-06,"peri_1","july",1,"decentralized","In Season"
+"SJ","june_2","warfarin",0.00301880957096758,"peri_1","july",1,"decentralized","In Season"
+"SJ","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"SJ","may_1","warfarin",9.87488725080425e-05,NA,"june",1,"decentralized","In Season"
+"SJ","may_1","warfarin",2.35010390968416e-06,NA,"june",1,"decentralized","In Season"
+"SJ","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"SJ","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"SJ","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"SJ","august_2","warfarin",0.0016159172986814,"peri_3","september",1,"decentralized","In Season"
+"SJ","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"WB","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"WB","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"WB","july_2","warfarin",0.000425257741647083,"peri_2","august",1,"decentralized","In Season"
+"WB","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"WB","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"WB","june_2","warfarin",0.00180006261005518,"peri_1","july",1,"decentralized","In Season"
+"WB","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"WB","may_1","warfarin",0.000454581188279931,NA,"june",1,"decentralized","In Season"
+"WB","may_1","warfarin",0.000154890443320722,NA,"june",1,"decentralized","In Season"
+"WB","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"WB","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"WB","august_2","warfarin",0.00021286013400221,"peri_3","september",1,"decentralized","In Season"
+"WB","august_2","warfarin",3.50972472264366e-05,"peri_3","september",1,"decentralized","In Season"
+"WB","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"WB","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"WF","july_2","warfarin",0.000203224962305081,"peri_2","august",1,"centralized","In Season"
+"WF","july_2","warfarin",0,"peri_2","august",1,"centralized","In Season"
+"WF","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"WF","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"WF","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"WF","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"WF","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"WF","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"WF","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"WF","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"WF","august_2","warfarin",0,"peri_3","september",1,"centralized","In Season"
+"WF","august_2","warfarin",0,"peri_3","september",1,"centralized","In Season"
+"WF","august_2","warfarin",0.000455397053632266,"peri_3","september",1,"centralized","In Season"
+"WF","august_2","warfarin",0,"peri_3","september",1,"centralized","In Season"
+"WS","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"WS","july_2","warfarin",0.000777966261390989,"peri_2","august",1,"decentralized","In Season"
+"WS","july_2","warfarin",0,"peri_2","august",1,"decentralized","In Season"
+"WS","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"WS","june_2","warfarin",0.00135228554088358,"peri_1","july",1,"decentralized","In Season"
+"WS","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"WS","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"WS","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"WS","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"WS","may_1","warfarin",0,NA,"june",1,"decentralized","In Season"
+"WS","august_2","warfarin",9.06118568839798e-05,"peri_3","september",1,"decentralized","In Season"
+"WS","august_2","warfarin",0.0013933492486279,"peri_3","september",1,"decentralized","In Season"
+"WS","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"YB","july_2","warfarin",1.43428815243958e-06,"peri_2","august",1,"centralized","In Season"
+"YB","july_2","warfarin",2.84849443394242e-05,"peri_2","august",1,"centralized","In Season"
+"YB","july_2","warfarin",0.00116220671434618,"peri_2","august",1,"centralized","In Season"
+"YB","july_2","warfarin",0,"peri_2","august",1,"centralized","In Season"
+"YB","june_2","warfarin",6.91891399333104e-05,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","warfarin",9.44771413323789e-09,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","warfarin",5.23070583231289e-06,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","warfarin",4.2128041270356e-05,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","warfarin",0.00124911755246214,"peri_1","july",1,"centralized","In Season"
+"YB","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"YB","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"YB","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"YB","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"YB","may_1","warfarin",0,NA,"june",1,"centralized","In Season"
+"YB","august_2","warfarin",0,"peri_3","september",1,"centralized","In Season"
+"YB","august_2","warfarin",0,"peri_3","september",1,"centralized","In Season"
+"YB","august_2","warfarin",0.00073633269063387,"peri_3","september",1,"centralized","In Season"
+"YB","august_2","warfarin",0,"peri_3","september",1,"centralized","In Season"
+"BB","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"BB","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"BB","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"BB","june_2","warfarin",0,"peri_1","july",1,"decentralized","In Season"
+"BB","july_2","warfarin",0,"peri_2","july",25,"decentralized","In Season"
+"BB","july_2","warfarin",0.000230075700251973,"peri_2","july",25,"decentralized","In Season"
+"BB","july_2","warfarin",0,"peri_2","july",25,"decentralized","In Season"
+"BD","august_1","warfarin",0,"peri_3","august",20,"decentralized","In Season"
+"BD","august_1","warfarin",0,"peri_3","august",20,"decentralized","In Season"
+"BD","august_1","warfarin",0,"peri_3","august",20,"decentralized","In Season"
+"BD","august_1","warfarin",0,"peri_3","august",20,"decentralized","In Season"
+"BD","july_1","warfarin",0,"peri_2","july",18,"decentralized","In Season"
+"BD","july_1","warfarin",0.000110886060545266,"peri_2","july",18,"decentralized","In Season"
+"BD","july_1","warfarin",0,"peri_2","july",18,"decentralized","In Season"
+"BD","july_2","warfarin",0,"peri_2","july",27,"decentralized","In Season"
+"BD","july_2","warfarin",0,"peri_2","july",27,"decentralized","In Season"
+"BD","july_2","warfarin",0,"peri_2","july",27,"decentralized","In Season"
+"BD","july_2","warfarin",0,"peri_2","july",27,"decentralized","In Season"
+"BO","july_1","warfarin",0,"peri_2","july",20,"decentralized","In Season"
+"BO","july_1","warfarin",6.13898158476886e-05,"peri_2","july",20,"decentralized","In Season"
+"BO","july_1","warfarin",0,"peri_2","july",20,"decentralized","In Season"
+"BO","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"BO","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"BO","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"BO","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"BO","june_2","warfarin",0,"peri_1","june",30,"decentralized","In Season"
+"BO","june_2","warfarin",8.21913296044422e-06,"peri_1","june",30,"decentralized","In Season"
+"BO","june_2","warfarin",0,"peri_1","june",30,"decentralized","In Season"
+"BO","september_1","warfarin",0,"peri_4","september",15,"decentralized","Out of Season"
+"BO","september_1","warfarin",0,"peri_4","september",15,"decentralized","Out of Season"
+"BO","september_1","warfarin",0,"peri_4","september",15,"decentralized","Out of Season"
+"BO","september_1","warfarin",0,"peri_4","september",15,"decentralized","Out of Season"
+"DU","september_1","warfarin",0.0187035506218071,"peri_4","september",15,"decentralized","Out of Season"
+"DU","september_1","warfarin",0.0200791840215778,"peri_4","september",15,"decentralized","Out of Season"
+"DU","september_1","warfarin",0.0301066782629856,"peri_4","september",15,"decentralized","Out of Season"
+"DU","september_1","warfarin",0,"peri_4","september",15,"decentralized","Out of Season"
+"FI","september_1","warfarin",0,"peri_4","september",15,"decentralized","Out of Season"
+"FI","september_1","warfarin",0,"peri_4","september",15,"decentralized","Out of Season"
+"FI","september_1","warfarin",0,"peri_4","september",15,"decentralized","Out of Season"
+"FLBS","june_2","warfarin",126.030838470274,"peri_1","july",1,"centralized","In Season"
+"FLBS","june_2","warfarin",138.984274548419,"peri_1","july",1,"centralized","In Season"
+"FLBS","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"FLBS","june_2","warfarin",0,"peri_1","july",1,"centralized","In Season"
+"FLBS","july_1","warfarin",0,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","warfarin",0,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","warfarin",0,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","warfarin",0,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","warfarin",0.00423869727412386,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","warfarin",0.00310109625121228,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","warfarin",0,"peri_2","july",18,"centralized","In Season"
+"FLBS","july_1","warfarin",0,"peri_2","july",18,"centralized","In Season"
+"HO","july_2","warfarin",0,"peri_2","july",26,"centralized","In Season"
+"HO","july_2","warfarin",0,"peri_2","july",26,"centralized","In Season"
+"HO","july_2","warfarin",0,"peri_2","july",26,"centralized","In Season"
+"HO","july_2","warfarin",0,"peri_2","july",26,"centralized","In Season"
+"LK","june_1","warfarin",407.661863029105,"peri_1","june",9,"decentralized","In Season"
+"LK","june_1","warfarin",431.335533363165,"peri_1","june",9,"decentralized","In Season"
+"LK","june_1","warfarin",0,"peri_1","june",9,"decentralized","In Season"
+"LK","june_1","warfarin",0,"peri_1","june",9,"decentralized","In Season"
+"LK","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"LK","august_2","warfarin",5.33833951072444e-06,"peri_3","september",1,"decentralized","In Season"
+"LK","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"LK","september_1","warfarin",0,"peri_4","september",16,"decentralized","Out of Season"
+"LK","september_1","warfarin",0.000100905353849714,"peri_4","september",16,"decentralized","Out of Season"
+"LK","september_1","warfarin",0,"peri_4","september",16,"decentralized","Out of Season"
+"SL","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"SL","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"SL","july_2","warfarin",2.90998948317865e-05,"peri_2","july",26,"decentralized","In Season"
+"SL","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"SL","september_2","warfarin",0,"peri_4","october",2,"decentralized","Out of Season"
+"SL","september_2","warfarin",0,"peri_4","october",2,"decentralized","Out of Season"
+"SL","september_2","warfarin",0,"peri_4","october",2,"decentralized","Out of Season"
+"SL","september_2","warfarin",0,"peri_4","october",2,"decentralized","Out of Season"
+"SJ","august_2","warfarin",0,"peri_3","august",24,"decentralized","In Season"
+"SJ","august_2","warfarin",0,"peri_3","august",24,"decentralized","In Season"
+"SJ","august_2","warfarin",0,"peri_3","august",24,"decentralized","In Season"
+"SJ","august_2","warfarin",0,"peri_3","august",24,"decentralized","In Season"
+"SJ","july_1","warfarin",0,"peri_2","july",20,"decentralized","In Season"
+"SJ","july_1","warfarin",0,"peri_2","july",20,"decentralized","In Season"
+"SJ","july_1","warfarin",0,"peri_2","july",20,"decentralized","In Season"
+"SJ","july_1","warfarin",0,"peri_2","july",20,"decentralized","In Season"
+"SJ","june_1","warfarin",0,"peri_1","june",11,"decentralized","In Season"
+"SJ","june_1","warfarin",0,"peri_1","june",11,"decentralized","In Season"
+"SJ","june_1","warfarin",3.4712489567946e-05,"peri_1","june",11,"decentralized","In Season"
+"SJ","june_1","warfarin",0,"peri_1","june",11,"decentralized","In Season"
+"WB","july_2","warfarin",0,"peri_2","july",25,"decentralized","In Season"
+"WB","july_2","warfarin",0.000213962017743642,"peri_2","july",25,"decentralized","In Season"
+"WB","july_2","warfarin",0,"peri_2","july",25,"decentralized","In Season"
+"WB","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"WB","august_2","warfarin",0.000443003240295853,"peri_3","september",1,"decentralized","In Season"
+"WB","august_2","warfarin",0,"peri_3","september",1,"decentralized","In Season"
+"WF","july_1","warfarin",0,"peri_2","july",18,"centralized","In Season"
+"WF","july_1","warfarin",0,"peri_2","july",18,"centralized","In Season"
+"WF","july_1","warfarin",0.000183867769751912,"peri_2","july",18,"centralized","In Season"
+"WF","july_1","warfarin",0,"peri_2","july",18,"centralized","In Season"
+"WF","june_1","warfarin",0,"peri_1","june",20,"centralized","In Season"
+"WF","june_1","warfarin",6.55343743110191e-06,"peri_1","june",20,"centralized","In Season"
+"WF","june_1","warfarin",0,"peri_1","june",20,"centralized","In Season"
+"WF","september_1","warfarin",0,"peri_4","september",15,"centralized","Out of Season"
+"WF","september_1","warfarin",0,"peri_4","september",15,"centralized","Out of Season"
+"WF","september_1","warfarin",0,"peri_4","september",15,"centralized","Out of Season"
+"WF","september_1","warfarin",0,"peri_4","september",15,"centralized","Out of Season"
+"WS","june_1","warfarin",0,"peri_1","june",10,"decentralized","In Season"
+"WS","june_1","warfarin",0,"peri_1","june",10,"decentralized","In Season"
+"WS","june_1","warfarin",0,"peri_1","june",10,"decentralized","In Season"
+"WS","june_1","warfarin",0,"peri_1","june",10,"decentralized","In Season"
+"BB","may_1","warfarin",0,NA,"may",24,"decentralized","In Season"
+"BB","may_1","warfarin",0,NA,"may",24,"decentralized","In Season"
+"BB","may_1","warfarin",0,NA,"may",24,"decentralized","In Season"
+"BB","may_1","warfarin",0,NA,"may",24,"decentralized","In Season"
+"BO","may_1","warfarin",0.0638521531171501,NA,"may",24,"decentralized","In Season"
+"BO","may_1","warfarin",0.0965916774479225,NA,"may",24,"decentralized","In Season"
+"BO","may_1","warfarin",0,NA,"may",24,"decentralized","In Season"
+"BO","september_2","warfarin",0,"peri_4","september",24,"decentralized","Out of Season"
+"BO","september_2","warfarin",0,"peri_4","september",24,"decentralized","Out of Season"
+"BO","september_2","warfarin",0,"peri_4","september",24,"decentralized","Out of Season"
+"BO","september_2","warfarin",0,"peri_4","september",24,"decentralized","Out of Season"
+"DA","june_2","warfarin",0,"peri_1","june",29,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","june",29,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","june",29,"decentralized","In Season"
+"DA","june_2","warfarin",0,"peri_1","june",29,"decentralized","In Season"
+"DA","september_2","warfarin",0,"peri_4","september",30,"decentralized","Out of Season"
+"DA","september_2","warfarin",0,"peri_4","september",30,"decentralized","Out of Season"
+"DA","september_2","warfarin",0,"peri_4","september",30,"decentralized","Out of Season"
+"DA","september_2","warfarin",0,"peri_4","september",30,"decentralized","Out of Season"
+"HO","september_2","warfarin",0,"peri_4","september",30,"centralized","Out of Season"
+"HO","september_2","warfarin",0,"peri_4","september",30,"centralized","Out of Season"
+"HO","september_2","warfarin",0,"peri_4","september",30,"centralized","Out of Season"
+"HO","september_2","warfarin",0,"peri_4","september",30,"centralized","Out of Season"
+"WB","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"WB","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"WB","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"WB","july_2","warfarin",0,"peri_2","july",26,"decentralized","In Season"
+"WS","september_2","warfarin",0,"peri_4","september",30,"decentralized","Out of Season"
+"WS","september_2","warfarin",0,"peri_4","september",30,"decentralized","Out of Season"
+"WS","september_2","warfarin",0,"peri_4","september",30,"decentralized","Out of Season"
+"WS","september_2","warfarin",0,"peri_4","september",30,"decentralized","Out of Season"
+"YB","september_1","warfarin",0.347963090667035,"peri_4","september",14,"centralized","Out of Season"
+"YB","september_1","warfarin",0,"peri_4","september",14,"centralized","Out of Season"

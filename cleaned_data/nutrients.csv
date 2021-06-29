@@ -1,61 +1,61 @@
-"site","rep","nh3","no3","tn","srp","tp","month","collection_data_formatted"
-"BB",1,3.2,1.8,80.6,0.8,2,"august",20170823
-"BB",2,3.3,2.3,79.3,0.8,1.7,"august",20170823
-"FI",1,1.9,2.2,112,0.8,4.3,"august",20170823
-"FI",2,1.7,1.5,101,0.8,4.1,"august",20170823
-"BO",1,2.4,4.5,105,0.8,3.4,"august",20170823
-"BO",2,6.7,5.6,106,0.9,3,"august",20170823
-"DU",1,4.5,1.5,396,0.8,13.5,"august",20170823
-"DU",2,5,1.5,394,0.8,11.5,"august",20170823
-"SA",1,2.5,9.1,111,0.8,4.6,"august",20170823
-"SA",2,2.3,8.4,112,0.8,4.3,"august",20170823
-"SJ",1,4.9,3,104,0.8,2.8,"august",20170823
-"SJ",2,2.7,2.1,103,0.8,2.3,"august",20170823
-"DA",1,4.7,1.9,84.7,0.8,1.8,"august",20170824
-"DA",2,3.7,1.7,87.1,0.8,2.4,"august",20170824
-"WS",1,3.1,1.5,83.3,0.8,1.5,"august",20170824
-"WS",2,1.8,1.5,80.8,0.8,1.5,"august",20170824
-"LK",1,4.4,4.4,84.4,0.8,1.5,"august",20170824
-"LK",2,4.7,4.5,91.2,0.8,1.9,"august",20170824
-"HO",1,4,10.3,103,0.8,12,"august",20170824
-"HO",2,3.8,12.6,98,0.8,7.3,"august",20170824
-"WF",1,1.9,1.5,66.6,0.8,1.5,"august",20170824
-"WF",2,2,1.5,69.9,0.8,1.5,"august",20170824
-"WB",1,1.5,1.5,68.9,0.8,1.5,"august",20170824
-"WB",2,2.5,1.7,72.2,0.8,1.5,"august",20170824
-"BD",1,2.3,2.5,76.3,0.8,1.5,"august",20170824
-"BD",2,1.5,1.5,67.5,0.8,1.5,"august",20170824
-"FLBS",1,11.2,1.8,330,3.7,12.1,"august",20170824
-"FLBS",2,2.7,1.5,69.6,0.8,1.5,"august",20170824
-"YB",1,8.4,7.6,86.3,0.8,3.3,"august",20170824
-"YB",2,8.5,6.8,82.8,0.8,1.5,"august",20170824
-"DA",1,1.8,1.5,77,0.8,1.7,"september",20170921
-"DA",2,2.7,1.5,79.5,0.8,2.8,"september",20170921
-"WS",1,3.4,1.6,75.7,0.8,3.6,"september",20170921
-"WS",2,3.1,1.5,73.8,0.8,1.9,"september",20170921
-"LK",1,3.3,2.7,80.2,0.8,3.8,"september",20170921
-"LK",2,13.9,1.5,82.9,0.8,3,"september",20170921
-"HO",1,3.8,23.6,96,0.8,6.9,"september",20170921
-"HO",2,5,22.5,93.9,0.8,9.6,"september",20170921
-"WF",1,4.4,1.5,81.7,1,4.5,"september",20170921
-"WF",2,5.4,2.3,72.6,1.1,1.9,"september",20170921
-"WB",1,2.5,1.7,65.3,0.9,1.5,"september",20170921
-"WB",2,2.6,1.6,69.7,1,1.6,"september",20170921
-"BD",1,2.6,1.8,78,0.9,2.8,"september",20170921
-"BD",2,3.1,1.9,81.4,0.8,2.8,"september",20170921
-"FLBS",1,4,2.9,87.4,0.8,3,"september",20170921
-"FLBS",2,3.3,1.5,86,1.2,2.2,"september",20170921
-"YB",1,2.9,2,86,0.8,4.2,"september",20170921
-"YB",2,3.2,2.1,82.5,0.8,3.3,"september",20170921
-"BB",1,3.2,2.2,82.7,0.8,2.9,"september",20170921
-"BB",2,3.7,2.3,75.2,0.8,4.1,"september",20170921
-"FI",1,2.9,2.6,81.6,0.8,3.5,"september",20170921
-"FI",2,2.5,2.1,77.4,0.8,2.8,"september",20170921
-"BO",1,3.3,8.7,93.1,0.8,4.4,"september",20170921
-"BO",2,3.2,8.8,91.4,0.8,3.3,"september",20170921
-"DU",1,5.8,1.5,735,1.1,48.4,"september",20170921
-"DU",2,5.7,1.5,442,1,15.5,"september",20170921
-"SA",1,4.1,3.6,89.7,0.8,3.1,"september",20170921
-"SA",2,4.4,4.3,98.6,0.8,5.3,"september",20170921
-"SJ",1,3.6,1.5,91.6,0.8,3.2,"september",20170921
-"SJ",2,3.3,1.5,85.7,0.8,2.2,"september",20170921
+"site","rep","month","collection_data_formatted","tourist_season","stt","nh3_n","no3_no2","total_n","srp","total_p"
+"BB",1,"august",20170823,"In Season","Decentralized",16,4,84,0.4,8
+"BB",2,"august",20170823,"In Season","Decentralized",17,9,81,0.4,3
+"FI",1,"august",20170823,"In Season","Decentralized",5,40,58,0.4,44
+"FI",2,"august",20170823,"In Season","Decentralized",3,0.75,51,0.4,23
+"BO",1,"august",20170823,"In Season","Decentralized",10,25,54,0.4,18
+"BO",2,"august",20170823,"In Season","Decentralized",32,45,55,113,43
+"DU",1,"august",20170823,"In Season","Decentralized",25,0.75,62,0.4,120
+"DU",2,"august",20170823,"In Season","Decentralized",28,0.75,61,112,117
+"SA",1,"august",20170823,"In Season","Decentralized",11,50,56,0.4,125
+"SA",2,"august",20170823,"In Season","Decentralized",9,33,57,0.4,44
+"SJ",1,"august",20170823,"In Season","Decentralized",27,43,53,0.4,122
+"SJ",2,"august",20170823,"In Season","Decentralized",13,39,52,0.4,9
+"DA",1,"august",20170824,"In Season","Decentralized",26,5,95,0.4,4
+"DA",2,"august",20170824,"In Season","Decentralized",20,3,99,0.4,10
+"WS",1,"august",20170824,"In Season","Decentralized",15,2,93,0.4,0.75
+"WS",2,"august",20170824,"In Season","Decentralized",4,0.75,85,0.4,0.75
+"LK",1,"august",20170824,"In Season","Decentralized",24,24,94,0.4,0.75
+"LK",2,"august",20170824,"In Season","Decentralized",26,25,102,0.4,5
+"HO",1,"august",20170824,"In Season","Centralized",22,37,52,0.4,118
+"HO",2,"august",20170824,"In Season","Centralized",21,38,108,0.4,129
+"WF",1,"august",20170824,"In Season","Centralized",5,0.75,65,0.4,0.75
+"WF",2,"august",20170824,"In Season","Centralized",8,0.75,70,0.4,0.75
+"WB",1,"august",20170824,"In Season","Centralized",2,0.75,67,0.4,0.75
+"WB",2,"august",20170824,"In Season","Centralized",11,3,71,0.4,0.75
+"BD",1,"august",20170824,"In Season","Decentralized",9,11,77,0.4,0.75
+"BD",2,"august",20170824,"In Season","Decentralized",2,0.75,66,0.4,0.75
+"FLBS",1,"august",20170824,"In Season","Centralized",6,4,60,20,119
+"FLBS",2,"august",20170824,"In Season","Centralized",13,2,68,0.4,0.75
+"YB",1,"august",20170824,"In Season","Decentralized",33,47,98,0.4,17
+"YB",2,"august",20170824,"In Season","Decentralized",34,46,91,0.4,0.75
+"DA",1,"september",20170921,"Out of Season","Decentralized",4,0.75,78,0.4,3
+"DA",2,"september",20170921,"Out of Season","Decentralized",13,0.75,82,0.4,122
+"WS",1,"september",20170921,"Out of Season","Decentralized",18,36,76,0.4,19
+"WS",2,"september",20170921,"Out of Season","Decentralized",15,2,73,0.4,5
+"LK",1,"september",20170921,"Out of Season","Decentralized",17,13,83,0.4,21
+"LK",2,"september",20170921,"Out of Season","Decentralized",7,0.75,92,0.4,43
+"HO",1,"september",20170921,"Out of Season","Centralized",21,42,107,0.4,128
+"HO",2,"september",20170921,"Out of Season","Centralized",28,41,106,0.4,130
+"WF",1,"september",20170921,"Out of Season","Centralized",24,2,88,114,25
+"WF",2,"september",20170921,"Out of Season","Centralized",29,9,72,115,5
+"WB",1,"september",20170921,"Out of Season","Centralized",11,3,64,113,0.75
+"WB",2,"september",20170921,"Out of Season","Centralized",12,36,69,114,36
+"BD",1,"september",20170921,"Out of Season","Decentralized",12,4,80,113,122
+"BD",2,"september",20170921,"Out of Season","Decentralized",15,5,86,0.4,122
+"FLBS",1,"september",20170921,"Out of Season","Centralized",22,14,100,0.4,43
+"FLBS",2,"september",20170921,"Out of Season","Centralized",17,0.75,97,116,40
+"YB",1,"september",20170921,"Out of Season","Decentralized",14,8,97,0.4,124
+"YB",2,"september",20170921,"Out of Season","Decentralized",16,39,89,0.4,17
+"BB",1,"september",20170921,"Out of Season","Decentralized",16,40,90,0.4,14
+"BB",2,"september",20170921,"Out of Season","Decentralized",20,9,75,0.4,23
+"FI",1,"september",20170921,"Out of Season","Decentralized",14,12,87,0.4,123
+"FI",2,"september",20170921,"Out of Season","Decentralized",11,39,79,0.4,122
+"BO",1,"september",20170921,"Out of Season","Decentralized",17,48,105,0.4,24
+"BO",2,"september",20170921,"Out of Season","Decentralized",16,49,103,0.4,17
+"DU",1,"september",20170921,"Out of Season","Decentralized",31,0.75,74,115,126
+"DU",2,"september",20170921,"Out of Season","Decentralized",30,0.75,63,114,121
+"SA",1,"september",20170921,"Out of Season","Decentralized",23,19,101,0.4,15
+"SA",2,"september",20170921,"Out of Season","Decentralized",24,44,109,0.4,127
+"SJ",1,"september",20170921,"Out of Season","Decentralized",19,0.75,104,0.4,16
+"SJ",2,"september",20170921,"Out of Season","Decentralized",17,0.75,96,0.4,40

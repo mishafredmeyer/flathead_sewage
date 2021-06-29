@@ -7,107 +7,285 @@
 ## season. Questions about this script should be directed to 
 ## Michael F. Meyer (michael.f.meyer@wsu.edu). 
 
-ggplot(afdm_edit, #%>%
-         #filter(MONTH != "JUNE",
-        #        SITE != "YB"), 
-       aes(tourist_season, mean_afdm)) +
+
+# 1. Load Packages and Data -----------------------------------------------
+
+library(tidyverse)
+library(viridis)
+library(car)
+library(ggpubr)
+
+afdm <- read.csv(file = "../cleaned_data/afdm.csv",
+                 header = TRUE)
+  
+fatty_acids <- read.csv(file = "../cleaned_data/fatty_acids.csv",
+                        header = TRUE)  
+
+nutrients <- read.csv(file = "../cleaned_data/nutrients.csv",
+                      header = TRUE)
+
+ppcp <- read.csv(file = "../cleaned_data/ppcp.csv",
+                 header = TRUE)
+
+tsidw_pop <- read.csv(file = "../cleaned_data/temporally_scaled_inverse_distance_weighted_population_metrics.csv",
+                      header = TRUE)
+
+
+# 2. Nutrient Analysis ----------------------------------------------------
+
+nutrient_labels <- c("Ammonia as Nitrogen", "Nitrate-Nitrate", "Total Nitrogen", "SRP",  "Total Phosphorus")
+names(nutrient_labels) <- c("nh3_n", "no3_no2", "total_n", "srp", "total_p")
+
+nutrient_plot <- nutrients %>%
+  pivot_longer(cols = c(nh3_n:total_p), names_to = "nutrient_type", values_to = "concentration") %>%
+  filter(!site %in% c("DU", "HO")) %>%
+  ggplot(aes(tourist_season, concentration, fill = stt, color = stt)) +
+  geom_boxplot(alpha = 0.7, width = 0.33, outlier.alpha = 0) +
+  geom_jitter() +
+  scale_y_log10() +
+  ylab(expression(paste("Concentration (\u03BCg/L- N or P)"))) +
+  scale_fill_manual(values = plasma(30)[c(5, 19)], name = "STT") +
+  scale_color_manual(values = plasma(30)[c(5, 19)], name = "STT") +
+  facet_wrap(~nutrient_type, scales = "free", labeller = labeller(nutrient_type = nutrient_labels)) +
+  theme_bw() +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 24),
+        axis.text = element_text(size = 18),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 20),
+        legend.key.height = unit(0.75, units = "in"),
+        legend.key.width = unit(0.75, units = "in"),
+        strip.text = element_text(size = 20))
+  
+ggsave(filename = "nutrient_boxplots.png", plot = nutrient_plot, 
+       device = "png", path = "../figures_tables", 
+       width = 15, height = 7, units = "in")
+
+
+# Ammonium Model
+nh3_lm <- lm(nh3_n ~ stt*tourist_season, 
+              data = nutrients %>% filter(!site %in% c("DU", "HO")))
+
+Anova(nh3_lm, type = "II")
+
+# Nitrate/Nitrite Model
+no3_no2_lm <- lm(no3_no2 ~ stt*tourist_season, 
+             data = nutrients %>% filter(!site %in% c("DU", "HO")))
+
+Anova(no3_no2_lm, type = "II")
+
+# SRP
+srp_lm <- lm(srp ~ stt*tourist_season, 
+             data = nutrients %>% filter(!site %in% c("DU", "HO")))
+
+Anova(srp_lm, type = "II")
+
+# Total Nitrogen
+tn_lm <- lm(total_n ~ stt*tourist_season, 
+             data = nutrients %>% filter(!site %in% c("DU", "HO")))
+
+Anova(tn_lm, type = "II")
+
+# Total Phosphorus
+tp_lm <- lm(total_p ~ stt*tourist_season, 
+            data = nutrients %>% filter(!site %in% c("DU", "HO")))
+
+Anova(tp_lm, type = "II")
+
+
+
+# 2. Ash Free Dry Mass ----------------------------------------------------
+
+stt_labels <- c("Centralized", "Decentralized")
+names(stt_labels) <- c("centralized", "decentralized")
+
+afdm_plot <- ggplot(afdm, aes(tourist_season, afdm)) +
   geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
   geom_jitter() +
-  facet_wrap(~stt) +
-  theme_bw()
+  facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
+  ylab("Ash Free Dry Mass (mg)") + 
+  theme_bw() + 
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 24),
+        axis.text = element_text(size = 18),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 20),
+        legend.key.height = unit(0.75, units = "in"),
+        legend.key.width = unit(0.75, units = "in"),
+        strip.text = element_text(size = 20))
 
-afdm_lm <- lm(mean_afdm ~ stt*tourist_season, 
-              data = afdm_edit)
+ggsave(filename = "afdm_boxplots.png", plot = afdm_plot, 
+       device = "png", path = "../figures_tables", 
+       width = 8, height = 6, units = "in")
+
+afdm_lm <- lm(afdm ~ stt*tourist_season, 
+              data = afdm)
 
 Anova(afdm_lm, type = "II")
 
-fatty_acids <- fatty_acids %>%
-  rename("SITE" = "LOC") %>%
-  mutate(MONTH = ifelse(MONTH == 9, "SEPTEMBER", MONTH),
-         MONTH = ifelse(MONTH == 8, "AUGUST", MONTH),
-         MONTH = ifelse(MONTH == 7, "JULY", MONTH))
 
-SAFA <- c("C12.0", "C14.0", "C15.0", "C16.0", "C17.0", "C18.0", "C20.0", "C22.0", "iso.C15.0", "C24.0", "C26.0", "C28.0")
-MUFA <- c( "C15.1", "C14.1n5", "C15.1w7", "C16.1w5", "C16.1w6", "C16.1w7", "C16.1w7c",  "C16.1w8", "C16.1w9", "C17.1n7", "C18.1w7", "C18.1w7c", 
-           "C18.1w9", "C18.1w9c", "C20.1w7", "C20.1w9", "C22.1w7", "C22.1w9", "C22.1w9c")
-LUFA <- c("C16.2", "C16.2w4",  "C16.2w6",  "C16.2w7",  "C16.3w3",  "C16.3w4",  "C16.3w6",  "C18.2w6",  "C18.2w6t", "C18.2w6c",
-          "C18.3w3",  "C18.3w6", "C20.2w6",  "C20.3w3",  "C20.3w6",  "C22.2w6",  "C22.3w3")
-HUFA <- c("C16.4w1", "C16.4w3", "C18.4w3", "C18.4w4", "C18.5w3", "C20.4w2", "C20.4w3", "C20.4w6", "C20.5w3", "C22.4w3", 
-          "C22.4w6", "C22.5w3", "C22.5w6", "C22.6w3")
-SCUFA_LUFA <- c("C16.2", "C16.2w4",  "C16.2w6",  "C16.2w7",  "C16.3w3",  "C16.3w4",  "C16.3w6",  "C18.2w6", "C18.2w6c", 
-                "C18.2w6t", "C18.3w3",  "C18.3w6")
-LCUFA_LUFA <- c("C20.2w6",  "C20.3w3",  "C20.3w6",  "C22.2w6",  "C22.3w3")
-SCUFA_HUFA <- c("C16.4w1", "C16.4w3", "C18.4w3", "C18.4w4", "C18.5w3")
-LCUFA_HUFA <- c( "C20.4w2", "C20.4w3", "C20.4w6", "C20.5w3", "C22.4w3", 
-                 "C22.4w6", "C22.5w3", "C22.5w6", "C22.6w3")
-SCUFA <- c("C16.2w4",  "C16.2w6",  "C16.2w7",  "C16.3w3",  "C16.3w4",  "C16.3w6",  "C18.2w6",  "C18.2w6t", "C18.2w6t",
-           "C18.3w3",  "C18.3w6", "C16.4w1", "C16.4w3", "C18.4w3", "C18.4w4", "C18.5w3")
-LCUFA <- c( "C20.4w2", "C20.4w3", "C20.4w6", "C20.5w3", "C22.4w3", 
-            "C22.4w6", "C22.5w3", "C22.5w6", "C22.6w3", "C20.2w6",  "C20.3w3",  "C20.3w6",  "C22.2w6",  "C22.3w3")
+# 3. Branched and Odd Chain Fatty Acids -----------------------------------
 
-C18PUFA <- c("C18.2w6",  "C18.2w6t", "C18.3w3",  "C18.3w6", "C18.4w3", "C18.4w4", "C18.5w3")
-C20PUFA <- c("C20.4w3", "C20.4w6", "C20.5w3", "C20.2w6",  "C20.3w3",  "C20.3w6")
-
-fatty_acids_reduced <- fatty_acids %>%
-  select(-C19.0) %>%
-  gather(FATTYACID, CONC, C12.0:C28.0) %>%
-  dplyr::mutate(TYPE = ifelse(FATTYACID %in% SAFA, "SAFA", "OTHER"),
-                TYPE = ifelse(FATTYACID %in% MUFA, "MUFA", TYPE),
-                TYPE = ifelse(FATTYACID %in% SCUFA_LUFA, "SCUFA_LUFA", TYPE),
-                TYPE = ifelse(FATTYACID %in% SCUFA_HUFA, "SCUFA_HUFA", TYPE),
-                TYPE = ifelse(FATTYACID %in% LCUFA_HUFA, "LCUFA_HUFA", TYPE),
-                TYPE = ifelse(FATTYACID %in% LCUFA_LUFA, "LCUFA_LUFA", TYPE)) %>%
-  dplyr::group_by(SITE, MONTH, TYPE) %>%
-  dplyr::summarize(TOTAL_FA_TYPE = sum(CONC)) %>%
+branched_odd_chain_fatty_acids_plot <- fatty_acids %>%
+  select(-c19_0) %>%
+  pivot_longer(cols = c(c12_0:c28_0), names_to = "fatty_acid", values_to = "concentration") %>%
+  group_by(tourist_season, stt, site, month) %>%
+  mutate(total_fatty_acid = sum(concentration, na.rm = TRUE),
+                prop_fatty_acid = concentration/total_fatty_acid) %>%
+  select(-concentration, -total_fatty_acid) %>%
+  pivot_wider(names_from = "fatty_acid", values_from = "prop_fatty_acid") %>%
+  select(site, month, stt, tourist_season, contains("15"), contains("17")) %>%
   ungroup() %>%
-  group_by(SITE, MONTH) %>%
-  mutate(TOTAL_FA_OVERALL = sum(TOTAL_FA_TYPE)) %>%
+  group_by(stt, tourist_season, site, month) %>%
+  summarize(total_branched_odd = rowSums(across(.cols = iso_c15_0:c17_0))) %>%
+  ggplot(aes(x = tourist_season, y = total_branched_odd)) +
+  geom_boxplot(alpha = 0.33, width = 0.2, outlier.alpha = 0) +
+  xlab("")+
+  ylab("Odd-chain + Branched Fatty Acids") +
+  geom_jitter(size = 2, width = 0.25) +
+  facet_wrap(~stt) +
+  theme_bw() +
+  theme(axis.text.x = element_text(size = 18),
+        axis.text.y = element_text(size = 18),
+        axis.title.y = element_text(size = 18),
+        strip.text = element_text(size = 20),
+        legend.text = element_text(size = 18),
+        legend.key.height = unit(0.75, "in"),
+        legend.key.width = unit(0.33, "in"))
+
+
+ggsave(filename = "branched_odd_chain_fatty_acid_boxplots.png", plot = branched_odd_chain_fatty_acids_plot, 
+       device = "png", path = "../figures_tables", 
+       width = 8, height = 6, units = "in")
+
+
+branched_odd_chain_fatty_acids <- fatty_acids %>%
+  select(-c19_0) %>%
+  pivot_longer(cols = c(c12_0:c28_0), names_to = "fatty_acid", values_to = "concentration") %>%
+  group_by(tourist_season, stt, site, month) %>%
+  mutate(total_fatty_acid = sum(concentration, na.rm = TRUE),
+         prop_fatty_acid = concentration/total_fatty_acid) %>%
+  select(-concentration, -total_fatty_acid) %>%
+  pivot_wider(names_from = "fatty_acid", values_from = "prop_fatty_acid") %>%
+  select(site, month, stt, tourist_season, contains("15"), contains("17")) %>%
   ungroup() %>%
-  mutate(PROP_FA = TOTAL_FA_TYPE/TOTAL_FA_OVERALL) %>%
-  dplyr::select(-TOTAL_FA_OVERALL, -TOTAL_FA_TYPE) %>%
-  spread(TYPE, PROP_FA)
+  group_by(stt, tourist_season, site, month) %>%
+  summarize(total_branched_odd = rowSums(across(.cols = iso_c15_0:c17_0)))
 
 
-nutrients_edit <- nutrients %>%
-  mutate(SITE = trimws(Sample_ID)) %>%
-  separate(SITE, c("SITE", "REP")) %>%
-  mutate(SITE = ifelse(SITE == "Beardance", "BD", SITE),
-         SITE = ifelse(SITE == "Blue Bay", "BB", SITE),
-         SITE = ifelse(SITE == "Boettcher", "BO", SITE),
-         SITE = ifelse(SITE == "Dayton", "DA", SITE),
-         SITE = ifelse(SITE == "Finley Point", "FI", SITE),
-         SITE = ifelse(SITE == "FLBS", "FLBS", SITE),
-         SITE = ifelse(SITE == "Lakeside", "LK", SITE),
-         SITE = ifelse(SITE == "Sacajawea", "SJ", SITE),
-         SITE = ifelse(SITE == "Salish Park", "SA", SITE),
-         SITE = ifelse(SITE == "Wayfarers", "WF", SITE),
-         SITE = ifelse(SITE == "West Shore", "WS", SITE),
-         SITE = ifelse(SITE == "Woods", "WB", SITE),
-         SITE = ifelse(SITE == "Yellow Bay", "YB", SITE),
-         MONTH = month(mdy(Collection.Date), label = TRUE, abbr = FALSE),
-         MONTH = toupper(MONTH)) %>%
-  group_by(SITE, MONTH) %>%
-  summarize(mean_nh3 = mean(NH3),
-            mean_NO3 = mean(NO3),
-            mean_TN = mean(TN),
-            mean_SRP = mean(SRP),
-            mean_TP = mean(TP)) %>%
-  pivot_longer(cols = c(mean_nh3:mean_TP), names_to = "nutrient_type", values_to = "concentration") %>%
-  mutate(stt = ifelse(SITE %in% c("WF", "YB", "WB"), "Centralized", "Decentralized"),
-         tourist_season = ifelse(MONTH %in% c("JUNE", "JULY", "AUGUST"), "In Season", "Out of Season"))
+branched_odd_chain_fatty_acids_lm <- lm(total_branched_odd ~ stt * tourist_season,
+                                        data = branched_odd_chain_fatty_acids)
+
+Anova(branched_odd_chain_fatty_acids_lm, type = "II")
 
 
-ggplot(nutrients_edit, 
-       aes(tourist_season, log10(concentration), fill = stt)) +
-  geom_boxplot(outlier.alpha = 0) +
-  geom_jitter(aes(color = stt)) +
-  scale_y_log10() +
-  facet_wrap(~nutrient_type) +
-  theme_bw()
+# 4. PPCPs ----------------------------------------------------------------
 
-phos_lm <- lm(log10(concentration) ~ stt*tourist_season, 
-              data = nutrients_edit %>%
-                filter(nutrient_type == "mean_NO3"))
+ppcp_reduced <- ppcp %>%
+  #filter(!site %in% c("HO", "DU")) %>%
+  #filter(month != "may") %>%
+  # group_by(tourist_season, stt, site, month, sampling_event) %>%
+  # summarize(mean_conc = sum(concentration, na.rm = TRUE)) %>%
+  group_by(tourist_season, stt, site, peri_sampling, sampling_event, ppcp) %>%
+  summarize(mean_conc = mean(concentration, na.rm = TRUE)) %>%
+  ungroup() %>%
+  group_by(tourist_season, stt, site, peri_sampling, sampling_event) %>%
+  summarize(total_concentration = sum(mean_conc, na.rm = TRUE)) %>%
+  ungroup() %>%
+  group_by(tourist_season, stt, site, peri_sampling) %>%
+  summarize(mean_conc = mean(total_concentration, na.rm = TRUE)) 
 
-Anova(phos_lm, type = "II")
+  
+ppcp_plot <- ggplot(ppcp_reduced, 
+       aes(tourist_season, (log10(mean_conc)))) +
+  geom_boxplot(alpha = 0.33, outlier.alpha = 0, width = 0.2) +
+  geom_jitter() +
+  facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
+  ylab("log10([Total PPCP])") + 
+  theme_bw() + 
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 24),
+        axis.text = element_text(size = 18),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 20),
+        legend.key.height = unit(0.75, units = "in"),
+        legend.key.width = unit(0.75, units = "in"),
+        strip.text = element_text(size = 20))
 
+ggsave(filename = "ppcp_boxplots.png", plot = ppcp_plot, 
+       device = "png", path = "../figures_tables", 
+       width = 8, height = 6, units = "in")
+
+## ANOVA with stt and tourist season
+
+Anova(lm(log10(mean_conc) ~ stt * tourist_season, 
+         data = ppcp_reduced),
+      type = "II")
+
+## ANOVA just with Decentralized treatment
+
+Anova(lm(log10(mean_conc) ~ tourist_season, 
+         data = ppcp_reduced %>%
+           filter(stt == "decentralized")),
+      type = "II")
+
+## ANOVA just with Centralized treatment
+
+Anova(lm(log10(mean_conc) ~ tourist_season, 
+         data = ppcp_reduced %>%
+           filter(stt == "centralized")),
+      type = "II")
+
+
+# 5. TSIDW ----------------------------------------------------------------
+
+tsidw_plot <- ggplot(tsidw_pop, 
+                    aes(tourist_season, (log10(scaled_idw_population)))) +
+  geom_boxplot(alpha = 0.33, outlier.alpha = 0, width = 0.2) +
+  geom_jitter() +
+  facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
+  ylab("log10(TSIDW Population)") + 
+  theme_bw() + 
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 24),
+        axis.text = element_text(size = 18),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 20),
+        legend.key.height = unit(0.75, units = "in"),
+        legend.key.width = unit(0.75, units = "in"),
+        strip.text = element_text(size = 20))
+
+ggsave(filename = "tsidw_population_boxplots.png", plot = tsidw_plot, 
+       device = "png", path = "../figures_tables", 
+       width = 8, height = 6, units = "in")
+
+## ANOVA with stt and tourist season
+
+Anova(lm(log10(scaled_idw_population) ~ stt * tourist_season, 
+         data = tsidw_pop),
+      type = "II")
+
+## ANOVA just with Decentralized treatment
+
+Anova(lm(log10(scaled_idw_population) ~ tourist_season, 
+         data = tsidw_pop %>%
+           filter(stt == "decentralized")),
+      type = "II")
+
+## ANOVA just with Centralized treatment
+
+Anova(lm(log10(scaled_idw_population) ~ tourist_season, 
+         data = tsidw_pop %>%
+           filter(stt == "centralized")),
+      type = "II")
+
+
+# 6. Combine Figures ------------------------------------------------------
+
+arranged_plots <- ggarrange(plotlist = list(tsidw_plot, ppcp_plot,
+                                         branched_odd_chain_fatty_acids_plot, afdm_plot), 
+                            ncol = 2, nrow = 2, labels = "AUTO")
+
+ggsave(filename = "combined_boxplots.png", plot = arranged_plots, 
+       device = "png", path = "../figures_tables", 
+       width = 16, height = 12, units = "in")

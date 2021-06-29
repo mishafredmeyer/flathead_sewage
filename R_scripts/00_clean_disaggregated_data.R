@@ -17,11 +17,12 @@
 # 1. Load Packages --------------------------------------------------------
 
 library(tidyverse)
-library(vegan)
 library(lubridate)
 library(stringi)
 library(janitor)
 library(readxl)
+library(sf)
+library(OpenStreetMap)
 
 # 2. Ash Free Dry Mass ----------------------------------------------------
 
@@ -57,10 +58,18 @@ write.csv(x = afdm_clean,
 
 # 3. Nutrients ------------------------------------------------------------
 
-nutrients <- read.csv("../raw_data/nutrients_20171219.csv", header = TRUE)
+nutrients <- read.csv("../raw_data/nutrients.csv", header = TRUE)
 
-nutrients_cleaned <- nutrients %>%
+nutrients_cleaned <- nutrients[-c(1:2) , ] %>%
   clean_names() %>%
+  select(-contains("X"), -analyte) %>% 
+  pivot_longer(cols = c(nh3_n:total_p), 
+               names_to = "nutrient_type", 
+               values_to = "concentration") %>%
+  mutate(concentration = ifelse(test = grepl(pattern = "<", x = concentration), 
+                                yes = as.numeric(trimws(gsub(pattern = "<", replacement = "", x = concentration)))/2,
+                                no = concentration)) %>%
+  pivot_wider(names_from = "nutrient_type", values_from = "concentration") %>%
   mutate(site = trimws(sample_id)) %>%
   separate(sample_id, c("site", "rep"), sep = "-") %>%
   mutate(site = ifelse(site == "Beardance", "BD", site),
@@ -130,7 +139,7 @@ samples <- dat_full %>%
 samples$PPCP <- as.factor(samples$PPCP)
 samples$SITE <- as.factor(samples$SITE)
 samples$MONTH <- as.factor(samples$MONTH)
-samples$TIME <- as.factor(samples$TIME)
+#samples$TIME <- as.factor(samples$TIME)
 samples$LINE <- as.factor(samples$LINE)
 samples$DATE_HPLC <- as.factor(samples$DATE_HPLC)
 samples$ROW <- as.factor(samples$ROW)
@@ -268,21 +277,50 @@ warf_data$CONCENTRATION <- 10^(warf_data$CONCENTRATION)
 samples_full <- rbind(aceta_data, caff_data, carb_data, cot_data, diph_data, para_data, sulfa_data, warf_data)
 summary(samples_full)
 
-samples_full <- samples_full %>%
+samples_formatted <- samples_full %>%
   mutate(MONTH = as.character(MONTH),
          MONTH = trimws(tolower(MONTH)),
          MONTH = ifelse(MONTH == "juny", "june", MONTH),
          MONTH = ifelse(MONTH == "sept", "september", MONTH),
-         MONTH = ifelse(MONTH == "october", "september", MONTH),
+         #MONTH = ifelse(MONTH == "october", "september", MONTH),
          SITE = as.character(SITE),
          SITE = ifelse(SITE == "SA", "SL", SITE)) %>%
-  filter(MONTH != "XXXX") %>%
   clean_names(case = "snake") %>%
   rename("area_observed" = "area_x",
          "area_blank" = "area_y",
-         "area_corrected" = "area")
+         "area_corrected" = "area") %>%
+  filter(!(site %in% c("FI2", "DU2", "HO1"))) %>%
+  filter(month != "xxxx") %>%
+  mutate(time = as.numeric(time),
+         sampling_event = ifelse(month == "may", "may_1", NA),
+         sampling_event = ifelse(month == "june" & between(time, 1,6), "may_1", sampling_event),
+         sampling_event = ifelse(month == "june" & between(time, 7, 26), "june_1", sampling_event),
+         sampling_event = ifelse(month == "june" & between(time, 27, 30), "june_2", sampling_event),
+         sampling_event = ifelse(month == "july" & between(time, 1,11), "june_2", sampling_event),
+         sampling_event = ifelse(month == "july" & between(time, 12,24), "july_1", sampling_event),
+         sampling_event = ifelse(month == "july" & between(time, 25,31), "july_2", sampling_event),
+         sampling_event = ifelse(month == "august" & between(time, 1,8), "july_2", sampling_event),
+         sampling_event = ifelse(month == "august" & between(time, 9,21), "august_1", sampling_event),
+         sampling_event = ifelse(month == "august" & between(time, 22,31), "august_2", sampling_event),
+         sampling_event = ifelse(month == "september" & between(time, 1,5), "august_2", sampling_event),
+         sampling_event = ifelse(month == "september" & between(time, 6,18), "september_1", sampling_event),
+         sampling_event = ifelse(month == "september" & between(time, 19,30), "september_2", sampling_event),
+         sampling_event = ifelse(month == "october", "september_2", sampling_event)) %>%
+  mutate(peri_sampling = ifelse(sampling_event %in% c("june_1", "june_2"), "peri_1", NA),
+         peri_sampling = ifelse(sampling_event %in% c("july_1", "july_2"), "peri_2", peri_sampling),
+         peri_sampling = ifelse(sampling_event %in% c("august_1", "august_2"), "peri_3", peri_sampling),
+         peri_sampling = ifelse(sampling_event %in% c("september_1", "september_2"), "peri_4", peri_sampling)) %>%
+  replace_na(list(concentration = 0)) %>%
+  #select(-month) %>%
+  #separate(col = "sampling_event", into = c("month", "sampling_time"), remove = TRUE) %>%
+  mutate(stt = ifelse(site %in% c("WF", "HO", "FLBS", "YB"), "Centralized", "Decentralized")) %>%
+  select(site, sampling_event, ppcp, concentration, peri_sampling, month, time) %>%
+  mutate(stt = ifelse(test = site %in% c("WF", "YB", "FLBS", "HO"), 
+                      yes = "centralized", no = "decentralized"),
+         tourist_season = ifelse(peri_sampling %in% c("peri_4"), "Out of Season", "In Season"))
+  
 
-write.csv(samples_full, "../cleaned_disaggregated_data/ppcp.csv", row.names = FALSE)
+write.csv(samples_formatted, "../cleaned_disaggregated_data/ppcp.csv", row.names = FALSE)
 
 # 5. Stoichiometry -------------------------------------------------------
 
@@ -338,7 +376,12 @@ july_fatty_acids <- read_excel(path = "../raw_data/Flathead_FA_orig_2018April.xl
   clean_names() %>%
   separate(col = na, into = c("site", "month", "id", "sample_number"), sep = "_") %>%
   filter(month == "07") %>%
-  select(site, month, c12_0:c28_0)
+  select(site, month, c12_0:c28_0) %>%
+  mutate(month = "july", 
+         tourist_season = ifelse(month %in% c("june", "july", "august"), "In Season", 
+                                 "Out of Season"),
+         stt = ifelse(site %in% c("HO", "FLBS", "WF", "YB"), "Centralized", "Decentralized"),
+         c22_1w9c = ifelse(c22_1w9c == "-----", 0, c22_1w9c))
 
 august_fatty_acids <- read_excel(path = "../raw_data/Flathead_FA_orig_2018April.xlsx", 
                                sheet = "August2017", trim_ws = TRUE, col_names = TRUE) %>%
@@ -346,7 +389,12 @@ august_fatty_acids <- read_excel(path = "../raw_data/Flathead_FA_orig_2018April.
   clean_names() %>%
   separate(col = na, into = c("site", "month", "id", "sample_number"), sep = "_") %>%
   filter(month == "08") %>%
-  select(site, month, c12_0:c28_0)
+  select(site, month, c12_0:c28_0) %>%
+  mutate(month = "august", 
+         tourist_season = ifelse(month %in% c("june", "july", "august"), "In Season", 
+                                 "Out of Season"),
+         stt = ifelse(site %in% c("HO", "FLBS", "WF", "YB"), "Centralized", "Decentralized"),
+         c22_1w9c = ifelse(c22_1w9c == "-----", 0, c22_1w9c))
 
 september_fatty_acids <- read_excel(path = "../raw_data/Flathead_FA_orig_2018April.xlsx", 
                                  sheet = "Sept2017", trim_ws = TRUE, col_names = TRUE) %>%
@@ -354,7 +402,12 @@ september_fatty_acids <- read_excel(path = "../raw_data/Flathead_FA_orig_2018Apr
   clean_names() %>%
   separate(col = na, into = c("site", "month", "id", "sample_number"), sep = "_") %>%
   filter(month == "09") %>%
-  select(site, month, c12_0:c28_0)
+  select(site, month, c12_0:c28_0) %>%
+  mutate(month = "september", 
+         tourist_season = ifelse(month %in% c("june", "july", "august"), "In Season", 
+                                 "Out of Season"),
+         stt = ifelse(site %in% c("HO", "FLBS", "WF", "YB"), "Centralized", "Decentralized"),
+         c22_1w9c = ifelse(c22_1w9c == "-----", 0, c22_1w9c))
 
 fatty_acids <- rbind(july_fatty_acids, august_fatty_acids, september_fatty_acids)
 
@@ -537,7 +590,14 @@ flathead_park_sampling_locs <- st_distance(x = site_loc,
 flathead_park_space_time <- inner_join(x = locs_centroids,
                                        y = flathead_park_sampling_locs) %>%
   mutate(scaled_idw_population = ((distance_weighted_population) * inverse_distance_weighted_scalar)) %>%
-  arrange(((scaled_idw_population)))
+  arrange(((scaled_idw_population))) %>%
+  separate(col = "month_scalar", into = c("month", "scalar"), remove = FALSE) %>%
+  mutate(stt = ifelse(test = sampling_site %in% c("WF", "YB", "FLBS", "HO"), 
+                      yes = "centralized", no = "decentralized"),
+         tourist_season = ifelse(test = month %in% c("june", "july", "august"), 
+                                 yes = "In Season", no = "Out of Season")) %>%
+  select(-scalar)
+  
 
 
 write.csv(x = flathead_park_space_time,
