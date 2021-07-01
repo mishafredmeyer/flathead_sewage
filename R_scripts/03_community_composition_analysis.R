@@ -117,7 +117,7 @@ ggsave(filename = "periphyton_boxplot.png", plot = peri_boxplot,
 # 4. Multivariate Analysis ------------------------------------------------
 
 periphyton_nmds <- metaMDS(comm = (periphyton_prop[, c(3, 6, 7)]), 
-                           distance = "bray", autotransform = TRUE, k = 3)
+                           distance = "bray", autotransform = TRUE, k = 2)
 
 periphyton_nmds
 

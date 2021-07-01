@@ -324,7 +324,8 @@ write.csv(samples_formatted, "../cleaned_disaggregated_data/ppcp.csv", row.names
 
 # 5. Stoichiometry -------------------------------------------------------
 
-stoich <- read.csv("../raw_data/biofilm_stoichiometry_20171219.csv", header = TRUE)
+stoich <- read.csv("../raw_data/biofilm_stoichiometry_20171219.csv", 
+                   header = TRUE, stringsAsFactors = FALSE)
 
 stoich_cleaned <- stoich[-c(1:3),] %>%
   rename("SITE_full" = "X",
@@ -345,7 +346,11 @@ stoich_cleaned <- stoich[-c(1:3),] %>%
   select(-SITE_full) %>%
   mutate(collection_data_formatted = paste0(year(mdy(date_collected)), 0,
                                             month(mdy(date_collected)))) %>%
-  clean_names(case = "snake")
+  clean_names(case = "snake") %>%
+  mutate(stt = ifelse(test = site %in% c("WF", "YB", "FLBS", "HO"), 
+                      yes = "centralized", no = "decentralized"),
+         tourist_season = ifelse(test = month %in% c("june", "july", "august"), 
+                                 yes = "In Season", no = "Out of Season"))
 
 write.csv(stoich_cleaned, "../cleaned_disaggregated_data/stoichiometry.csv", row.names = FALSE)
 

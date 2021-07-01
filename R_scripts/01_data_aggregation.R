@@ -68,7 +68,8 @@ stoich_orig <- read.csv(file = "../cleaned_disaggregated_data/stoichiometry.csv"
                         header = TRUE)
 
 stoich_cleaned <- stoich_orig %>%
-  select(site, month, total_dry_mass_carbon_mg:phosphorus_ug, collection_data_formatted)
+  select(site, month, stt, tourist_season,
+         total_dry_mass_carbon_mg:phosphorus_ug, collection_data_formatted)
 
 write.csv(x = stoich_cleaned, 
           file = "../cleaned_data/stoichiometry.csv", 

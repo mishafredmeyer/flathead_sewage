@@ -1,34 +1,34 @@
-"site","month","total_dry_mass_carbon_mg","carbon_mg","total_dry_mass_nitrogen_mg","nitrogen_mg","total_dry_mass_phosphorus_mg","phosphorus_ug","collection_data_formatted"
-"BO","july",7,6,7,6,34,35,201707
-"FLBS","july",5,9,5,34,10,8,201707
-"SJ","july",19,11,19,31,20,5,201707
-"SL","july",11,35,11,30,33,26,201707
-"WB","july",30,10,30,32,12,19,201707
-"YB","july",6,20,6,19,27,34,201707
-"FI","july",8,7,8,7,31,17,201707
-"BD","july",15,26,15,20,8,11,201707
-"FL","august",4,33,4,33,26,24,201708
-"BD","august",23,27,23,23,17,27,201708
-"WB","august",28,19,28,10,24,21,201708
-"WF","august",31,28,31,25,25,32,201708
-"WB","august",18,31,18,28,14,15,201708
-"DA","august",27,15,27,13,3,23,201708
-"LK","august",3,5,3,5,18,14,201708
-"BO","august",26,4,26,4,27,9,201708
-"SA","august",20,34,20,24,5,6,201708
-"SJ","august",21,8,21,29,9,3,201708
-"FI","august",25,3,25,2,6,4,201708
-"BB","august",10,24,10,17,19,28,201708
-"YB","august",24,16,24,14,4,29,201708
-"FL","september",8,12,8,35,28,20,201709
-"YB","september",12,17,12,12,21,33,201709
-"WB","september",22,25,22,18,11,10,201709
-"BO","september",17,14,17,9,30,16,201709
-"BD","september",9,23,9,16,32,31,201709
-"FI","september",19,13,19,8,13,22,201709
-"SJ","september",29,32,29,27,16,12,201709
-"SA","september",8,30,8,22,23,7,201709
-"LK","september",24,18,24,11,7,13,201709
-"WF","september",16,22,16,21,15,30,201709
-"DA","september",14,21,14,15,22,25,201709
-"WS","september",13,29,13,26,29,18,201709
+"site","month","stt","tourist_season","total_dry_mass_carbon_mg","carbon_mg","total_dry_mass_nitrogen_mg","nitrogen_mg","total_dry_mass_phosphorus_mg","phosphorus_ug","collection_data_formatted"
+"BO","july","decentralized","In Season",50,1.28,50,0.072,5.03,1.99,201707
+"FLBS","july","centralized","In Season",39.4,10.3,39.4,0.809,1.914,0.555,201707
+"SJ","july","decentralized","In Season",53.1,10.9,53.1,0.586,2.087,0.477,201707
+"SL","july","decentralized","In Season",51.1,9.77,51.1,0.503,2.778,0.986,201707
+"WB","july","decentralized","In Season",59.4,10.5,59.4,0.625,1.97,0.854,201707
+"YB","july","centralized","In Season",47.6,4.29,47.6,0.316,2.239,1.88,201707
+"FI","july","decentralized","In Season",50.2,1.71,50.2,0.105,2.356,0.808,201707
+"BD","july","decentralized","In Season",52.2,5.51,52.2,0.325,1.838,0.728,201707
+"FL","august","decentralized","In Season",30.2,7.57,30.2,0.628,2.222,0.927,201708
+"BD","august","decentralized","In Season",54.2,5.97,54.2,0.364,2.069,0.999,201708
+"WB","august","decentralized","In Season",56.7,4.24,56.7,0.2,2.156,0.859,201708
+"WF","august","centralized","In Season",61,6.26,61,0.383,2.178,1.34,201708
+"WB","august","decentralized","In Season",52.7,7.28,52.7,0.429,2.002,0.789,201708
+"DA","august","decentralized","In Season",55.3,3.65,55.3,0.233,1.342,0.925,201708
+"LK","august","decentralized","In Season",19,1.03,19,0.069,2.076,0.787,201708
+"BO","august","decentralized","In Season",55.1,0.83,55.1,0.045,2.239,0.661,201708
+"SA","august","decentralized","In Season",53.4,8.63,53.4,0.369,1.737,0.536,201708
+"SJ","august","decentralized","In Season",53.9,10.1,53.9,0.44,1.866,0.385,201708
+"FI","august","decentralized","In Season",54.8,0.6,54.8,NA,1.81,0.466,201708
+"BB","august","decentralized","In Season",50.9,4.85,50.9,0.284,2.084,1.05,201708
+"YB","august","centralized","In Season",54.5,3.78,54.5,0.234,1.458,1.1,201708
+"FL","september","decentralized","Out of Season",50.2,11.9,50.2,0.819,2.275,0.857,201709
+"YB","september","centralized","Out of Season",51.2,3.92,51.2,0.225,2.1,1.4,201709
+"WB","september","decentralized","Out of Season",54,5.47,54,0.299,1.957,0.721,201709
+"BO","september","decentralized","Out of Season",52.5,3.22,52.5,0.158,2.329,0.79,201709
+"BD","september","decentralized","Out of Season",50.5,4.79,50.5,0.258,2.522,1.21,201709
+"FI","september","decentralized","Out of Season",53.1,3.03,53.1,0.151,1.995,0.867,201709
+"SJ","september","decentralized","Out of Season",58,7.54,58,0.425,2.044,0.78,201709
+"SA","september","decentralized","Out of Season",50.2,7.24,50.2,0.348,2.125,0.547,201709
+"LK","september","decentralized","Out of Season",54.5,4.01,54.5,0.207,1.829,0.785,201709
+"WF","september","centralized","Out of Season",52.3,4.65,52.3,0.346,2.016,1.11,201709
+"DA","september","decentralized","Out of Season",52,4.6,52,0.256,2.112,0.945,201709
+"WS","september","decentralized","Out of Season",51.9,7.18,51.9,0.405,2.322,0.824,201709
