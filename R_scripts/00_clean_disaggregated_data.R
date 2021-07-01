@@ -339,6 +339,13 @@ stoich_cleaned <- stoich[-c(1:3),] %>%
   select(-contains("X")) %>%
   mutate(MONTH = tolower(month(mdy(date_collected), label = TRUE, abbr = FALSE)),
          SITE = unlist(str_extract_all(SITE_full,  "(?<=\\().+?(?=\\))"))) %>%
+  pivot_longer(cols = c(total_dry_mass_carbon_mg:phosphorus_ug), 
+               names_to = "nutrient_type", 
+               values_to = "mass") %>%
+  mutate(mass = ifelse(test = grepl(pattern = "<", x = mass), 
+                                yes = as.numeric(trimws(gsub(pattern = "<", replacement = "", x = mass)))/2,
+                                no = mass)) %>%
+  pivot_wider(names_from = "nutrient_type", values_from = "mass") %>%
   mutate(across(c("total_dry_mass_carbon_mg", "carbon_mg",
                       "total_dry_mass_nitrogen_mg", "nitrogen_mg",
                       "total_dry_mass_phosphorus_mg", "phosphorus_ug"), 

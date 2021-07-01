@@ -38,20 +38,77 @@ stoich <- stoichiometry_orig %>%
 
 # 3. Create stoichiometric plots and analyses -----------------------------
 
+
+stt_labels <- c("Centralized", "Decentralized")
+names(stt_labels) <- c("centralized", "decentralized")
+
 carbon_nitrogen <- ggplot(stoich, aes(tourist_season, carbon/nitrogen)) +
-  geom_boxplot(width = 0.2, outlier.alpha = 0) +
-  geom_jitter(size = 5) +
-  facet_wrap(~stt) +
-  theme_bw()
+  geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
+  geom_jitter() +
+  facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
+  ylab("Carbon:Nitrogen") + 
+  theme_bw() + 
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 24),
+        axis.text = element_text(size = 18),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 20),
+        legend.key.height = unit(0.75, units = "in"),
+        legend.key.width = unit(0.75, units = "in"),
+        strip.text = element_text(size = 20))
+
+ggsave(filename = "carbon_nitrogen_boxplots.png", plot = carbon_nitrogen, 
+       device = "png", path = "../figures_tables", 
+       width = 8, height = 6, units = "in")
 
 carbon_phosphorus <- ggplot(stoich, aes(tourist_season, carbon/phosphorus)) +
-  geom_boxplot(width = 0.2, outlier.alpha = 0) +
-  geom_jitter(size = 5) +
-  facet_wrap(~stt) +
-  theme_bw()
+  geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
+  geom_jitter() +
+  facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
+  ylab("Carbon:Phosphorus") + 
+  theme_bw() + 
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 24),
+        axis.text = element_text(size = 18),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 20),
+        legend.key.height = unit(0.75, units = "in"),
+        legend.key.width = unit(0.75, units = "in"),
+        strip.text = element_text(size = 20))
+
+ggsave(filename = "carbon_phosphorus_boxplots.png", plot = carbon_phosphorus, 
+       device = "png", path = "../figures_tables", 
+       width = 8, height = 6, units = "in")
 
 nitrogen_phosphorus <- ggplot(stoich, aes(tourist_season, nitrogen/phosphorus)) +
-  geom_boxplot(width = 0.2, outlier.alpha = 0) +
-  geom_jitter(size = 5) +
-  facet_wrap(~stt) +
-  theme_bw()
+  geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
+  geom_jitter() +
+  facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
+  ylab("Nitrogen:Phosphorus") + 
+  theme_bw() + 
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 24),
+        axis.text = element_text(size = 18),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 20),
+        legend.key.height = unit(0.75, units = "in"),
+        legend.key.width = unit(0.75, units = "in"),
+        strip.text = element_text(size = 20))
+
+ggsave(filename = "nitrogen_phosphorus_boxplots.png", plot = nitrogen_phosphorus, 
+       device = "png", path = "../figures_tables", 
+       width = 8, height = 6, units = "in")
+
+combined_plots <- ggarrange(plotlist = list(carbon_nitrogen, carbon_phosphorus, nitrogen_phosphorus), 
+                            ncol = 1, labels = "AUTO")
+
+ggsave(filename = "combined_stoich_boxplots.png", plot = combined_plots, 
+       device = "png", path = "../figures_tables", 
+       width = 8, height = 16, units = "in")
+
+
+Anova(lm(carbon/nitrogen ~ tourist_season*stt, data = stoich), type = "II")
+
+Anova(lm(carbon/phosphorus ~ tourist_season*stt, data = stoich), type = "II")
+
+Anova(lm(nitrogen/phosphorus ~ tourist_season*stt, data = stoich), type = "II")
