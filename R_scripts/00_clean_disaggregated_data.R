@@ -740,16 +740,17 @@ locs_centroids_scaled <- locs_centroids %>%
          august_idw_pop = distance_weighted_population * park_scalars$august_scalar,
          september_idw_pop = distance_weighted_population * park_scalars$september_scalar) %>%
   select(-distance_weighted_population) %>%
-  pivot_longer(cols = c(may_idw_pop:september_idw_pop), names_to = "month", values_to = "idw_pop") %>%
+  pivot_longer(cols = c(may_idw_pop:september_idw_pop), names_to = "month", values_to = "atsidw_pop") %>%
   mutate(month = gsub("_idw_pop", "", month),
          month = tolower(month)) %>%
   mutate(stt = ifelse(test = sampling_site %in% c("WF", "YB", "FLBS", "HO"), 
                       yes = "centralized", no = "decentralized"),
          tourist_season = ifelse(test = month %in% c("june", "july", "august"), 
-                                 yes = "In Season", no = "Out of Season"))
+                                 yes = "In Season", no = "Out of Season")) %>%
+  rename("site" = "sampling_site")
 
 write.csv(x = locs_centroids_scaled, 
-          file = "../cleaned_disaggregated_data/temporally_scaled_inverse_distance_weighted_population_metrics.csv", 
+          file = "../cleaned_disaggregated_data/averaged_temporally_scaled_inverse_distance_weighted_population_metrics.csv", 
           row.names = FALSE)
 
 ## Make a map

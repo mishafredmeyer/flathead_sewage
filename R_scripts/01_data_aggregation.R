@@ -89,6 +89,8 @@ write.csv(x = fatty_acids_orig,
 
 # 7. Temporally Scaled Inverse Distance Weighted Population ---------------
 
+# First create a variant where scalars are left in their interpolated states
+
 tsidw_pop <- read.csv(file = "../cleaned_disaggregated_data/temporally_scaled_inverse_distance_weighted_population_metrics.csv",
                       header = TRUE)
 
@@ -98,6 +100,18 @@ write.csv(x = tsidw_pop,
           file = "../cleaned_data/temporally_scaled_inverse_distance_weighted_population_metrics.csv",
           row.names = FALSE)
 
+# Second create a varaint with scalars averaged for a given month
+
+tsidw_pop_average <- read.csv(file = "../cleaned_disaggregated_data/averaged_temporally_scaled_inverse_distance_weighted_population_metrics.csv", 
+                              header = TRUE)
+
+head(tsidw_pop_average)
+
+tsidw_pop_average <- tsidw_pop_average_clean
+
+write.csv(x = tsidw_pop_average_clean, 
+          file = "../cleaned_data/averaged_temporally_scaled_inverse_distance_weighted_population_metrics.csv", 
+          row.names = FALSE)
 
 # 8. Periphyton Abundance -------------------------------------------------
 
