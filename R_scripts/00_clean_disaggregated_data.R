@@ -742,7 +742,15 @@ locs_centroids_scaled <- locs_centroids %>%
   select(-distance_weighted_population) %>%
   pivot_longer(cols = c(may_idw_pop:september_idw_pop), names_to = "month", values_to = "idw_pop") %>%
   mutate(month = gsub("_idw_pop", "", month),
-         month = str_to_sentence(month))
+         month = tolower(month)) %>%
+  mutate(stt = ifelse(test = sampling_site %in% c("WF", "YB", "FLBS", "HO"), 
+                      yes = "centralized", no = "decentralized"),
+         tourist_season = ifelse(test = month %in% c("june", "july", "august"), 
+                                 yes = "In Season", no = "Out of Season"))
+
+write.csv(x = locs_centroids_scaled, 
+          file = "../cleaned_disaggregated_data/temporally_scaled_inverse_distance_weighted_population_metrics.csv", 
+          row.names = FALSE)
 
 ## Make a map
 
@@ -846,6 +854,7 @@ park_scalars <- park_data_orig %>%
                                    (September+August)/2/May, 
                                    september_scalar)) %>%
   dplyr::select(state_park, june_scalar:september_scalar)
+  
 
 flathead_parks_locs <- flathead_shapefile %>%
   filter(grepl(pattern = "State_Park", x = Name)) %>%
@@ -858,7 +867,8 @@ flathead_parks_locs <- flathead_shapefile %>%
   pivot_longer(cols = c(june_scalar:september_scalar), names_to = "month", values_to = "scalar") %>%
   mutate(month = factor(x = month, 
                         levels = c("june_scalar", "july_scalar", "august_scalar", "september_scalar"), 
-                        labels = c("June", "July", "August", "September")))
+                        labels = c("June", "July", "August", "September"))) %>%
+  
 
 zoom_map <- autoplot.OpenStreetMap(base_map_zoom) +
   geom_point(data = flathead_parks_locs, 
