@@ -715,7 +715,7 @@ park_scalars <- park_data_orig %>%
   summarize(average_scalar = mean(scalar_value)) %>%
   pivot_wider(names_from = "month", values_from = "average_scalar")
 
-park_scalars %>%
+park_scalars_plot <- park_scalars %>%
   pivot_longer(cols = c(august_scalar:september_scalar), names_to = "month", values_to = "scalar") %>%
   mutate(month = factor(x = month, 
                         levels = c("june_scalar", "july_scalar", "august_scalar", "september_scalar"),
@@ -732,6 +732,12 @@ park_scalars %>%
         axis.text.y = element_text(size = 18),
         axis.title.y = element_text(size = 20),
         plot.title = element_text(size = 24))
+
+ggsave(filename = "average_park_scalars.png", 
+       plot = park_scalars_plot, 
+       device = "png", 
+       path = "../figures_tables", 
+       width = 6, height = 4, units = "in")
 
 locs_centroids_scaled <- locs_centroids %>%
   mutate(may_idw_pop = distance_weighted_population * park_scalars$may_scalar,
