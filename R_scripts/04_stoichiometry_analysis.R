@@ -22,7 +22,6 @@ library(ggpubr)
 stoichiometry_orig <- read.csv(file = "../cleaned_data/stoichiometry.csv")
 
 
-
 # 2. Convert mass to moles ------------------------------------------------
 
 stoich <- stoichiometry_orig %>%
@@ -45,6 +44,7 @@ names(stt_labels) <- c("centralized", "decentralized")
 carbon_nitrogen <- ggplot(stoich, aes(tourist_season, carbon/nitrogen)) +
   geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
   geom_jitter() +
+  geom_hline(aes(yintercept = 119/17), size = 2, linetype = "dotted") + 
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
   ylab("Carbon:Nitrogen") + 
   theme_bw() + 
@@ -64,6 +64,7 @@ ggsave(filename = "carbon_nitrogen_boxplots.png", plot = carbon_nitrogen,
 carbon_phosphorus <- ggplot(stoich, aes(tourist_season, carbon/phosphorus)) +
   geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
   geom_jitter() +
+  geom_hline(aes(yintercept = 119), size = 2, linetype = "dotted") + 
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
   ylab("Carbon:Phosphorus") + 
   theme_bw() + 
@@ -83,6 +84,7 @@ ggsave(filename = "carbon_phosphorus_boxplots.png", plot = carbon_phosphorus,
 nitrogen_phosphorus <- ggplot(stoich, aes(tourist_season, nitrogen/phosphorus)) +
   geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
   geom_jitter() +
+  geom_hline(aes(yintercept = 17), size = 2, linetype = "dotted") + 
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
   ylab("Nitrogen:Phosphorus") + 
   theme_bw() + 
@@ -100,7 +102,8 @@ ggsave(filename = "nitrogen_phosphorus_boxplots.png", plot = nitrogen_phosphorus
        width = 8, height = 6, units = "in")
 
 combined_plots <- ggarrange(plotlist = list(carbon_nitrogen, carbon_phosphorus, nitrogen_phosphorus), 
-                            ncol = 1, labels = "AUTO")
+                            ncol = 1, labels = "AUTO",
+                            font.label = list(size = 24))
 
 ggsave(filename = "combined_stoich_boxplots.png", plot = combined_plots, 
        device = "png", path = "../figures_tables", 

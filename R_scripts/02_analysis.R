@@ -27,13 +27,13 @@ nutrients <- read.csv(file = "../cleaned_data/nutrients.csv",
 ppcp <- read.csv(file = "../cleaned_data/ppcp.csv",
                  header = TRUE)
 
-tsidw_pop <- read.csv(file = "../cleaned_data/temporally_scaled_inverse_distance_weighted_population_metrics.csv",
+tsidw_pop <- read.csv(file = "../cleaned_data/averaged_temporally_scaled_inverse_distance_weighted_population_metrics.csv",
                       header = TRUE)
 
 
 # 2. Nutrient Analysis ----------------------------------------------------
 
-nutrient_labels <- c("Ammonia as Nitrogen", "Nitrate-Nitrate", "Total Nitrogen", "SRP",  "Total Phosphorus")
+nutrient_labels <- c("Ammonia as Nitrogen", "Nitrate-Nitrite", "Total Nitrogen", "SRP",  "Total Phosphorus")
 names(nutrient_labels) <- c("nh3_n", "no3_no2", "total_n", "srp", "total_p")
 
 nutrient_plot <- nutrients %>%
@@ -100,8 +100,8 @@ stt_labels <- c("Centralized", "Decentralized")
 names(stt_labels) <- c("centralized", "decentralized")
 
 afdm_plot <- ggplot(afdm, aes(tourist_season, afdm)) +
-  geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
-  geom_jitter() +
+  geom_boxplot(alpha = 0.33, outlier.alpha = 0, width = 0.2) +
+  geom_jitter(width = 0.25) +
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
   ylab("Ash Free Dry Mass (mg)") + 
   theme_bw() + 
@@ -179,6 +179,15 @@ branched_odd_chain_fatty_acids_lm <- lm(total_branched_odd ~ stt * tourist_seaso
 Anova(branched_odd_chain_fatty_acids_lm, type = "II")
 
 
+Anova(lm(total_branched_odd ~  tourist_season,
+         data = branched_odd_chain_fatty_acids %>%
+           filter(stt == "Decentralized")))
+
+Anova(lm(total_branched_odd ~  tourist_season,
+         data = branched_odd_chain_fatty_acids %>%
+           filter(stt == "Centralized")))
+
+
 # 4. PPCPs ----------------------------------------------------------------
 
 ppcp_reduced <- ppcp %>%
@@ -240,7 +249,7 @@ Anova(lm(log10(mean_conc) ~ tourist_season,
 # 5. TSIDW ----------------------------------------------------------------
 
 tsidw_plot <- ggplot(tsidw_pop, 
-                    aes(tourist_season, (log10(scaled_idw_population)))) +
+                    aes(tourist_season, (log10(atsidw_pop)))) +
   geom_boxplot(alpha = 0.33, outlier.alpha = 0, width = 0.2) +
   geom_jitter() +
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
@@ -261,20 +270,20 @@ ggsave(filename = "tsidw_population_boxplots.png", plot = tsidw_plot,
 
 ## ANOVA with stt and tourist season
 
-Anova(lm(log10(scaled_idw_population) ~ stt * tourist_season, 
-         data = tsidw_pop),
+Anova(lm(log10(atsidw_pop) ~ stt * tourist_season, 
+         data = locs_centroids_scaled),
       type = "II")
 
 ## ANOVA just with Decentralized treatment
 
-Anova(lm(log10(scaled_idw_population) ~ tourist_season, 
+Anova(lm(log10(atsidw_pop) ~ tourist_season, 
          data = tsidw_pop %>%
            filter(stt == "decentralized")),
       type = "II")
 
 ## ANOVA just with Centralized treatment
 
-Anova(lm(log10(scaled_idw_population) ~ tourist_season, 
+Anova(lm(log10(atsidw_pop) ~ tourist_season, 
          data = tsidw_pop %>%
            filter(stt == "centralized")),
       type = "II")
@@ -284,7 +293,8 @@ Anova(lm(log10(scaled_idw_population) ~ tourist_season,
 
 arranged_plots <- ggarrange(plotlist = list(tsidw_plot, ppcp_plot,
                                          branched_odd_chain_fatty_acids_plot, afdm_plot), 
-                            ncol = 2, nrow = 2, labels = "AUTO")
+                            ncol = 2, nrow = 2, labels = "AUTO",
+                            font.label = list(size = 24))
 
 ggsave(filename = "combined_boxplots.png", plot = arranged_plots, 
        device = "png", path = "../figures_tables", 

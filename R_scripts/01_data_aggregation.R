@@ -107,7 +107,7 @@ tsidw_pop_average <- read.csv(file = "../cleaned_disaggregated_data/averaged_tem
 
 head(tsidw_pop_average)
 
-tsidw_pop_average <- tsidw_pop_average_clean
+tsidw_pop_average_clean <- tsidw_pop_average
 
 write.csv(x = tsidw_pop_average_clean, 
           file = "../cleaned_data/averaged_temporally_scaled_inverse_distance_weighted_population_metrics.csv", 

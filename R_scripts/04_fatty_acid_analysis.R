@@ -48,7 +48,7 @@ fatty_acid_prop <- fatty_acids_orig %>%
   group_by(site, month) %>%
   mutate(total_fatty_acids = sum(concentration, na.rm = TRUE),
          proportion = concentration/total_fatty_acids) %>%
-  dplyr::select(-concentration, -total_fatty_acids, -type) %>%
+  dplyr::select(-concentration, -total_fatty_acids) %>%
   pivot_wider(names_from = "fatty_acid", values_from = "proportion")
 
 mean <- as.vector(sapply(fatty_acid_prop[,5:33], mean))
@@ -115,6 +115,16 @@ fatty_acid_type_data <- fatty_acid_prop %>%
 
 Anova(lm(PUFA ~ tourist_season*stt, 
          data = fatty_acid_type_data), 
+      type = "II")
+
+Anova(lm(PUFA ~ tourist_season, 
+         data = fatty_acid_type_data %>%
+           filter(stt == "Decentralized")), 
+      type = "II")
+
+Anova(lm(PUFA ~ tourist_season, 
+         data = fatty_acid_type_data %>%
+           filter(stt == "Centralized")), 
       type = "II")
 
 efa_boxplot <- fatty_acid_prop %>%
@@ -277,3 +287,13 @@ arranged_plots <- ggarrange(plotlist = list(nmds_stt_boxplot, nmds_tourist_seaso
 ggsave(filename = "combined_efa_nmds_boxplot.png", plot = arranged_plots, 
        device = "png", path = "../figures_tables", 
        width = 10, height = 12, units = "in")
+
+
+arranged_plots <- ggarrange(efa_nmds_plot, 
+                            ggarrange(plotlist = list(nmds_stt_boxplot, nmds_tourist_season_boxplot),
+                                      ncol = 1, labels = c("B", "C"), font.label = list(size = 24)),
+                            ncol = 2, widths = c(2,1), labels = c("A"), font.label = list(size = 24))
+
+ggsave(filename = "combined_efa_nmds_boxplot.png", plot = arranged_plots, 
+       device = "png", path = "../figures_tables", 
+       width = 20, height = 10, units = "in")

@@ -222,9 +222,11 @@ ggsave(filename = "nmds_tourist_season_boxplot.png", plot = nmds_tourist_season_
        device = "png", path = "../figures_tables", 
        width = 10, height = 8, units = "in")
 
-arranged_plots <- ggarrange(plotlist = list(nmds_stt_boxplot, nmds_tourist_season_boxplot),
-                            ncol = 1, labels = "AUTO")
+arranged_plots <- ggarrange(periphyton_nmds_plot, 
+                            ggarrange(plotlist = list(nmds_stt_boxplot, nmds_tourist_season_boxplot),
+                            ncol = 1, labels = c("B", "C"), font.label = list(size = 24)),
+                            ncol = 2, widths = c(2,1), labels = c("A"), font.label = list(size = 24))
 
 ggsave(filename = "combined_nmds_boxplot.png", plot = arranged_plots, 
        device = "png", path = "../figures_tables", 
-       width = 10, height = 12, units = "in")
+       width = 20, height = 10, units = "in")
