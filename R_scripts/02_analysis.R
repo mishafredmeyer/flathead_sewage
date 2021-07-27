@@ -40,7 +40,7 @@ nutrient_plot <- nutrients %>%
   pivot_longer(cols = c(nh3_n:total_p), names_to = "nutrient_type", values_to = "concentration") %>%
   filter(!site %in% c("DU", "HO")) %>%
   ggplot(aes(tourist_season, concentration, fill = stt, color = stt)) +
-  geom_boxplot(alpha = 0.7, width = 0.33, outlier.alpha = 0) +
+  geom_boxplot(alpha = 0.33, width = 0.33, outlier.alpha = 0) +
   geom_jitter() +
   scale_y_log10() +
   ylab(expression(paste("Concentration (\u03BCg/L- N or P)"))) +
