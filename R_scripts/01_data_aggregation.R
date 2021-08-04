@@ -41,12 +41,7 @@ write.csv(x = afdm_clean,
 nutrients_orig <- read.csv("../cleaned_disaggregated_data/nutrients.csv", header = TRUE)
 
 nutrients_cleaned <- nutrients_orig %>%
-  select(-collection_date) %>%
-  pivot_longer(cols = c(nh3_n:total_p), names_to = "nutrient_type", values_to = "concentration") %>%
-  mutate(tourist_season = ifelse(month %in% c("june", "july", "august"), "In Season", 
-                                 "Out of Season"),
-         stt = ifelse(site %in% c("HO", "FLBS", "WF", "WB"), "Centralized", "Decentralized")) %>%
-  pivot_wider(names_from = "nutrient_type", values_from = "concentration")
+  select(-collection_date) 
   
 write.csv(x = nutrients_cleaned, 
           file = "../cleaned_data/nutrients.csv", 

@@ -39,10 +39,15 @@ names(nutrient_labels) <- c("nh3_n", "no3_no2", "total_n", "srp", "total_p")
 nutrient_plot <- nutrients %>%
   pivot_longer(cols = c(nh3_n:total_p), names_to = "nutrient_type", values_to = "concentration") %>%
   filter(!site %in% c("DU", "HO")) %>%
-  ggplot(aes(tourist_season, concentration, fill = stt, color = stt)) +
-  geom_boxplot(alpha = 0.33, width = 0.33, outlier.alpha = 0) +
-  geom_jitter() +
-  scale_y_log10() +
+  group_by(tourist_season, stt, site, nutrient_type) %>%
+  summarize(mean_concentration = mean(concentration)) %>%
+  ungroup() %>%
+  mutate(nutrient_type = factor(nutrient_type, 
+                                levels = c("nh3_n", "no3_no2", "total_n",
+                                           "srp", "total_p"))) %>%
+  ggplot(aes(tourist_season, mean_concentration, fill = stt, color = stt)) +
+  geom_boxplot(alpha = 0.33, width = 0.25, outlier.alpha = 0) +
+  geom_jitter(width = 0.3) +
   ylab(expression(paste("Concentration (\u03BCg/L- N or P)"))) +
   scale_fill_manual(values = plasma(30)[c(5, 19)], name = "STT") +
   scale_color_manual(values = plasma(30)[c(5, 19)], name = "STT") +
@@ -62,36 +67,42 @@ ggsave(filename = "nutrient_boxplots.png", plot = nutrient_plot,
        width = 15, height = 7, units = "in")
 
 
+nutrients_formatted <- nutrients %>%
+  pivot_longer(cols = c(nh3_n:total_p), names_to = "nutrient_type", values_to = "concentration") %>%
+  filter(!site %in% c("DU", "HO")) %>%
+  group_by(tourist_season, stt, site, nutrient_type) %>%
+  summarize(mean_concentration = mean(concentration)) %>%
+  pivot_wider(names_from = "nutrient_type", values_from = "mean_concentration")
+
 # Ammonium Model
 nh3_lm <- lm(nh3_n ~ stt*tourist_season, 
-              data = nutrients %>% filter(!site %in% c("DU", "HO")))
+              data = nutrients_formatted %>% filter(!site %in% c("DU", "HO")))
 
 Anova(nh3_lm, type = "II")
 
 # Nitrate/Nitrite Model
 no3_no2_lm <- lm(no3_no2 ~ stt*tourist_season, 
-             data = nutrients %>% filter(!site %in% c("DU", "HO")))
+             data = nutrients_formatted %>% filter(!site %in% c("DU", "HO")))
 
 Anova(no3_no2_lm, type = "II")
 
 # SRP
 srp_lm <- lm(srp ~ stt*tourist_season, 
-             data = nutrients %>% filter(!site %in% c("DU", "HO")))
+             data = nutrients_formatted %>% filter(!site %in% c("DU", "HO")))
 
 Anova(srp_lm, type = "II")
 
 # Total Nitrogen
 tn_lm <- lm(total_n ~ stt*tourist_season, 
-             data = nutrients %>% filter(!site %in% c("DU", "HO")))
+             data = nutrients_formatted %>% filter(!site %in% c("DU", "HO")))
 
 Anova(tn_lm, type = "II")
 
 # Total Phosphorus
 tp_lm <- lm(total_p ~ stt*tourist_season, 
-            data = nutrients %>% filter(!site %in% c("DU", "HO")))
+            data = nutrients_formatted %>% filter(!site %in% c("DU", "HO")))
 
 Anova(tp_lm, type = "II")
-
 
 
 # 2. Ash Free Dry Mass ----------------------------------------------------
@@ -99,7 +110,11 @@ Anova(tp_lm, type = "II")
 stt_labels <- c("Centralized", "Decentralized")
 names(stt_labels) <- c("centralized", "decentralized")
 
-afdm_plot <- ggplot(afdm, aes(tourist_season, afdm)) +
+afdm_mean <- afdm %>%
+  group_by(tourist_season, stt, site) %>%
+  summarize(mean_afdm = mean(afdm))
+
+afdm_plot <- ggplot(afdm_mean, aes(tourist_season, mean_afdm)) +
   geom_boxplot(alpha = 0.33, outlier.alpha = 0, width = 0.2) +
   geom_jitter(width = 0.25) +
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
@@ -118,11 +133,20 @@ ggsave(filename = "afdm_boxplots.png", plot = afdm_plot,
        device = "png", path = "../figures_tables", 
        width = 8, height = 6, units = "in")
 
-afdm_lm <- lm(afdm ~ stt*tourist_season, 
-              data = afdm)
+afdm_lm <- lm(mean_afdm ~ stt*tourist_season, 
+              data = afdm_mean)
 
 Anova(afdm_lm, type = "II")
 
+afdm_lm <- lm(mean_afdm ~ tourist_season, 
+              data = afdm_mean %>% filter(stt == "decentralized"))
+
+Anova(afdm_lm, type = "II")
+
+afdm_lm <- lm(mean_afdm ~ tourist_season, 
+              data = afdm_mean %>% filter(stt == "centralized"))
+
+Anova(afdm_lm, type = "II")
 
 # 3. Branched and Odd Chain Fatty Acids -----------------------------------
 
@@ -138,7 +162,10 @@ branched_odd_chain_fatty_acids_plot <- fatty_acids %>%
   ungroup() %>%
   group_by(stt, tourist_season, site, month) %>%
   summarize(total_branched_odd = rowSums(across(.cols = iso_c15_0:c17_0))) %>%
-  ggplot(aes(x = tourist_season, y = total_branched_odd)) +
+  ungroup() %>%
+  group_by(tourist_season, stt, site) %>%
+  summarize(mean_total_branched_odd = mean(total_branched_odd)) %>%
+  ggplot(aes(x = tourist_season, y = mean_total_branched_odd)) +
   geom_boxplot(alpha = 0.33, width = 0.2, outlier.alpha = 0) +
   xlab("")+
   ylab("Odd-chain + Branched Fatty Acids") +
@@ -154,7 +181,8 @@ branched_odd_chain_fatty_acids_plot <- fatty_acids %>%
         legend.key.width = unit(0.33, "in"))
 
 
-ggsave(filename = "branched_odd_chain_fatty_acid_boxplots.png", plot = branched_odd_chain_fatty_acids_plot, 
+ggsave(filename = "branched_odd_chain_fatty_acid_boxplots.png", 
+       plot = branched_odd_chain_fatty_acids_plot, 
        device = "png", path = "../figures_tables", 
        width = 8, height = 6, units = "in")
 
@@ -170,20 +198,23 @@ branched_odd_chain_fatty_acids <- fatty_acids %>%
   select(site, month, stt, tourist_season, contains("15"), contains("17")) %>%
   ungroup() %>%
   group_by(stt, tourist_season, site, month) %>%
-  summarize(total_branched_odd = rowSums(across(.cols = iso_c15_0:c17_0)))
+  summarize(total_branched_odd = rowSums(across(.cols = iso_c15_0:c17_0))) %>%
+  ungroup() %>%
+  group_by(tourist_season, stt, site) %>%
+  summarize(mean_total_branched_odd = mean(total_branched_odd))
 
 
-branched_odd_chain_fatty_acids_lm <- lm(total_branched_odd ~ stt * tourist_season,
+branched_odd_chain_fatty_acids_lm <- lm(mean_total_branched_odd ~ stt * tourist_season,
                                         data = branched_odd_chain_fatty_acids)
 
 Anova(branched_odd_chain_fatty_acids_lm, type = "II")
 
 
-Anova(lm(total_branched_odd ~  tourist_season,
+Anova(lm(mean_total_branched_odd ~ tourist_season,
          data = branched_odd_chain_fatty_acids %>%
            filter(stt == "Decentralized")))
 
-Anova(lm(total_branched_odd ~  tourist_season,
+Anova(lm(mean_total_branched_odd ~ tourist_season,
          data = branched_odd_chain_fatty_acids %>%
            filter(stt == "Centralized")))
 
@@ -201,14 +232,14 @@ ppcp_reduced <- ppcp %>%
   group_by(tourist_season, stt, site, peri_sampling, sampling_event) %>%
   summarize(total_concentration = sum(mean_conc, na.rm = TRUE)) %>%
   ungroup() %>%
-  group_by(tourist_season, stt, site, peri_sampling) %>%
+  group_by(tourist_season, stt, site) %>%
   summarize(mean_conc = mean(total_concentration, na.rm = TRUE)) 
 
   
 ppcp_plot <- ggplot(ppcp_reduced, 
        aes(tourist_season, (log10(mean_conc)))) +
   geom_boxplot(alpha = 0.33, outlier.alpha = 0, width = 0.2) +
-  geom_jitter() +
+  geom_jitter(width = 0.3) +
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
   ylab("log10([Total PPCP])") + 
   theme_bw() + 
@@ -248,8 +279,12 @@ Anova(lm(log10(mean_conc) ~ tourist_season,
 
 # 5. TSIDW ----------------------------------------------------------------
 
-tsidw_plot <- ggplot(tsidw_pop, 
-                    aes(tourist_season, (log10(atsidw_pop)))) +
+tsidw_formatted <- tsidw_pop %>%
+  group_by(tourist_season, stt, site) %>%
+  summarize(mean_tsidw_pop = mean(atsidw_pop))
+
+tsidw_plot <- ggplot(tsidw_formatted, 
+                    aes(tourist_season, (log10(mean_tsidw_pop)))) +
   geom_boxplot(alpha = 0.33, outlier.alpha = 0, width = 0.2) +
   geom_jitter() +
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
@@ -270,21 +305,21 @@ ggsave(filename = "tsidw_population_boxplots.png", plot = tsidw_plot,
 
 ## ANOVA with stt and tourist season
 
-Anova(lm(log10(atsidw_pop) ~ stt * tourist_season, 
-         data = locs_centroids_scaled),
+Anova(lm(log10(mean_tsidw_pop) ~ stt * tourist_season, 
+         data = tsidw_formatted),
       type = "II")
 
 ## ANOVA just with Decentralized treatment
 
-Anova(lm(log10(atsidw_pop) ~ tourist_season, 
-         data = tsidw_pop %>%
+Anova(lm(log10(mean_tsidw_pop) ~ tourist_season, 
+         data = tsidw_formatted %>%
            filter(stt == "decentralized")),
       type = "II")
 
 ## ANOVA just with Centralized treatment
 
-Anova(lm(log10(atsidw_pop) ~ tourist_season, 
-         data = tsidw_pop %>%
+Anova(lm(log10(mean_tsidw_pop) ~ tourist_season, 
+         data = tsidw_formatted %>%
            filter(stt == "centralized")),
       type = "II")
 

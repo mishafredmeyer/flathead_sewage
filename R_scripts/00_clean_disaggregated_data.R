@@ -58,7 +58,8 @@ write.csv(x = afdm_clean,
 
 # 3. Nutrients ------------------------------------------------------------
 
-nutrients <- read.csv("../raw_data/nutrients.csv", header = TRUE)
+nutrients <- read.csv("../raw_data/Meyer_2017_orig_nutrients.csv", header = TRUE,
+                      stringsAsFactors = FALSE)
 
 nutrients_cleaned <- nutrients[-c(1:2) , ] %>%
   clean_names() %>%
@@ -87,11 +88,15 @@ nutrients_cleaned <- nutrients[-c(1:2) , ] %>%
          site = ifelse(site == "Yellow Bay", "YB", site),
          site = ifelse(site == "Holt", "HO", site),
          site = ifelse(site == "Ducharme", "DU", site),
+         stt = ifelse(test = site %in% c("WF", "YB", "FLBS", "HO"), 
+                      yes = "centralized", no = "decentralized"),
          month = month(mdy(collection_date), label = TRUE, abbr = FALSE),
          month = tolower(as.character(month)),
          collection_data_formatted = paste0(year(mdy(collection_date)), 0,
                                             month(mdy(collection_date)),
-                                            day(mdy(collection_date))))
+                                            day(mdy(collection_date))),
+         tourist_season = ifelse(test = month %in% c("june", "july", "august"), 
+                                 yes = "In Season", no = "Out of Season"))
 
 write.csv(x = nutrients_cleaned, 
           file = "../cleaned_disaggregated_data/nutrients.csv", 

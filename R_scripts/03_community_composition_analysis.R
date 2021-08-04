@@ -17,6 +17,8 @@ library(viridis)
 library(vegan)
 library(car)
 library(ggpubr)
+library(ape)
+library(janitor)
 
 periphyton_orig <- read.csv(file = "../cleaned_data/periphyton_abundance.csv",
                             header = TRUE)
@@ -121,9 +123,11 @@ periphyton_nmds <- metaMDS(comm = (periphyton_prop[, c(3, 6, 7)]),
 
 periphyton_nmds
 
-adonis2(formula = periphyton_prop[, c(3, 6, 7)] ~ stt+tourist_season, 
-        data = periphyton_prop, method = "bray", by = "margin", 
-        sqrt.dist = TRUE)
+adonis2(formula = (periphyton_prop[, c(3, 6, 7)]) ~ stt+tourist_season, 
+        data = periphyton_prop, 
+        method = "bray", by = "margin", 
+        sqrt.dist = TRUE, 
+        permutations = 9999)
 
 # Pull scores from NMDS and add site data
 data_scores <- as.data.frame(scores(x = periphyton_nmds))
@@ -154,7 +158,7 @@ periphyton_nmds_plot <- ggplot() +
   geom_text_repel(data = species_scores, 
                   aes(x = NMDS1, y = NMDS2, label = species), 
                   size = 9, parse = TRUE) + 
-  annotate("label", x = -0.25, y = -0.3, size = 10,
+  annotate("label", x = -0.25, y = -0.2, size = 10,
            label = paste("Stress: ", round(periphyton_nmds$stress, digits = 3))) +
   guides(fill = guide_legend(override.aes = list(size=10,
                                                  color = plasma(30)[c(5, 19)])),
@@ -170,10 +174,100 @@ ggsave(filename = "periphyton_nmds.png", plot = periphyton_nmds_plot,
        device = "png", path = "../figures_tables", 
        width = 16, height = 12, units = "in")
 
-nmds_stt_boxplot <- data_scores %>%
-  select(NMDS1, NMDS2, stt, tourist_season) %>%
-  pivot_longer(cols = c(NMDS1, NMDS2), names_to = "NMDS", values_to = "scores") %>%
-  ggplot(aes(NMDS, scores, fill = stt)) +
+## Now try with Principal Coordinate Analysis
+
+periphyton_pcoa <- pcoa(vegdist(x = periphyton_prop[, c(3, 6, 7)], method = "bray"))
+
+diag_dir <- diag(c(1,1))
+
+periphyton_pcoa$vectors[,c(1,2)] <- periphyton_pcoa$vectors[,c(1,2)] %*% diag_dir
+
+eigenvalues_periphyton <- periphyton_pcoa$vectors[,c(1,2)] %>%
+  data.frame() %>%
+  clean_names() %>%
+  cbind(., periphyton_prop[, c(8,9)])
+
+species_scores_periphyton <- periphyton_pcoa$vectors %>%
+  data.frame() %>%
+  clean_names() %>%
+  cbind(., periphyton_prop[, c(3,6,7)]) %>%
+  mutate(cyano_1 = axis_1 * cyanobacteria,
+         cyano_2 = axis_2 * cyanobacteria,
+         diatom_1 = axis_1 * diatom,
+         diatom_2 = axis_2 * diatom,
+         chloro_1 = axis_1 * chlorophyta,
+         chloro_2 = axis_2 * chlorophyta) %>%
+  select(cyano_1:chloro_2) %>%
+  pivot_longer(cols = c(cyano_1:chloro_2), 
+               names_to = "weighted_axis_name", 
+               values_to = "weighted_axis_value") %>%
+  group_by(weighted_axis_name) %>%
+  summarize(mean_axis_value = mean(weighted_axis_value)) %>%
+  separate(col = weighted_axis_name, into = c("taxon", "axis"), remove = TRUE) %>%
+  mutate(axis = paste("axis_", axis, sep = "")) %>%
+  pivot_wider(names_from = "axis", values_from = "mean_axis_value") %>%
+  mutate(axis_1 = axis_1 * sqrt(periphyton_pcoa$values[1,2]),
+         axis_2 = axis_2 * sqrt(periphyton_pcoa$values[2,2]))
+
+n <- nrow(periphyton_prop)
+standardize_points <- scale(eigenvalues_periphyton[, c(1:2)], center = TRUE, scale = TRUE)
+covariance_matrix <- cov(periphyton_prop[,c(3,6,7)], standardize_points)
+species_scores <- covariance_matrix %*% diag((periphyton_pcoa$values$Eigenvalues[c(1:2)]/(n-1))^(-0.5))
+colnames(species_scores) <- colnames(periphyton_pcoa$vectors[,c(1:2)])
+
+species_scores_formatted <- species_scores %>%
+  data.frame() %>%
+  rename("axis_1" = "Axis.1",
+         "axis_2" = "Axis.2") %>%
+  mutate(axis_2 = axis_2 * max(abs(eigenvalues_periphyton$axis_2)),
+         axis_1 = axis_1 * max(abs(eigenvalues_periphyton$axis_1))) %>%
+  rownames_to_column(var = "taxon")
+
+pcoa_biplot <- ggplot() +
+  geom_point(data = eigenvalues_periphyton,
+             aes(x = axis_1, y = axis_2, 
+                 fill = stt, shape = tourist_season), 
+             size = 10, stroke = 2, color = "grey60", alpha = 0.8) +
+  scale_shape_manual(values = c(21, 23), name = "Tourist Season") +
+  scale_fill_manual(values = plasma(30)[c(5, 19)], 
+                    name = "STT", labels = c("Centralized", "Decentralized")) +
+  geom_text_repel(data =  species_scores_formatted, 
+                  aes(x = axis_1, y = axis_2, label = taxon), 
+                  size = 9, parse = TRUE) + 
+  xlab(paste("PCo 1 (", round(periphyton_pcoa$values[1,2]*100, 2), "% of Variance)", sep = "")) +
+  ylab(paste("PCo 2 (", round(periphyton_pcoa$values[2,2]*100, 2), "% of Variance)", sep = "")) +
+  #annotate("label", x = -0.25, y = -0.3, size = 10,
+  #         label = paste("Stress: ", round(periphyton_nmds$stress, digits = 3))) +
+  guides(fill = guide_legend(override.aes = list(size=10,
+                                                 color = plasma(30)[c(5, 19)])),
+         shape = guide_legend(override.aes = list(size=10))) + 
+  theme_minimal() +
+  theme(legend.position = "right",
+        legend.key=element_blank(),
+        text = element_text(size = 24))
+
+pcoa_biplot
+
+manova_model <- manova(as.matrix(periphyton_prop[, c(3, 6, 7)]) ~ periphyton_prop$stt * periphyton_prop$tourist_season)
+
+summary(manova_model)
+
+library(MVN)
+
+mvn(data = as.matrix(periphyton_prop[, c(3, 6, 7)]), 
+    mvnTest = "mardia", multivariatePlot = "qq")
+
+Anova(lm(axis_2 ~ stt*tourist_season, 
+         data = eigenvalues_periphyton), type = "II")
+
+Anova(lm(axis_1 ~ stt*tourist_season, 
+         data = eigenvalues_periphyton), type = "II")
+
+pcoa_stt_boxplot <- eigenvalues_periphyton %>%
+  select(axis_1, axis_2, stt, tourist_season) %>%
+  pivot_longer(cols = c(axis_1, axis_2), names_to = "PCo", values_to = "scores") %>%
+  mutate(PCo = gsub(pattern = "axis_", replacement = "PCo ", x = PCo)) %>%
+  ggplot(aes(PCo, scores, fill = stt)) +
   geom_boxplot(alpha = 0.33, width = 0.2) +
   geom_jitter(aes(color = stt), size = 2, width = 0.25) +
   scale_color_manual(values = plasma(30)[c(5, 19)], name = "STT", labels = c("Centralized", "Decentralized")) +
@@ -189,10 +283,11 @@ nmds_stt_boxplot <- data_scores %>%
         legend.key.width = unit(0.33, "in"),
         legend.title = element_text(size = 20))
 
-nmds_tourist_season_boxplot <- data_scores %>%
-  select(NMDS1, NMDS2, stt, tourist_season) %>%
-  pivot_longer(cols = c(NMDS1, NMDS2), names_to = "NMDS", values_to = "scores") %>%
-  ggplot(aes(NMDS, scores, fill = tourist_season)) +
+pcoa_tourist_season_boxplot <- eigenvalues_periphyton %>%
+  select(axis_1, axis_2, stt, tourist_season) %>%
+  pivot_longer(cols = c(axis_1, axis_2), names_to = "PCo", values_to = "scores") %>%
+  mutate(PCo = gsub(pattern = "axis_", replacement = "PCo ", x = PCo)) %>%
+  ggplot(aes(PCo, scores, fill = tourist_season)) +
   geom_boxplot(alpha = 0.33, width = 0.2) +
   geom_jitter(aes(color = tourist_season), size = 2, width = 0.25) +
   scale_color_manual(values = viridis(30)[c(5, 19)], name = "Tourist Season") +
@@ -208,25 +303,20 @@ nmds_tourist_season_boxplot <- data_scores %>%
         legend.key.width = unit(0.33, "in"),
         legend.title = element_text(size = 20))
 
-Anova(lm(NMDS2 ~ stt*tourist_season, 
-         data = data_scores), type = "II")
 
-Anova(lm(NMDS1 ~ stt*tourist_season, 
-         data = data_scores), type = "II")
-
-ggsave(filename = "nmds_stt_boxplot.png", plot = nmds_stt_boxplot, 
+ggsave(filename = "pcoa_stt_boxplot.png", plot = pcoa_stt_boxplot, 
        device = "png", path = "../figures_tables", 
        width = 10, height = 8, units = "in")
 
-ggsave(filename = "nmds_tourist_season_boxplot.png", plot = nmds_tourist_season_boxplot, 
+ggsave(filename = "pcoa_tourist_season_boxplot.png", plot = pcoa_tourist_season_boxplot, 
        device = "png", path = "../figures_tables", 
        width = 10, height = 8, units = "in")
 
-arranged_plots <- ggarrange(periphyton_nmds_plot, 
-                            ggarrange(plotlist = list(nmds_stt_boxplot, nmds_tourist_season_boxplot),
+arranged_plots <- ggarrange(pcoa_biplot, 
+                            ggarrange(plotlist = list(pcoa_stt_boxplot, pcoa_tourist_season_boxplot),
                             ncol = 1, labels = c("B", "C"), font.label = list(size = 24)),
-                            ncol = 2, widths = c(2,1), labels = c("A"), font.label = list(size = 24))
+                            ncol = 2, widths = c(1.65,1), labels = c("A"), font.label = list(size = 24))
 
-ggsave(filename = "combined_nmds_boxplot.png", plot = arranged_plots, 
+ggsave(filename = "combined_pcoa_boxplot.png", plot = arranged_plots, 
        device = "png", path = "../figures_tables", 
        width = 20, height = 10, units = "in")
