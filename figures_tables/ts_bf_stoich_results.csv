@@ -1,0 +1,7 @@
+"tourist_season","term","variable","group1","group2","df","statistic","p","p.adj","p.adj.signif"
+"In Season","stt","carbon/nitrogen","centralized","decentralized",29,-2.09372423824451,0.0451393460771227,0.0451393460771227,"*"
+"Out of Season","stt","carbon/nitrogen","centralized","decentralized",29,-1.22354918861519,0.230971312036118,0.230971312036118,"ns"
+"In Season","stt","carbon/phosphorus","centralized","decentralized",29,-0.0845203794491713,0.933223490002102,0.933223490002102,"ns"
+"Out of Season","stt","carbon/phosphorus","centralized","decentralized",29,-0.83774778993192,0.40902394722693,0.40902394722693,"ns"
+"In Season","stt","nitrogen/phosphorus","centralized","decentralized",29,0.578140346638964,0.567632151828605,0.567632151828605,"ns"
+"Out of Season","stt","nitrogen/phosphorus","centralized","decentralized",29,-0.620304882333524,0.53990148888545,0.53990148888545,"ns"

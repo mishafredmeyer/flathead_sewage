@@ -1,0 +1,7 @@
+"stt","term","variable","group1","group2","df","statistic","p","p.adj","p.adj.signif"
+"Centralized","tourist_season","asin(sqrt(PUFA))","In Season","Out of Season",29,-1.44545616714737,0.159050453793689,0.159050453793689,"ns"
+"Decentralized","tourist_season","asin(sqrt(PUFA))","In Season","Out of Season",29,-3.5548462670981,0.00131936305827624,0.00131936305827624,"**"
+"Centralized","tourist_season","asin(sqrt(SAFA))","In Season","Out of Season",29,1.13995121448608,0.2636346348142,0.2636346348142,"ns"
+"Decentralized","tourist_season","asin(sqrt(SAFA))","In Season","Out of Season",29,4.56478431061032,8.48807699402819e-05,8.48807699402819e-05,"****"
+"Centralized","tourist_season","asin(sqrt(MUFA))","In Season","Out of Season",29,0.932422515610458,0.358816723502527,0.358816723502527,"ns"
+"Decentralized","tourist_season","asin(sqrt(MUFA))","In Season","Out of Season",29,0.62825163678068,0.534756037184826,0.534756037184826,"ns"

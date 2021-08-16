@@ -108,6 +108,7 @@ peri_boxplot <- periphyton_prop %>%
         axis.title.y = element_text(size = 18),
         strip.text = element_text(size = 20),
         legend.text = element_text(size = 18),
+        legend.title = element_text(size = 20),
         legend.key.height = unit(0.75, "in"),
         legend.key.width = unit(0.33, "in"))
 
@@ -123,11 +124,13 @@ periphyton_nmds <- metaMDS(comm = (periphyton_prop[, c(3, 6, 7)]),
 
 periphyton_nmds
 
-adonis2(formula = (periphyton_prop[, c(3, 6, 7)]) ~ stt+tourist_season, 
-        data = periphyton_prop, 
-        method = "bray", by = "margin", 
-        sqrt.dist = TRUE, 
-        permutations = 9999)
+permanova_results <- adonis2(formula = (periphyton_prop[, c(3, 6, 7)]) ~ stt+tourist_season, 
+                             data = periphyton_prop, 
+                             method = "bray", by = "margin", 
+                             sqrt.dist = TRUE, 
+                             permutations = 4999)
+
+write.csv(x = permanova_results, file = "../figures_tables/periphyton_permanova.csv")
 
 # Pull scores from NMDS and add site data
 data_scores <- as.data.frame(scores(x = periphyton_nmds))
@@ -152,7 +155,7 @@ periphyton_nmds_plot <- ggplot() +
              aes(x = NMDS1, y = NMDS2, 
                  fill = stt, shape = tourist_season), 
              size = 10, stroke = 2, color = "grey60", alpha = 0.8) +
-  scale_shape_manual(values = c(21, 23), name = "Tourist Season") +
+  scale_shape_manual(values = c(21, 23), name = "Tourism Season") +
   scale_fill_manual(values = plasma(30)[c(5, 19)], 
                     name = "STT", labels = c("Centralized", "Decentralized")) +
   geom_text_repel(data = species_scores, 
@@ -248,7 +251,7 @@ pcoa_biplot <- ggplot() +
 
 pcoa_biplot
 
-manova_model <- manova(as.matrix(periphyton_prop[, c(3, 6, 7)]) ~ periphyton_prop$stt * periphyton_prop$tourist_season)
+manova_model <- manova(as.matrix(periphyton_prop[, c(3, 6, 7)]) ~ periphyton_prop$tourist_season *  periphyton_prop$stt)
 
 summary(manova_model)
 

@@ -8,6 +8,118 @@
 ## Michael F. Meyer (michael.f.meyer@wsu.edu). 
 
 
+# 0. Define a function for permutational analysis -------------------------
+
+
+permute_data_analytics <- function(data, metric, full_model, metric_plot_title, transform_response){
+  for(i in 1:5000){
+    
+    # First permute the response variable. The variable is supplied by the user.
+    permuted_data <- data %>%
+      ungroup() %>%
+      select(paste(metric)) %>%
+      rename("permuted_metric" = paste(metric)) %>%
+      sample_frac(size = 1) %>%
+      as.vector() %>%
+      cbind(., data.frame(data))
+    
+    # If the user has specified to log-transform the variable, this step will 
+    # actually perform the log-transform. If not, then  
+    if(transform_response == "log10"){
+      permuted_model <- Anova(lm(log10(permuted_metric) ~ stt * tourist_season,
+                                 data = permuted_data), type = "II")
+    }else if(transform_response == "asin_sqrt"){
+      permuted_model <- Anova(lm(asin(sqrt(permuted_metric)) ~ stt * tourist_season,
+                                 data = permuted_data), type = "II")
+    }else if(transform_response == "none"){
+      permuted_model <- Anova(lm(permuted_metric ~ stt * tourist_season,
+                                 data = permuted_data), type = "II")
+    }else{
+      cat("You entered in the wrong transformation")
+      stop()
+    }
+    
+    # If this iteration is the first, then function creates two repos for the 
+    # p-value and r-squared values. Note that this step requires the broom package
+    # be installed. 
+    if(i == 1){
+      tidy_repo <- tidy(permuted_model) %>%
+        filter(term != "Residuals")
+    } else {
+      tidy_repo <- rbind(tidy_repo, tidy(permuted_model)) %>%
+        filter(term != "Residuals")
+    }
+  }
+  
+  # This step removes all intercept coefficients from the repo. 
+  tidy_full_model <- tidy(full_model) %>%
+    filter(term != "Residuals")
+  
+  # Add facet labels for plot
+  tidy_repo_formatted <- tidy_repo %>%
+    mutate(facet_label = ifelse(test = term == "stt", 
+                                yes = paste("STT \n(", nrow(filter(tidy_repo, 
+                                                                   term == "stt" & 
+                                                                     statistic >= tidy_full_model[tidy_full_model$term == "stt", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = "something wrong"), 
+           facet_label = ifelse(test = term == "tourist_season", 
+                                yes = paste("Tourist Season \n(", nrow(filter(tidy_repo, 
+                                                                              term == "tourist_season" & 
+                                                                                statistic >= tidy_full_model[tidy_full_model$term == "tourist_season", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = facet_label),
+           facet_label = ifelse(test = term == "stt:tourist_season", 
+                                yes = paste("Tourist Season:STT \n(", nrow(filter(tidy_repo, 
+                                                                                  term == "stt:tourist_season" & 
+                                                                                    statistic >= tidy_full_model[tidy_full_model$term == "stt:tourist_season", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = facet_label))
+  
+  tidy_full_model_formatted <- tidy_full_model %>%
+    mutate(facet_label = ifelse(test = term == "stt", 
+                                yes = paste("STT \n(", nrow(filter(tidy_repo, 
+                                                                   term == "stt" & 
+                                                                     statistic >= tidy_full_model[tidy_full_model$term == "stt", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = "something wrong"), 
+           facet_label = ifelse(test = term == "tourist_season", 
+                                yes = paste("Tourist Season \n(", nrow(filter(tidy_repo, 
+                                                                              term == "tourist_season" & 
+                                                                                statistic >= tidy_full_model[tidy_full_model$term == "tourist_season", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = facet_label),
+           facet_label = ifelse(test = term == "stt:tourist_season", 
+                                yes = paste("Tourist Season:STT \n(", nrow(filter(tidy_repo, 
+                                                                                  term == "stt:tourist_season" & 
+                                                                                    statistic >= tidy_full_model[tidy_full_model$term == "stt:tourist_season", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = facet_label))
+  
+  # This step plots the p-value histogram figure. 
+  permuted_plot <- ggplot() +
+    geom_histogram(data = tidy_repo_formatted,
+                   aes(statistic), bins = 40, color = "white") +
+    facet_grid(~facet_label) +
+    geom_vline(data = tidy_full_model_formatted,
+               aes(xintercept = statistic), linetype = "dashed", size = 2, color = viridis(8)[4]) +
+    scale_y_continuous(expand = c(0,0)) +
+    scale_x_continuous(expand = c(0,0)) +
+    xlab("F-value") +
+    ylab("Frequency") +
+    ggtitle(paste(metric_plot_title)) +
+    theme_bw() +
+    theme(strip.background = element_rect(fill = "white"),
+          strip.text = element_text(size = 18),
+          axis.text = element_text(size = 16),
+          axis.title = element_text(size = 20),
+          plot.title = element_text(size = 20))
+  
+  # The two resulting figures are returned as a list. 
+  return(list(permuted_plot))
+}
+
+
 # 1. Load packages and data -----------------------------------------------
 
 library(tidyverse)
@@ -19,6 +131,10 @@ library(car)
 library(ggpubr)
 library(ape)
 library(janitor)
+library(broom)
+library(emmeans)
+library(rstatix)
+
 
 fatty_acids_orig <- read.csv(file = "../cleaned_data/fatty_acids.csv",
                             header = TRUE)
@@ -83,9 +199,9 @@ fatty_acid_type_boxplot <- fatty_acid_prop %>%
   geom_boxplot(outlier.alpha = 0, alpha = 0.5) +
   geom_jitter(aes(color = tourist_season), shape = 21) +
   scale_color_manual(values = viridis(20)[c(5, 14)], 
-                     name = "Tourist Season") +
+                     name = "Tourism Season") +
   scale_fill_manual(values = viridis(20)[c(5, 14)], 
-                    name = "Tourist Season") +
+                    name = "Tourism Season") +
   ylab("Proportion") +
   xlab("") +
   facet_wrap(~stt) +
@@ -115,19 +231,98 @@ fatty_acid_type_data <- fatty_acid_prop %>%
   summarize(proportion_sum = sum(proportion)) %>%
   pivot_wider(names_from = "type", values_from = "proportion_sum")
 
-Anova(lm(PUFA ~ tourist_season*stt, 
-         data = fatty_acid_type_data), 
-      type = "II")
+pufa_lm <- Anova(lm(asin(sqrt(PUFA)) ~ stt*tourist_season, 
+                    data = fatty_acid_type_data), 
+                 type = "II")
 
-Anova(lm(PUFA ~ tourist_season, 
-         data = fatty_acid_type_data %>%
-           filter(stt == "Decentralized")), 
-      type = "II")
+pufa_permutation <- permute_data_analytics(data = fatty_acid_type_data, 
+                                         metric = "PUFA", 
+                                         full_model = pufa_lm, 
+                                         metric_plot_title = "PUFA ~ STT * Tourist Season", 
+                                         transform_response = "asin_sqrt")
 
-Anova(lm(PUFA ~ tourist_season, 
-         data = fatty_acid_type_data %>%
-           filter(stt == "Centralized")), 
-      type = "II")
+stt_bf_pufa <- fatty_acid_type_data %>% 
+  group_by(stt) %>%
+  emmeans_test(asin(sqrt(PUFA)) ~ tourist_season, p.adjust.method = "bonferroni") 
+
+ts_bf_pufa <- fatty_acid_type_data %>% 
+  group_by(tourist_season) %>%
+  emmeans_test(asin(sqrt(PUFA)) ~ stt, p.adjust.method = "bonferroni") 
+
+safa_lm <- Anova(lm(asin(sqrt(SAFA)) ~ stt*tourist_season, 
+                    data = fatty_acid_type_data), 
+                 type = "II")
+
+safa_permutation <- permute_data_analytics(data = fatty_acid_type_data, 
+                                           metric = "SAFA", 
+                                           full_model = safa_lm, 
+                                           metric_plot_title = "SAFA ~ STT * Tourist Season", 
+                                           transform_response = "asin_sqrt")
+
+stt_bf_safa <- fatty_acid_type_data %>% 
+  group_by(stt) %>%
+  emmeans_test(asin(sqrt(SAFA)) ~ tourist_season, p.adjust.method = "bonferroni") 
+
+ts_bf_safa <- fatty_acid_type_data %>% 
+  group_by(tourist_season) %>%
+  emmeans_test(asin(sqrt(SAFA)) ~ stt, p.adjust.method = "bonferroni") 
+
+mufa_lm <- Anova(lm(asin(sqrt(MUFA)) ~ stt*tourist_season, 
+                    data = fatty_acid_type_data), 
+                 type = "II")
+
+mufa_permutation <- permute_data_analytics(data = fatty_acid_type_data, 
+                                           metric = "MUFA", 
+                                           full_model = mufa_lm, 
+                                           metric_plot_title = "MUFA ~ STT * Tourist Season", 
+                                           transform_response = "asin_sqrt")
+
+stt_bf_mufa <- fatty_acid_type_data %>% 
+  group_by(stt) %>%
+  emmeans_test(asin(sqrt(MUFA)) ~ tourist_season, p.adjust.method = "bonferroni") 
+
+ts_bf_mufa <- fatty_acid_type_data %>% 
+  group_by(tourist_season) %>%
+  emmeans_test(asin(sqrt(MUFA)) ~ stt, p.adjust.method = "bonferroni") 
+
+## Save Figures 
+
+permutation_plots <- c(pufa_permutation, safa_permutation, mufa_permutation)
+
+permutation_plot_names <- c("pufa_permutation", "safa_permutation", "mufa_permutation")
+
+walk2(.x = permutation_plots,
+      .y = permutation_plot_names,
+      .f = ~ ggsave(filename = paste(.y, "_histogram.png", sep = ""), 
+                    plot = .x, 
+                    device = "png", path = "../figures_tables", 
+                    width = 16, height = 8, units = "in"))
+
+anova_table <- list(clean_names(data.frame(pufa_lm)), 
+                    clean_names(data.frame(safa_lm)), 
+                    clean_names(data.frame(mufa_lm)))
+
+anova_table_names <- c("pufa", "safa", "mufa")
+
+walk2(.x = anova_table,
+      .y = anova_table_names,
+      .f = ~ write.csv(file = paste("../figures_tables/", .y, "_anova_table.csv", sep = ""), 
+                       x = .x, row.names = TRUE))
+
+stt_bf <- rbind(stt_bf_pufa, stt_bf_safa, stt_bf_mufa) %>%
+  rename("variable" = ".y.")
+
+write.csv(x = stt_bf, 
+          file = "../figures_tables/stt_fa_stoich_results.csv", 
+          row.names = FALSE)
+
+ts_bf <- rbind(ts_bf_pufa, ts_bf_safa, ts_bf_mufa) %>%
+  rename("variable" = ".y.")
+
+write.csv(x = ts_bf, 
+          file = "../figures_tables/ts_bf_fa_results.csv", 
+          row.names = FALSE)
+
 
 efa_boxplot <- fatty_acid_prop %>%
   select(site:stt, c18_2w6c, c18_3w3, c18_4w3, 
@@ -145,9 +340,9 @@ efa_boxplot <- fatty_acid_prop %>%
   geom_boxplot(outlier.alpha = 0, alpha = 0.5) +
   geom_jitter(aes(color = tourist_season), width = 0.2) +
   scale_color_manual(values = viridis(20)[c(5, 14)], 
-                     name = "Tourist Season") +
+                     name = "Tourism Season") +
   scale_fill_manual(values = viridis(20)[c(5, 14)], 
-                    name = "Tourist Season") +
+                    name = "Tourism Season") +
   ylab("Proportion") +
   xlab("") +
   facet_wrap(~stt) +
@@ -175,9 +370,11 @@ efa_nmds <- metaMDS(comm = (fatty_acid_prop[, c(20, 22, 23, 25, 27, 30)]),
 
 efa_nmds
 
-adonis2(formula = fatty_acid_prop[, c(20, 22, 23, 25, 27, 30)] ~ stt+tourist_season, 
-        data = fatty_acid_prop, method = "bray", by = "margin", 
-        sqrt.dist = TRUE)
+permanova_results <- adonis2(formula = fatty_acid_prop[, c(20, 22, 23, 25, 27, 30)] ~ stt+tourist_season, 
+                             data = fatty_acid_prop, method = "bray", by = "margin", permutations = 4999,
+                             sqrt.dist = TRUE)
+
+write.csv(x = permanova_results, file = "../figures_tables/fatty_acid_permanova.csv")
 
 summary(simper(fatty_acid_prop[, c(20, 22, 23, 25, 27, 30)], 
                group = fatty_acid_prop$tourist_season,
@@ -206,7 +403,7 @@ efa_nmds_plot <- ggplot() +
              aes(x = NMDS1, y = NMDS2, 
                  fill = stt, shape = tourist_season), 
              size = 10, stroke = 2, color = "grey60", alpha = 0.8) +
-  scale_shape_manual(values = c(21, 23), name = "Tourist Season") +
+  scale_shape_manual(values = c(21, 23), name = "Tourism Season") +
   scale_fill_manual(values = plasma(30)[c(5, 19)], 
                     name = "STT", labels = c("Centralized", "Decentralized")) +
   geom_text_repel(data = species_scores %>%

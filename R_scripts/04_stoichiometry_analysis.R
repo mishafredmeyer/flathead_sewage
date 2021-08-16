@@ -9,6 +9,116 @@
 ## Michael F. Meyer (michael.f.meyer@wsu.edu). 
 
 
+# 0. Create function to run permutational analysis ------------------------
+
+permute_data_analytics <- function(data, metric, full_model, metric_plot_title, transform_response){
+  for(i in 1:5000){
+    
+    # First permute the response variable. The variable is supplied by the user.
+    permuted_data <- data %>%
+      ungroup() %>%
+      select(paste(metric)) %>%
+      rename("permuted_metric" = paste(metric)) %>%
+      sample_frac(size = 1) %>%
+      as.vector() %>%
+      cbind(., data.frame(data))
+    
+    # If the user has specified to log-transform the variable, this step will 
+    # actually perform the log-transform. If not, then  
+    if(transform_response == "log10"){
+      permuted_model <- Anova(lm(log10(permuted_metric) ~ stt * tourist_season,
+                                 data = permuted_data), type = "II")
+    }else if(transform_response == "asin_sqrt"){
+      permuted_model <- Anova(lm(asin(sqrt(permuted_metric)) ~ stt * tourist_season,
+                                 data = permuted_data), type = "II")
+    }else if(transform_response == "none"){
+      permuted_model <- Anova(lm(permuted_metric ~ stt * tourist_season,
+                                 data = permuted_data), type = "II")
+    }else{
+      cat("You entered in the wrong transformation")
+      stop()
+    }
+    
+    # If this iteration is the first, then function creates two repos for the 
+    # p-value and r-squared values. Note that this step requires the broom package
+    # be installed. 
+    if(i == 1){
+      tidy_repo <- tidy(permuted_model) %>%
+        filter(term != "Residuals")
+    } else {
+      tidy_repo <- rbind(tidy_repo, tidy(permuted_model)) %>%
+        filter(term != "Residuals")
+    }
+  }
+  
+  # This step removes all intercept coefficients from the repo. 
+  tidy_full_model <- tidy(full_model) %>%
+    filter(term != "Residuals")
+  
+  # Add facet labels for plot
+  tidy_repo_formatted <- tidy_repo %>%
+    mutate(facet_label = ifelse(test = term == "stt", 
+                                yes = paste("STT \n(", nrow(filter(tidy_repo, 
+                                                                   term == "stt" & 
+                                                                     statistic >= tidy_full_model[tidy_full_model$term == "stt", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = "something wrong"), 
+           facet_label = ifelse(test = term == "tourist_season", 
+                                yes = paste("Tourist Season \n(", nrow(filter(tidy_repo, 
+                                                                              term == "tourist_season" & 
+                                                                                statistic >= tidy_full_model[tidy_full_model$term == "tourist_season", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = facet_label),
+           facet_label = ifelse(test = term == "stt:tourist_season", 
+                                yes = paste("Tourist Season:STT \n(", nrow(filter(tidy_repo, 
+                                                                                  term == "stt:tourist_season" & 
+                                                                                    statistic >= tidy_full_model[tidy_full_model$term == "stt:tourist_season", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = facet_label))
+  
+  tidy_full_model_formatted <- tidy_full_model %>%
+    mutate(facet_label = ifelse(test = term == "stt", 
+                                yes = paste("STT \n(", nrow(filter(tidy_repo, 
+                                                                   term == "stt" & 
+                                                                     statistic >= tidy_full_model[tidy_full_model$term == "stt", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = "something wrong"), 
+           facet_label = ifelse(test = term == "tourist_season", 
+                                yes = paste("Tourist Season \n(", nrow(filter(tidy_repo, 
+                                                                              term == "tourist_season" & 
+                                                                                statistic >= tidy_full_model[tidy_full_model$term == "tourist_season", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = facet_label),
+           facet_label = ifelse(test = term == "stt:tourist_season", 
+                                yes = paste("Tourist Season:STT \n(", nrow(filter(tidy_repo, 
+                                                                                  term == "stt:tourist_season" & 
+                                                                                    statistic >= tidy_full_model[tidy_full_model$term == "stt:tourist_season", "statistic"]$statistic))/5000*100,
+                                            "% of models had higher F values)", sep = ""),
+                                no = facet_label))
+  
+  # This step plots the p-value histogram figure. 
+  permuted_plot <- ggplot() +
+    geom_histogram(data = tidy_repo_formatted,
+                   aes(statistic), bins = 40, color = "white") +
+    facet_grid(~facet_label) +
+    geom_vline(data = tidy_full_model_formatted,
+               aes(xintercept = statistic), linetype = "dashed", size = 2, color = viridis(8)[4]) +
+    scale_y_continuous(expand = c(0,0)) +
+    scale_x_continuous(expand = c(0,0)) +
+    xlab("F-value") +
+    ylab("Frequency") +
+    ggtitle(paste(metric_plot_title)) +
+    theme_bw() +
+    theme(strip.background = element_rect(fill = "white"),
+          strip.text = element_text(size = 18),
+          axis.text = element_text(size = 16),
+          axis.title = element_text(size = 20),
+          plot.title = element_text(size = 20))
+  
+  # The two resulting figures are returned as a list. 
+  return(list(permuted_plot))
+}
+
 # 1. Load packages and data -----------------------------------------------
 
 library(tidyverse)
@@ -18,6 +128,9 @@ library(viridis)
 library(vegan)
 library(car)
 library(ggpubr)
+library(emmeans)
+library(rstatix)
+library(janitor)
 
 stoichiometry_orig <- read.csv(file = "../cleaned_data/stoichiometry.csv")
 
@@ -110,8 +223,99 @@ ggsave(filename = "combined_stoich_boxplots.png", plot = combined_plots,
        width = 8, height = 16, units = "in")
 
 
-Anova(lm(carbon/nitrogen ~ tourist_season*stt, data = stoich), type = "II")
+cn_lm <- Anova(lm(carbon/nitrogen ~ stt * tourist_season, 
+                  data = stoich), 
+               type = "II")
 
-Anova(lm(carbon/phosphorus ~ tourist_season*stt, data = stoich), type = "II")
+cn_permutation <- permute_data_analytics(data = stoich %>%
+                                           mutate(carbon_nitrogen = carbon/nitrogen), 
+                                         metric = "carbon_nitrogen", 
+                                         full_model = cn_lm, 
+                                         metric_plot_title = "Carbon:Nitrogen ~ STT * Tourist Season", 
+                                         transform_response = "none")
+                                              
+stt_bf_cn <- stoich %>% 
+  group_by(stt) %>%
+  emmeans_test(carbon/nitrogen ~ tourist_season, p.adjust.method = "bonferroni") 
 
-Anova(lm(nitrogen/phosphorus ~ tourist_season*stt, data = stoich), type = "II")
+ts_bf_cn <- stoich %>% 
+  group_by(tourist_season) %>%
+  emmeans_test(carbon/nitrogen ~ stt, p.adjust.method = "bonferroni") 
+
+
+cp_lm <- Anova(lm(carbon/phosphorus ~ stt * tourist_season,
+                  data = stoich), 
+               type = "II")
+
+cp_permutation <- permute_data_analytics(data = stoich %>%
+                                           mutate(carbon_phosphorus = carbon/phosphorus), 
+                                         metric = "carbon_phosphorus", 
+                                         full_model = cp_lm, 
+                                         metric_plot_title = "Carbon:Phosphorus ~ STT * Tourist Season", 
+                                         transform_response = "none")
+
+stt_bf_cp <- stoich %>% 
+  group_by(stt) %>%
+  emmeans_test(carbon/phosphorus ~ tourist_season, p.adjust.method = "bonferroni") 
+
+ts_bf_cp <- stoich %>% 
+  group_by(tourist_season) %>%
+  emmeans_test(carbon/phosphorus ~ stt, p.adjust.method = "bonferroni") 
+
+np_lm <- Anova(lm(nitrogen/phosphorus ~ stt * tourist_season, 
+                  data = stoich), 
+               type = "II")
+
+np_permutation <- permute_data_analytics(data = stoich %>%
+                                           mutate(nitrogen_phosphorus = nitrogen/phosphorus), 
+                                         metric = "nitrogen_phosphorus", 
+                                         full_model = np_lm, 
+                                         metric_plot_title = "Nitrogen:Phosphorus ~ STT * Tourist Season", 
+                                         transform_response = "none")
+
+stt_bf_np <- stoich %>% 
+  group_by(stt) %>%
+  emmeans_test(nitrogen/phosphorus ~ tourist_season, p.adjust.method = "bonferroni") 
+
+ts_bf_np <- stoich %>% 
+  group_by(tourist_season) %>%
+  emmeans_test(nitrogen/phosphorus ~ stt, p.adjust.method = "bonferroni") 
+
+
+# 4. Save Figures ------------------------------------------------------
+
+permutation_plots <- c(cn_permutation, cp_permutation, np_permutation)
+
+permutation_plot_names <- c("cn_permutation", "cp_permutation", "np_permutation")
+
+walk2(.x = permutation_plots,
+      .y = permutation_plot_names,
+      .f = ~ ggsave(filename = paste(.y, "_histogram.png", sep = ""), 
+                    plot = .x, 
+                    device = "png", path = "../figures_tables", 
+                    width = 16, height = 8, units = "in"))
+
+anova_table <- list(clean_names(data.frame(cn_lm)), 
+                    clean_names(data.frame(cp_lm)), 
+                    clean_names(data.frame(np_lm)))
+
+anova_table_names <- c("cn", "cp", "np")
+
+walk2(.x = anova_table,
+      .y = anova_table_names,
+      .f = ~ write.csv(file = paste("../figures_tables/", .y, "_anova_table.csv", sep = ""), 
+                       x = .x, row.names = TRUE))
+
+stt_bf <- rbind(stt_bf_cn, stt_bf_cp, stt_bf_np) %>%
+  rename("variable" = ".y.")
+
+write.csv(x = stt_bf, 
+          file = "../figures_tables/stt_bf_stoich_results.csv", 
+          row.names = FALSE)
+
+ts_bf <- rbind(ts_bf_cn, ts_bf_cp, ts_bf_np) %>%
+  rename("variable" = ".y.")
+
+write.csv(x = ts_bf, 
+          file = "../figures_tables/ts_bf_stoich_results.csv", 
+          row.names = FALSE)
