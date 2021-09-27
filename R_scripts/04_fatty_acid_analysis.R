@@ -231,6 +231,23 @@ fatty_acid_type_data <- fatty_acid_prop %>%
   summarize(proportion_sum = sum(proportion)) %>%
   pivot_wider(names_from = "type", values_from = "proportion_sum")
 
+fa_prop_table <- fatty_acid_type_data %>%
+  select(tourist_season, stt, SAFA:PUFA) %>%
+  pivot_longer(cols = c(SAFA, MUFA, PUFA),
+               names_to = "fatty_acid", values_to = "proportion") %>%
+  group_by(tourist_season, stt, fatty_acid) %>%
+  summarize(mean_prop = mean(proportion),
+            sd_prop = sd(proportion),
+            cv_prop = sd_prop/mean_prop) %>%
+  pivot_wider(names_from = "stt", 
+              values_from = c("mean_prop", "sd_prop", "cv_prop")) %>%
+  select(fatty_acid, tourist_season, mean_prop_Centralized:cv_prop_Decentralized) %>%
+  arrange(fatty_acid)
+
+write.csv(x = fa_prop_table, 
+          file = "../figures_tables/fa_summary_stats.csv", 
+          row.names = FALSE)
+
 pufa_lm <- Anova(lm(asin(sqrt(PUFA)) ~ stt*tourist_season, 
                     data = fatty_acid_type_data), 
                  type = "II")
@@ -360,6 +377,24 @@ ggsave(filename = "efa_boxplot.png", plot = efa_boxplot,
        device = "png", path = "../figures_tables", 
        width = 16, height = 7, units = "in")
 
+efa_prop_table <- fatty_acid_prop %>%
+  select(site:stt, c18_2w6c, c18_3w3, c18_4w3, 
+         c20_5w3, c22_6w3, c20_4w6) %>%
+  pivot_longer(cols = c(c18_2w6c:c20_4w6), 
+               names_to = "EFA", 
+               values_to = "proportion") %>%
+  group_by(tourist_season, stt, EFA) %>%
+  summarize(mean_prop = mean(proportion),
+            sd_prop = sd(proportion),
+            cv_prop = sd_prop/mean_prop) %>%
+  pivot_wider(names_from = "stt", 
+              values_from = c("mean_prop", "sd_prop", "cv_prop")) %>%
+  select(EFA, tourist_season, mean_prop_Centralized:cv_prop_Decentralized) %>%
+  arrange(EFA)
+
+write.csv(x = efa_prop_table, 
+          file = "../figures_tables/efa_summary_stats.csv", 
+          row.names = FALSE)
 
 # 4. Multivariate Analysis ------------------------------------------------
 

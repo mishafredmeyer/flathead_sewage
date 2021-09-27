@@ -1,0 +1,5 @@
+"tourist_season","stt","mean_afdm_new","sd_afdm"
+"In Season","centralized",0.00252962962962963,0.00130451889496667
+"In Season","decentralized",0.00452566666666665,0.00203356960443375
+"Out of Season","centralized",0.00642222222222225,0.00791947903262264
+"Out of Season","decentralized",0.00379629629629628,0.00205429390711021

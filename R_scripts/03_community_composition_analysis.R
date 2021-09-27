@@ -19,6 +19,7 @@ library(car)
 library(ggpubr)
 library(ape)
 library(janitor)
+library(MVN)
 
 periphyton_orig <- read.csv(file = "../cleaned_data/periphyton_abundance.csv",
                             header = TRUE)
@@ -53,6 +54,22 @@ periphyton_prop <- periphyton_orig %>%
 
 summary(periphyton_prop)
 
+peri_prop_table <- periphyton_prop %>%
+  select(tourist_season, stt, chlorophyta, cyanobacteria, diatom) %>%
+  pivot_longer(cols = c(chlorophyta, cyanobacteria, diatom),
+               names_to = "taxon", values_to = "proportion") %>%
+  group_by(tourist_season, stt, taxon) %>%
+  summarize(mean_prop = mean(proportion),
+            sd_prop = sd(proportion),
+            cv_prop = sd_prop/mean_prop) %>%
+  pivot_wider(names_from = "stt", 
+              values_from = c("mean_prop", "sd_prop", "cv_prop")) %>%
+  select(taxon, tourist_season, mean_prop_centralized:cv_prop_decentralized) %>%
+  arrange(taxon)
+
+write.csv(x = peri_prop_table, 
+          file = "../figures_tables/periphtyon_summary_stats.csv", 
+          row.names = FALSE)
 
 # 3. Univariate Analysis --------------------------------------------------
 
@@ -178,6 +195,13 @@ ggsave(filename = "periphyton_nmds.png", plot = periphyton_nmds_plot,
        width = 16, height = 12, units = "in")
 
 ## Now try with Principal Coordinate Analysis
+## This method is meant to confirm the patterns
+## observed with NMDS but with a completely 
+## different approach (i.e., numerical vs eigencalculations)
+
+## This approach is NOT included in the manuscript but is included
+## in the R code so to serve as an archive or how a similar but 
+## different technique got us qualitatively similar results. 
 
 periphyton_pcoa <- pcoa(vegdist(x = periphyton_prop[, c(3, 6, 7)], method = "bray"))
 
@@ -185,33 +209,14 @@ diag_dir <- diag(c(1,1))
 
 periphyton_pcoa$vectors[,c(1,2)] <- periphyton_pcoa$vectors[,c(1,2)] %*% diag_dir
 
+## This step extracts the eigenvalues 
+
 eigenvalues_periphyton <- periphyton_pcoa$vectors[,c(1,2)] %>%
   data.frame() %>%
   clean_names() %>%
   cbind(., periphyton_prop[, c(8,9)])
 
-species_scores_periphyton <- periphyton_pcoa$vectors %>%
-  data.frame() %>%
-  clean_names() %>%
-  cbind(., periphyton_prop[, c(3,6,7)]) %>%
-  mutate(cyano_1 = axis_1 * cyanobacteria,
-         cyano_2 = axis_2 * cyanobacteria,
-         diatom_1 = axis_1 * diatom,
-         diatom_2 = axis_2 * diatom,
-         chloro_1 = axis_1 * chlorophyta,
-         chloro_2 = axis_2 * chlorophyta) %>%
-  select(cyano_1:chloro_2) %>%
-  pivot_longer(cols = c(cyano_1:chloro_2), 
-               names_to = "weighted_axis_name", 
-               values_to = "weighted_axis_value") %>%
-  group_by(weighted_axis_name) %>%
-  summarize(mean_axis_value = mean(weighted_axis_value)) %>%
-  separate(col = weighted_axis_name, into = c("taxon", "axis"), remove = TRUE) %>%
-  mutate(axis = paste("axis_", axis, sep = "")) %>%
-  pivot_wider(names_from = "axis", values_from = "mean_axis_value") %>%
-  mutate(axis_1 = axis_1 * sqrt(periphyton_pcoa$values[1,2]),
-         axis_2 = axis_2 * sqrt(periphyton_pcoa$values[2,2]))
-
+## This step scales the eigenvectors by the covariance matrix
 n <- nrow(periphyton_prop)
 standardize_points <- scale(eigenvalues_periphyton[, c(1:2)], center = TRUE, scale = TRUE)
 covariance_matrix <- cov(periphyton_prop[,c(3,6,7)], standardize_points)
@@ -251,11 +256,12 @@ pcoa_biplot <- ggplot() +
 
 pcoa_biplot
 
+## To test for significant differences, we perform a MANOVA with the 
+## 
+
 manova_model <- manova(as.matrix(periphyton_prop[, c(3, 6, 7)]) ~ periphyton_prop$tourist_season *  periphyton_prop$stt)
 
 summary(manova_model)
-
-library(MVN)
 
 mvn(data = as.matrix(periphyton_prop[, c(3, 6, 7)]), 
     mvnTest = "mardia", multivariatePlot = "qq")

@@ -128,8 +128,6 @@ library(viridis)
 library(vegan)
 library(car)
 library(ggpubr)
-library(emmeans)
-library(rstatix)
 library(janitor)
 
 stoichiometry_orig <- read.csv(file = "../cleaned_data/stoichiometry.csv")
@@ -147,16 +145,39 @@ stoich <- stoichiometry_orig %>%
          phosphorus = phosphorus_moles/(total_dry_mass_phosphorus_mg*0.001)) %>%
   select(site, month, stt, tourist_season, carbon, nitrogen, phosphorus)
 
-
+stoich_table <- stoich %>%
+  mutate(carbon_nitrogen = carbon/nitrogen,
+         carbon_phosphorus = carbon/phosphorus,
+         nitrogen_phosphorus = nitrogen/phosphorus) %>%
+  select(tourist_season, stt, carbon_nitrogen:nitrogen_phosphorus) %>%
+  pivot_longer(cols = c(carbon_nitrogen:nitrogen_phosphorus), 
+               names_to = "elements", values_to = "ratios") %>%
+  group_by(tourist_season, stt, elements) %>%
+  summarize(mean_ratio = mean(ratios),
+            sd_ratio = sd(ratios),
+            cv_ratio = sd_ratio/mean_ratio) %>%
+  pivot_wider(names_from = "stt", 
+              values_from = c("mean_ratio", "sd_ratio", "cv_ratio")) %>%
+  select(elements, tourist_season, mean_ratio_centralized:cv_ratio_decentralized) %>%
+  arrange(elements)
+  
+write.csv(x = stoich_table, 
+          file = "../figures_tables/stoich_summary_stats.csv", 
+          row.names = FALSE)
+  
 # 3. Create stoichiometric plots and analyses -----------------------------
 
 
 stt_labels <- c("Centralized", "Decentralized")
 names(stt_labels) <- c("centralized", "decentralized")
 
-carbon_nitrogen <- ggplot(stoich, aes(tourist_season, carbon/nitrogen)) +
-  geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
-  geom_jitter() +
+carbon_nitrogen <- ggplot(data = stoich, aes(tourist_season, carbon/nitrogen)) +
+  geom_boxplot(stoich %>%
+                 filter(!(stt == "centralized" & tourist_season == "Out of Season")), 
+               mapping = aes(tourist_season, carbon/nitrogen),
+               alpha = 0.33, outlier.alpha = 0) +
+  geom_jitter(stoich, 
+              mapping = aes(tourist_season, carbon/nitrogen), size = 3) +
   geom_hline(aes(yintercept = 119/17), size = 2, linetype = "dotted") + 
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
   ylab("Carbon:Nitrogen") + 
@@ -174,9 +195,13 @@ ggsave(filename = "carbon_nitrogen_boxplots.png", plot = carbon_nitrogen,
        device = "png", path = "../figures_tables", 
        width = 8, height = 6, units = "in")
 
-carbon_phosphorus <- ggplot(stoich, aes(tourist_season, carbon/phosphorus)) +
-  geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
-  geom_jitter() +
+carbon_phosphorus <- ggplot(data = stoich, aes(tourist_season, carbon/phosphorus)) +
+  geom_boxplot(stoich %>%
+                 filte`r(!(stt == "centralized" & tourist_season == "Out of Season")), 
+               mapping = aes(tourist_season, carbon/phosphorus),
+               alpha = 0.33, outlier.alpha = 0) +
+  geom_jitter(stoich, 
+              mapping = aes(tourist_season, carbon/phosphorus), size = 3) +
   geom_hline(aes(yintercept = 119), size = 2, linetype = "dotted") + 
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
   ylab("Carbon:Phosphorus") + 
@@ -194,9 +219,13 @@ ggsave(filename = "carbon_phosphorus_boxplots.png", plot = carbon_phosphorus,
        device = "png", path = "../figures_tables", 
        width = 8, height = 6, units = "in")
 
-nitrogen_phosphorus <- ggplot(stoich, aes(tourist_season, nitrogen/phosphorus)) +
-  geom_boxplot(alpha = 0.33, outlier.alpha = 0) +
-  geom_jitter() +
+nitrogen_phosphorus <- ggplot(data = stoich, aes(tourist_season, nitrogen/phosphorus)) +
+  geom_boxplot(stoich %>%
+                 filter(!(stt == "centralized" & tourist_season == "Out of Season")), 
+               mapping = aes(tourist_season, nitrogen/phosphorus),
+               alpha = 0.33, outlier.alpha = 0) +
+  geom_jitter(stoich, 
+              mapping = aes(tourist_season, nitrogen/phosphorus), size = 3) +
   geom_hline(aes(yintercept = 17), size = 2, linetype = "dotted") + 
   facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
   ylab("Nitrogen:Phosphorus") + 

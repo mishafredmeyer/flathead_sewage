@@ -11,6 +11,22 @@ communities <- st_read("../raw_data/Flathead sampling locations.kml")
 
 tsidw_pop <- read.csv("../cleaned_data/averaged_temporally_scaled_inverse_distance_weighted_population_metrics.csv")
 
+ppcp <- read.csv("../cleaned_data/ppcp.csv") %>%
+  filter(month != "may") %>%
+  group_by(tourist_season, stt, site, peri_sampling, sampling_event, ppcp) %>%
+  summarize(mean_conc = mean(concentration, na.rm = TRUE)) %>%
+  ungroup() %>%
+  group_by(tourist_season, stt, site, peri_sampling, sampling_event) %>%
+  summarize(total_concentration = sum(mean_conc, na.rm = TRUE)) %>%
+  ungroup() %>%
+  mutate(month = ifelse(peri_sampling == "peri_1", "june", NA),
+         month = ifelse(peri_sampling == "peri_2", "july", month),
+         month = ifelse(peri_sampling == "peri_3", "august", month),
+         month = ifelse(peri_sampling == "peri_4", "september", month)) %>%
+  filter(!is.na(month)) %>%
+  group_by(tourist_season, stt, site, month) %>%
+  summarize(mean_conc = mean(total_concentration, na.rm = TRUE)) 
+
 sample_points_sf <- communities %>%
   filter(Name %in% c("BB", "YB", "FLBS", "BD", "WB", "WF", "HO",
                      "LK", "WS", "DA", "DU", "FI", "SJ", "SL", "BO")) %>%
@@ -18,6 +34,14 @@ sample_points_sf <- communities %>%
   inner_join(., tsidw_pop, by = c("Name" = "site")) %>%
   mutate(month = factor(month, levels = c("may", "june", "july", "august", "september"), 
                         labels = c("May", "June", "July", "August", "September")))
+
+# sample_points_sf <- communities %>%
+#   filter(Name %in% c("BB", "YB", "FLBS", "BD", "WB", "WF", "HO",
+#                      "LK", "WS", "DA", "DU", "FI", "SJ", "SL", "BO")) %>%
+#   st_as_sf(coords = c("lon", "lat"), crs = 4326) %>%
+#   inner_join(., ppcp, by = c("Name" = "site")) %>%
+#   mutate(month = factor(month, levels = c("june", "july", "august", "september"), 
+#                         labels = c("June", "July", "August", "September"))) 
 
 
 sample_points <- sample_points_sf %>%
@@ -113,11 +137,16 @@ map_month <- ggplot() +
     zoom = 11,
     cachedir = "data/map_tiles/") +
   #geom_sf(data = developments, color = "black", alpha = 0.5, fill = viridis(10)[2]) +
-  geom_sf(data = sample_points_sf, aes(fill = log10(atsidw_pop),
-                                       size = log10(atsidw_pop)), 
+  geom_sf(data = sample_points_sf, 
+          aes(fill = (atsidw_pop),
+              size = (atsidw_pop)), 
           color = "black", alpha = 0.7, pch = 21) +
-  scale_fill_viridis_c(option = "plasma", name = "log10(TSIDW Pop)") +
-  scale_size_continuous(range = c(5,12), guide = NULL) +
+  scale_fill_viridis_c(option = "plasma", name = "TSIDW Pop", 
+                       trans = "log",
+                       limits = c(200, 27000),
+                       breaks = c(300, 1000, 3000, 10000, 25000), 
+                       labels = c(300, 1000, 3000, 10000, 25000)) +
+  scale_size_continuous(range = c(5,12), guide = NULL, trans = "log") +
   facet_wrap(~ month) +
   xlab("") +
   ylab("") +
@@ -132,7 +161,7 @@ map_month <- ggplot() +
         legend.key.height = unit(x = 0.75, units = "in"),
         legend.key.width = unit(x = 0.5, units = "in"))
   
-ggsave(filename = "../figures_tables/flathead_map_monthly.png", plot = map_month,
+ggsave(filename = "../figures_tables/flathead_tsidw_map_monthly.png", plot = map_month,
        width = 14, height = 10, units = "in", device = "png")
 
 

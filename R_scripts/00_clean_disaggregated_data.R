@@ -88,7 +88,7 @@ nutrients_cleaned <- nutrients[-c(1:2) , ] %>%
          site = ifelse(site == "Yellow Bay", "YB", site),
          site = ifelse(site == "Holt", "HO", site),
          site = ifelse(site == "Ducharme", "DU", site),
-         stt = ifelse(test = site %in% c("WF", "YB", "FLBS", "HO"), 
+         stt = ifelse(test = site %in% c("WF", "HO", "YB", "FLBS"), 
                       yes = "centralized", no = "decentralized"),
          month = month(mdy(collection_date), label = TRUE, abbr = FALSE),
          month = tolower(as.character(month)),
