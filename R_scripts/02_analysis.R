@@ -5,7 +5,7 @@
 ## sewage indicators with wastewater treatment infrastructure
 ## and a sampling point's temporal position to the tourist 
 ## season. Questions about this script should be directed to 
-## Michael F. Meyer (michael.f.meyer@wsu.edu). 
+## Michael F. Meyer (mfmeyer2@wisc.edu). 
 
 # 0. Define a function for permutation of sewage indicators ---------------
 

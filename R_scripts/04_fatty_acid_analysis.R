@@ -5,11 +5,10 @@
 ## periphyton fatty acid profiles with wastewater treatment infrastructure
 ## and a sampling point's temporal position to the tourist 
 ## season. Questions about this script should be directed to 
-## Michael F. Meyer (michael.f.meyer@wsu.edu). 
+## Michael F. Meyer (mfmeyer2@wisc.edu). 
 
 
 # 0. Define a function for permutational analysis -------------------------
-
 
 permute_data_analytics <- function(data, metric, full_model, metric_plot_title, transform_response){
   for(i in 1:5000){
@@ -241,7 +240,7 @@ fa_prop_table <- fatty_acid_type_data %>%
             cv_prop = sd_prop/mean_prop) %>%
   pivot_wider(names_from = "stt", 
               values_from = c("mean_prop", "sd_prop", "cv_prop")) %>%
-  select(fatty_acid, tourist_season, mean_prop_Centralized:cv_prop_Decentralized) %>%
+  select(fatty_acid, tourist_season, mean_prop_centralized:cv_prop_decentralized) %>%
   arrange(fatty_acid)
 
 write.csv(x = fa_prop_table, 
@@ -389,7 +388,7 @@ efa_prop_table <- fatty_acid_prop %>%
             cv_prop = sd_prop/mean_prop) %>%
   pivot_wider(names_from = "stt", 
               values_from = c("mean_prop", "sd_prop", "cv_prop")) %>%
-  select(EFA, tourist_season, mean_prop_Centralized:cv_prop_Decentralized) %>%
+  select(EFA, tourist_season, mean_prop_centralized:cv_prop_decentralized) %>%
   arrange(EFA)
 
 write.csv(x = efa_prop_table, 
@@ -423,7 +422,7 @@ summary(simper(fatty_acid_prop[, c(20, 22, 23, 25, 27, 30)],
                permutations = 999))
 
 # Pull scores from NMDS and add site data
-data_scores <- as.data.frame(scores(x = efa_nmds))
+data_scores <- as.data.frame(scores(x = efa_nmds)$sites)
 data_scores$stt <- fatty_acid_prop %>%
   #filter(!site %in% c("WB", "BB", "YB")) %>%
   pull(stt)

@@ -3,7 +3,7 @@
 ## Lake's nearshore zone. This script takes data from a cleaned,
 ## disaggregated format prepares them for an analysis-ready format. Questions about 
 ##this script should be directed to 
-## Michael F. Meyer (michael.f.meyer@wsu.edu). 
+## Michael F. Meyer (mfmeyer2@wisc.edu). 
 ## The script can be divided into the following sections:
 ## 1. Load Packages
 ## 2. Ash Free Dry Mass

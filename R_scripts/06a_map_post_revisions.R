@@ -1,3 +1,21 @@
+## This script is associated with an analysis of spatially and 
+## and temporally heterogeneous nutrient loading into Flathead
+## Lake's nearshore zone. This script aggregates data necessary to make
+## maps that detail the human population around Flathead Lake over space and 
+## time. The scripts also make maps that highlight where samples were collected,
+## and where human lakeside developments are located. 
+##Questions about this script should be directed to 
+## Michael F. Meyer (mfmeyer2@wisc.edu). 
+
+## This script is divided into the following sections
+## 1. Load Packages
+## 2. Load and aggregate data
+## 3. Create map of sampling locations by sewage treatment method
+## 4. Create map of lakeside developments
+## 5. Create map of littoral PPCP concentrations
+
+# 1. Load Packages --------------------------------------------------------
+
 library(tidyverse)
 library(sf)
 library(rnaturalearth)
@@ -7,12 +25,15 @@ library(cowplot)
 library(ggrepel)
 library(viridis)
 
+
+# 2. Load and aggregate data ----------------------------------------------
+
 communities <- st_read("../raw_data/Flathead sampling locations.kml")
 
 tsidw_pop <- read.csv("../cleaned_data/averaged_temporally_scaled_inverse_distance_weighted_population_metrics.csv")
 
 ppcp <- read.csv("../cleaned_data/ppcp.csv") %>%
-  filter(month != "may") %>%
+  #filter(month != "may") %>%
   group_by(tourist_season, stt, site, peri_sampling, sampling_event, ppcp) %>%
   summarize(mean_conc = mean(concentration, na.rm = TRUE)) %>%
   ungroup() %>%
@@ -35,14 +56,6 @@ sample_points_sf <- communities %>%
   mutate(month = factor(month, levels = c("may", "june", "july", "august", "september"), 
                         labels = c("May", "June", "July", "August", "September")))
 
-# sample_points_sf <- communities %>%
-#   filter(Name %in% c("BB", "YB", "FLBS", "BD", "WB", "WF", "HO",
-#                      "LK", "WS", "DA", "DU", "FI", "SJ", "SL", "BO")) %>%
-#   st_as_sf(coords = c("lon", "lat"), crs = 4326) %>%
-#   inner_join(., ppcp, by = c("Name" = "site")) %>%
-#   mutate(month = factor(month, levels = c("june", "july", "august", "september"), 
-#                         labels = c("June", "July", "August", "September"))) 
-
 
 sample_points <- sample_points_sf %>%
   st_coordinates() %>%
@@ -58,6 +71,9 @@ state_parks <- communities %>%
 developments <- communities %>%
   filter(Name %in% c("Bigfork_shapefile", "Polson_shapefile", "Dayton_shapefile",
                      "Woods_Bay_shapefile", "Lakeside_shapefile"))
+
+
+# 3. Create map of sampling locations by sewage treatment method ----------
 
 site_map <- ggplot() +
   annotation_map_tile(
@@ -99,6 +115,9 @@ site_map <- ggplot() +
         legend.text = element_text(size = 14),
         plot.title = element_text(size = 18),
         axis.text = element_text(size = 14))
+
+
+# 4. Create map of lakeside developments ----------------------------------
 
 development_map <- ggplot() +
   annotation_map_tile(
@@ -147,49 +166,8 @@ arranged_plots <- ggarrange(plotlist = list(site_map, development_map), ncol = 2
 ggsave(filename = "../figures_tables/combined_maps_revised.png", plot = arranged_plots, 
        width = 14, height = 10, units = "in", bg = "white")
 
-# Set up polygon to show boundaries of sampling map
-bounds <- data.frame(
-  x = c(-114.5268, -113.7768, -113.7768, -114.5268),
-  y = c(48.15, 48.15, 47.65, 47.65)) %>%
-  summarize(x = mean(x),
-            y = mean(y))
 
-inset_map <- ne_states(country = 'United States of America', returnclass = "sf") %>%
-  filter(!(name %in% c("Alaska", "Hawaii"))) %>%
-  ggplot() +
-  geom_sf(data = ne_countries(continent = "North America", returnclass = "sf"),
-          fill = "gray70", size = 0.25) +
-  geom_sf(fill = "gray99") +
-  geom_star(data = bounds, aes(x = x, y = y),
-            color = "black", fill = "#d24644", size = 3) +
-  theme_bw() +
-  coord_sf(xlim = c(-130, -60), ylim = c(22, 50)) +
-  xlab("") +
-  ylab("") +
-  theme(axis.title.x = element_blank(),
-        axis.title.y = element_blank(),
-        panel.grid = element_blank(),
-        axis.text = element_blank(),
-        axis.ticks = element_blank(),
-        plot.background = element_blank())
-
-flathead_map <- ggdraw() +
-  draw_plot(site_map) +
-  draw_plot(plot = inset_map,
-            x = 0.065,
-            y = 0.105, 
-            width = .45, 
-            height = .27, 
-            scale = .66) 
-
-ggsave(filename = "../figures_tables/flathead_map.png", plot = flathead_map,
-       width = 5, height = 5, units = "in", device = "png")
-
-
-
-############ TESTING
-
-
+# 5. Create map of littoral PPCP concentrations ---------------------------
 
 map_month <- ggplot() +
   annotation_map_tile(
