@@ -1,3 +1,5 @@
 raw_data/
 .DS_Store
 R_scripts/data/
+R_scripts/.Rhistory
+
