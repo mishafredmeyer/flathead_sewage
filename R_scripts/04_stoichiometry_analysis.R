@@ -183,8 +183,9 @@ carbon_nitrogen <- ggplot(data = stoich, aes(tourist_season, carbon/nitrogen)) +
   ylab("Carbon:Nitrogen") + 
   theme_bw() + 
   theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(), 
         axis.title.y = element_text(size = 24),
-        axis.text = element_text(size = 18),
+        axis.text.y = element_text(size = 18),
         legend.text = element_text(size = 20),
         legend.title = element_text(size = 20),
         legend.key.height = unit(0.75, units = "in"),
@@ -197,7 +198,7 @@ ggsave(filename = "carbon_nitrogen_boxplots.png", plot = carbon_nitrogen,
 
 carbon_phosphorus <- ggplot(data = stoich, aes(tourist_season, carbon/phosphorus)) +
   geom_boxplot(stoich %>%
-                 filte`r(!(stt == "centralized" & tourist_season == "Out of Season")), 
+                 filter(!(stt == "centralized" & tourist_season == "Out of Season")), 
                mapping = aes(tourist_season, carbon/phosphorus),
                alpha = 0.33, outlier.alpha = 0) +
   geom_jitter(stoich, 
@@ -207,8 +208,9 @@ carbon_phosphorus <- ggplot(data = stoich, aes(tourist_season, carbon/phosphorus
   ylab("Carbon:Phosphorus") + 
   theme_bw() + 
   theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(), 
         axis.title.y = element_text(size = 24),
-        axis.text = element_text(size = 18),
+        axis.text.y = element_text(size = 18),
         legend.text = element_text(size = 20),
         legend.title = element_text(size = 20),
         legend.key.height = unit(0.75, units = "in"),

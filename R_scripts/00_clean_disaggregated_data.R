@@ -288,8 +288,7 @@ samples_formatted <- samples_full %>%
          MONTH = ifelse(MONTH == "juny", "june", MONTH),
          MONTH = ifelse(MONTH == "sept", "september", MONTH),
          #MONTH = ifelse(MONTH == "october", "september", MONTH),
-         SITE = as.character(SITE),
-         SITE = ifelse(SITE == "SA", "SL", SITE)) %>%
+         SITE = as.character(SITE)) %>%
   clean_names(case = "snake") %>%
   rename("area_observed" = "area_x",
          "area_blank" = "area_y",
@@ -319,7 +318,7 @@ samples_formatted <- samples_full %>%
   #select(-month) %>%
   #separate(col = "sampling_event", into = c("month", "sampling_time"), remove = TRUE) %>%
   mutate(stt = ifelse(site %in% c("WF", "HO", "FLBS", "YB"), "Centralized", "Decentralized")) %>%
-  select(site, sampling_event, ppcp, concentration, peri_sampling, month, time) %>%
+  select(site, sampling_event, ppcp, concentration, peri_sampling) %>%
   mutate(stt = ifelse(test = site %in% c("WF", "YB", "FLBS", "HO"), 
                       yes = "centralized", no = "decentralized"),
          tourist_season = ifelse(peri_sampling %in% c("peri_4"), "Out of Season", "In Season"))
@@ -359,7 +358,9 @@ stoich_cleaned <- stoich[-c(1:3),] %>%
   mutate(collection_data_formatted = paste0(year(mdy(date_collected)), 0,
                                             month(mdy(date_collected)))) %>%
   clean_names(case = "snake") %>%
-  mutate(stt = ifelse(test = site %in% c("WF", "YB", "FLBS", "HO"), 
+  mutate(site = ifelse(site == "SL", "SA", site),
+         site = ifelse(site == "FL", "FLBS", site),
+         stt = ifelse(test = site %in% c("WF", "YB", "FLBS", "HO"), 
                       yes = "centralized", no = "decentralized"),
          tourist_season = ifelse(test = month %in% c("june", "july", "august"), 
                                  yes = "In Season", no = "Out of Season"))
@@ -426,7 +427,9 @@ september_fatty_acids <- read_excel(path = "../raw_data/Flathead_FA_orig_2018Apr
          stt = ifelse(site %in% c("HO", "FLBS", "WF", "YB"), "Centralized", "Decentralized"),
          c22_1w9c = ifelse(c22_1w9c == "-----", 0, c22_1w9c))
 
-fatty_acids <- rbind(july_fatty_acids, august_fatty_acids, september_fatty_acids)
+fatty_acids <- rbind(july_fatty_acids, august_fatty_acids, september_fatty_acids) %>%
+  mutate(site = ifelse(site == "SL", "SA", site),
+         stt = tolower(stt))
 
 write.csv(x = fatty_acids, 
           file = "../cleaned_disaggregated_data/fatty_acids.csv", 
@@ -912,7 +915,9 @@ periphyton <- read.csv(file = "../raw_data/flathead_periphyton_abundance.csv")
 head(periphyton)
 
 periphyton_clean <- periphyton %>%
-  rename("chlorophyta_filamentts" = "chlorophyta_filamnets")
+  rename("chlorophyta_filaments" = "chlorophyta_filamnets") %>%
+  mutate(site = ifelse(site == "SL", "SA", site), 
+         month = tolower(month))
 
 write.csv(x = periphyton_clean, 
           file = "../cleaned_disaggregated_data/periphyton_abundance.csv", 

@@ -145,6 +145,8 @@ ppcp <- read.csv(file = "../cleaned_data/ppcp.csv",
 tsidw_pop <- read.csv(file = "../cleaned_data/averaged_temporally_scaled_inverse_distance_weighted_population_metrics.csv",
                       header = TRUE)
 
+temperature <- read.csv("../cleaned_data/temperature.csv", 
+                        header = TRUE)
 
 # 2. Nutrient Analysis ----------------------------------------------------
 
@@ -191,6 +193,9 @@ ggsave(filename = "nutrient_boxplots.png", plot = nutrient_plot,
        device = "png", path = "../figures_tables", 
        width = 15, height = 8, units = "in")
 
+
+nutrients_formatted_wide <- nutrients_formatted %>%
+  pivot_wider(names_from = nutrient_type, values_from = mean_concentration)
 
 # Ammonium Model
 nh3_lm <- Anova(lm(log10(nh3_n) ~ stt * tourist_season, 
@@ -290,14 +295,14 @@ afdm_permutation <- permute_data_analytics(data = afdm_mean,
 # 3. Branched and Odd Chain Fatty Acids -----------------------------------
 
 branched_odd_chain_fatty_acids_plot <- fatty_acids %>%
-  select(-c19_0) %>%
+  dplyr::select(-c19_0) %>%
   pivot_longer(cols = c(c12_0:c28_0), names_to = "fatty_acid", values_to = "concentration") %>%
   group_by(tourist_season, stt, site, month) %>%
   mutate(total_fatty_acid = sum(concentration, na.rm = TRUE),
                 prop_fatty_acid = concentration/total_fatty_acid) %>%
-  select(-concentration, -total_fatty_acid) %>%
+  dplyr::select(-concentration, -total_fatty_acid) %>%
   pivot_wider(names_from = "fatty_acid", values_from = "prop_fatty_acid") %>%
-  select(site, month, stt, tourist_season, contains("15"), contains("17")) %>%
+  dplyr::select(site, month, stt, tourist_season, contains("15"), contains("17")) %>%
   ungroup() %>%
   group_by(stt, tourist_season, site, month) %>%
   summarize(total_branched_odd = rowSums(across(.cols = iso_c15_0:c17_0))) %>%
@@ -326,14 +331,14 @@ ggsave(filename = "branched_odd_chain_fatty_acid_boxplots.png",
 
 
 branched_odd_chain_fatty_acids <- fatty_acids %>%
-  select(-c19_0) %>%
+  dplyr::select(-c19_0) %>%
   pivot_longer(cols = c(c12_0:c28_0), names_to = "fatty_acid", values_to = "concentration") %>%
   group_by(tourist_season, stt, site, month) %>%
   mutate(total_fatty_acid = sum(concentration, na.rm = TRUE),
          prop_fatty_acid = concentration/total_fatty_acid) %>%
-  select(-concentration, -total_fatty_acid) %>%
+  dplyr::select(-concentration, -total_fatty_acid) %>%
   pivot_wider(names_from = "fatty_acid", values_from = "prop_fatty_acid") %>%
-  select(site, month, stt, tourist_season, contains("15"), contains("17")) %>%
+  dplyr::select(site, month, stt, tourist_season, contains("15"), contains("17")) %>%
   ungroup() %>%
   group_by(stt, tourist_season, site, month) %>%
   summarize(total_branched_odd = rowSums(across(.cols = iso_c15_0:c17_0))) %>%
@@ -380,7 +385,8 @@ ppcp_plot <- ggplot(ppcp_reduced ,
   theme_bw() + 
   theme(axis.title.x = element_blank(),
         axis.title.y = element_text(size = 24),
-        axis.text = element_text(size = 18),
+        axis.text.y = element_text(size = 18),
+        axis.text.x = element_blank(),
         legend.text = element_text(size = 20),
         legend.title = element_text(size = 20),
         legend.key.height = unit(0.75, units = "in"),
@@ -418,7 +424,8 @@ tsidw_plot <- ggplot(tsidw_formatted,
   theme_bw() + 
   theme(axis.title.x = element_blank(),
         axis.title.y = element_text(size = 24),
-        axis.text = element_text(size = 18),
+        axis.text.y = element_text(size = 18),
+        axis.text.x = element_blank(),
         legend.text = element_text(size = 20),
         legend.title = element_text(size = 20),
         legend.key.height = unit(0.75, units = "in"),
@@ -429,25 +436,67 @@ ggsave(filename = "tsidw_population_boxplots.png", plot = tsidw_plot,
        device = "png", path = "../figures_tables", 
        width = 8, height = 6, units = "in")
 
+# 6. Temperature ----------------------------------------------------------------
+
+temperature_formatted <- temperature %>%
+  filter(month %in% c(6:9),
+         !(site %in% c("DU", "HO"))) %>%
+  mutate(tourist_season = ifelse(month %in% c(6:8), "In Season", "Out of Season"),
+         stt = ifelse(site %in% c("FLBS", "YB", "WF"), "Centralized", "Decentralized")) %>%
+  group_by(tourist_season, stt, site) %>%
+  summarize(mean_temperature = median(predicted_temp))
+
+temperature_plot <- ggplot(temperature_formatted, 
+                     aes(tourist_season, ((mean_temperature)))) +
+  geom_boxplot(alpha = 0.33, width = 0.25, outlier.alpha = 0) +
+  geom_jitter(width = 0.3) +
+  scale_y_log10() +
+  facet_wrap(~stt, labeller = labeller(stt = stt_labels)) +
+  ylab("Surface Temperature (\u00B0C)") +
+  theme_bw() + 
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 24),
+        axis.text = element_text(size = 18),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 20),
+        legend.key.height = unit(0.75, units = "in"),
+        legend.key.width = unit(0.75, units = "in"),
+        strip.text = element_text(size = 20))
+
+ggsave(filename = "temperature_boxplots.png", plot = temperature_plot, 
+       device = "png", path = "../figures_tables", 
+       width = 8, height = 6, units = "in")
+
+temperature_lm <- Anova(lm(mean_temperature~ stt*tourist_season, 
+                  data = temperature_formatted), 
+               type = "II")
+
+temperature_permutation <- permute_data_analytics(data = temperature_formatted, 
+                                         metric = "mean_temperature", 
+                                         full_model = temperature_lm, 
+                                         metric_plot_title = "Mean Temperature ~ STT * Tourist Season", 
+                                         transform_response = "none")
 
 # 6. Combine Figures ------------------------------------------------------
 
 arranged_plots <- ggarrange(plotlist = list(tsidw_plot, ppcp_plot,
-                                         branched_odd_chain_fatty_acids_plot, afdm_plot), 
-                            ncol = 2, nrow = 2, labels = "AUTO",
+                                         branched_odd_chain_fatty_acids_plot, afdm_plot,
+                                         temperature_plot), 
+                            ncol = 3, nrow = 2, labels = "AUTO",
                             font.label = list(size = 24))
 
 ggsave(filename = "combined_boxplots.png", plot = arranged_plots, 
        device = "png", path = "../figures_tables", 
-       width = 16, height = 12, units = "in")
+       width = 24, height = 12, units = "in")
 
 permutation_plots <- c(nh3_permutation, no3_no2_permutation, srp_permutation, 
                        tn_permutation, tp_permutation, afdm_permutation,
-                       branched_odd_fa_permutation, ppcp_permutation)
+                       branched_odd_fa_permutation, ppcp_permutation,
+                       temerature_permutation)
 
 permutation_plot_names <- c("nh3_permutation", "no3_no2_permutation", "srp_permutation", 
                        "tn_permutation", "tp_permutation", "afdm_permutation",
-                       "branched_odd_fa_permutation", "ppcp_permutation")
+                       "branched_odd_fa_permutation", "ppcp_permutation", "temperature_permutation")
 
 walk2(.x = permutation_plots,
       .y = permutation_plot_names,
@@ -463,12 +512,13 @@ anova_table <- list(clean_names(data.frame(nh3_lm)),
                     clean_names(data.frame(tp_lm)), 
                     clean_names(data.frame(afdm_lm)),
                     clean_names(data.frame(branched_odd_chain_fatty_acids_lm)), 
-                    clean_names(data.frame(ppcp_lm)))
+                    clean_names(data.frame(ppcp_lm)),
+                    clean_names(data.frame(temperature_lm)))
 
 anova_table_names <- c("nh3", "no3_no2", "srp", 
                             "tn", "tp", "afdm",
                             "branched_odd_chain_fatty_acids", 
-                            "ppcp")
+                            "ppcp", "temperature")
 
 walk2(.x = anova_table,
       .y = anova_table_names,
@@ -500,7 +550,7 @@ write.csv(x = nutrients_table,
 nutrients_tsidw <- inner_join(tsidw_formatted, nutrients_formatted) %>%
   rename("analyte" = "nutrient_type",
          "mean_conc" = "mean_concentration") %>%
-  select(tourist_season, stt, site, analyte, mean_tsidw_pop, mean_conc)
+  dplyr::select(tourist_season, stt, site, analyte, mean_tsidw_pop, mean_conc)
 
 ## AFDM
 
@@ -520,7 +570,7 @@ write.csv(x = afdm_table,
 afdm_tsidw <- inner_join(afdm_mean, tsidw_formatted) %>%
   mutate(analyte = "afdm") %>%
   rename("mean_conc" = "mean_afdm") %>%
-  select(tourist_season, stt, site, analyte, mean_tsidw_pop, mean_conc)
+  dplyr::select(tourist_season, stt, site, analyte, mean_tsidw_pop, mean_conc)
 
 ## Branched and Odd-Chain Fatty Acids
 
@@ -550,7 +600,7 @@ branched_odd_tsidw <- inner_join(branched_odd_chain_fatty_acids %>%
                                    mutate(stt = tolower(stt)), tsidw_formatted) %>%
   mutate(analyte = "branched_odd_chains") %>%
   rename("mean_conc" = "mean_total_branched_odd") %>%
-  select(tourist_season, stt, site, analyte, mean_tsidw_pop, mean_conc)
+  dplyr::select(tourist_season, stt, site, analyte, mean_tsidw_pop, mean_conc)
 
 branched_odd_table <- branched_odd_chain_fatty_acids %>%
   mutate(stt = tolower(stt)) %>%
@@ -583,16 +633,38 @@ write.csv(x = ppcp_reduced_formatted,
 
 ppcp_tsidw <- left_join(ppcp_reduced, tsidw_formatted) %>%
   mutate(analyte = "ppcp") %>%
-  select(tourist_season, stt, site, analyte, mean_tsidw_pop, mean_conc)
+  dplyr::select(tourist_season, stt, site, analyte, mean_tsidw_pop, mean_conc)
+
+## Temperature
+
+temperature_reduced_formatted <- temperature_formatted %>%
+  group_by(tourist_season, stt) %>%
+  summarize(mean_temp = mean(mean_temperature),
+            sd_temp = sd(mean_temperature),
+            cv_temp = sd_temp/mean_temp) %>%
+  pivot_wider(names_from = "stt", 
+              values_from = c("mean_temp", "sd_temp", "cv_temp"))
+
+write.csv(x = ppcp_reduced_formatted, 
+          file = "../figures_tables/temperature_summary_stats.csv", 
+          row.names = FALSE)
+
+temperature_tsidw <- left_join(temperature_formatted %>%
+                                 mutate(stt = tolower(stt)), 
+                               tsidw_formatted) %>%
+  mutate(analyte = "temperature") %>%
+  dplyr::select(tourist_season, stt, site, analyte, mean_tsidw_pop, "mean_conc" = mean_temperature)
+
 
 ## Combine all the data frames
 
 combined_tsidw_df <- rbind(nutrients_tsidw, afdm_tsidw, 
-                           branched_odd_tsidw, ppcp_tsidw)
+                           branched_odd_tsidw, ppcp_tsidw,
+                           temperature_tsidw)
 
 combined_tsidw_lm_log_mod <- combined_tsidw_df %>%
   group_by(analyte) %>%
-  filter(analyte != "branched_odd_chains") %>%
+  filter(!(analyte %in% c("branched_odd_chains", "temperature"))) %>%
   nest() %>%
   mutate(model = map(data, function(df) lm(log10(mean_conc) ~ log10(mean_tsidw_pop), 
                                            data = df)))
@@ -604,31 +676,39 @@ combined_tsidw_lm_asinsqrt_mod <- combined_tsidw_df %>%
   mutate(model = map(data, function(df) lm(asin(sqrt(mean_conc)) ~ log10(mean_tsidw_pop), 
                                            data = df)))
 
+combined_tsidw_lm_no_mod <- combined_tsidw_df %>%
+  group_by(analyte) %>%
+  filter(analyte == "temperature") %>%
+  nest() %>%
+  mutate(model = map(data, function(df) lm(((mean_conc)) ~ log10(mean_tsidw_pop), 
+                                           data = df)))
+
 combined_tsidw_mod <- rbind(combined_tsidw_lm_log_mod, 
-                            combined_tsidw_lm_asinsqrt_mod) %>%
+                            combined_tsidw_lm_asinsqrt_mod, 
+                            combined_tsidw_lm_no_mod) %>%
   mutate(tidy_model = map(.x = model,
                           .f = ~ glance(.x))) %>%
-  select(-data, -model) %>%
+  dplyr::select(-data, -model) %>%
     unnest(cols = c(tidy_model))
 
-plots_combined <- map2(.x = unique(combined_tsidw_df$analyte),
-                       .y = c("Ammonia (mg/L)", "Nitrate/Nitrite (mg/L)",
-                             "SRP (mg/L)", "Total Nitrogen (mg/L)", 
-                             "Total Phosphorus (mg/L)","AFDM (mg)",
+plots_combined <- map2(.x = unique(combined_tsidw_df$analyte)[c(1:6,8,7,9)],
+                       .y = c("Ammonia (\U03BCg/L)", "Nitrate/Nitrite (\U03BCg/L)",
+                             "SRP (\U03BCg/L)", "Total Nitrogen (\U03BCg/L)", 
+                             "Total Phosphorus (\U03BCg/L)","AFDM (mg)",
+                             "Total PPCP (ng/L)",
                              "Branched + Odd Chain Fatty Acids",
-                             "Total PPCP (ng/L)"),
-     .f = ~ if(.x != "branched_odd_chain"){
+                             "Temperature (\U00B0C)"),
+     .f = ~ if(!(.x %in% c("branched_odd_chains", "temperature", "total_p"))){
      combined_tsidw_df %>%
       filter(analyte == .x) %>%
       ggplot(aes(x = (mean_tsidw_pop),
                  y = (mean_conc))) +
       geom_point(size = 6) +
-      geom_smooth(method = "lm", se = TRUE) +
+      geom_smooth(method = "lm", se = FALSE, linetype = "dashed", lwd = 2) +
       scale_y_log10()+
       scale_x_log10() +
       ylab(paste(.y)) +
       xlab("TSIDW Population (people)") +
-      ggtitle(paste(.y, " vs. TSIDW Population")) +
       geom_richtext(data = combined_tsidw_mod %>%
                       filter(analyte == .x), 
                     mapping = aes(label = paste0("p-value: ",
@@ -640,24 +720,24 @@ plots_combined <- map2(.x = unique(combined_tsidw_df$analyte),
                                   y = max(combined_tsidw_df %>%
                                         ungroup() %>%
                                         filter(analyte == .x) %>%
-                                        select(mean_conc))*0.7), size = 7) +
+                                        dplyr::select(mean_conc))*0.7), size = 7) +
       theme_minimal() +
       theme(strip.text = element_markdown(),
             axis.text = element_text(size = 24),
-            axis.title = element_text(size = 28),
-            plot.title = element_text(size = 34))
-     } else if (.x == "branched_odd_chain") {
+            axis.title.y = element_text(size = 28),
+            plot.title = element_text(size = 34),
+            axis.title.x = element_blank())
+     } else if (.x == "total_p") {
        combined_tsidw_df %>%
          filter(analyte == .x) %>%
          ggplot(aes(x = (mean_tsidw_pop),
-                    y = asin(sqrt(mean_conc)))) +
+                    y = mean_conc)) +
          geom_point(size = 6) +
-         geom_smooth(method = "lm", se = TRUE) +
-         #scale_y_log10()+
+         geom_smooth(method = "lm", se = TRUE, lwd = 2) +
+         scale_y_log10()+
          scale_x_log10() +
-         ylab("Branched + Odd Chain Fatty Acids (\u00b5g/mg)") +
+         ylab(paste(.y)) +
          xlab("TSIDW Population (people)") +
-         ggtitle("Branched + Odd Chain FA vs. TSIDW Population") +
          geom_richtext(data = combined_tsidw_mod %>%
                          filter(analyte == .x), 
                        mapping = aes(label = paste0("p-value: ",
@@ -669,7 +749,64 @@ plots_combined <- map2(.x = unique(combined_tsidw_df$analyte),
                                      y = max(combined_tsidw_df %>%
                                                ungroup() %>%
                                                filter(analyte == .x) %>%
-                                               select(mean_conc))*0.7), size = 7) +
+                                               dplyr::select(mean_conc))*0.7), size = 7) +
+         theme_minimal() +
+         theme(strip.text = element_markdown(),
+               axis.text = element_text(size = 24),
+               axis.title = element_markdown(size = 28),
+               plot.title = element_text(size = 34))
+     } else if (.x == "branched_odd_chains") {
+       combined_tsidw_df %>%
+         filter(analyte == .x) %>%
+         ggplot(aes(x = (mean_tsidw_pop),
+                    y = asin(sqrt(mean_conc)))) +
+         geom_point(size = 6) +
+         geom_smooth(method = "lm", se = FALSE, linetype = "dashed", lwd = 2) +
+         #scale_y_log10()+
+         scale_x_log10() +
+         ylab("Branched + Odd Chain\nFatty Acids") +
+         xlab("TSIDW Population (people)") +
+         geom_richtext(data = combined_tsidw_mod %>%
+                         filter(analyte == .x), 
+                       mapping = aes(label = paste0("p-value: ",
+                                                    round(p.value, 3),
+                                                    "<br>R<sup>2</sup>: ",
+                                                    round(r.squared, 3),
+                                                    "<br> N = ", nobs), 
+                                     x = 6000, 
+                                     y = asin(sqrt(max(combined_tsidw_df %>%
+                                               ungroup() %>%
+                                               filter(analyte == .x) %>%
+                                               dplyr::select(mean_conc),
+                                             na.rm=TRUE)))*0.85), size = 7) +
+         theme_minimal() +
+         theme(strip.text = element_markdown(),
+               axis.text = element_text(size = 24),
+               axis.title = element_markdown(size = 28),
+               plot.title = element_text(size = 34))
+     } else if (.x == "temperature") {
+       combined_tsidw_df %>%
+         filter(analyte == .x) %>%
+         ggplot(aes(x = (mean_tsidw_pop),
+                    y = ((mean_conc)))) +
+         geom_point(size = 6) +
+         geom_smooth(method = "lm", se = TRUE, lwd = 2) +
+         #scale_y_log10()+
+         scale_x_log10() +
+         ylab("Surface Temperature (\u00B0C)") +
+         xlab("TSIDW Population (people)") +
+         geom_richtext(data = combined_tsidw_mod %>%
+                         filter(analyte == .x), 
+                       mapping = aes(label = paste0("p-value: ",
+                                                    round(p.value, 3),
+                                                    "<br>R<sup>2</sup>: ",
+                                                    round(r.squared, 3),
+                                                    "<br> N = ", nobs), 
+                                     x = 6000, 
+                                     y = max(combined_tsidw_df %>%
+                                               ungroup() %>%
+                                               filter(analyte == .x) %>%
+                                               dplyr::select(mean_conc))*0.7), size = 7) +
          theme_minimal() +
          theme(strip.text = element_markdown(),
                axis.text = element_text(size = 24),
@@ -679,8 +816,8 @@ plots_combined <- map2(.x = unique(combined_tsidw_df$analyte),
        )
 
 ggarrange(plotlist = plots_combined, 
-          ncol = 2, nrow = 4,
-          labels = "AUTO", 
+          ncol = 2, nrow = 5,
+          labels = "AUTO", hjust = 0, 
           font.label = list(size = 36)) %>%
   ggexport(filename = "../figures_tables/combined_plot_continuous.png",
            height = 4000, width = 3200, res = 120)

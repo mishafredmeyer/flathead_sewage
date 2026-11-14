@@ -2,12 +2,12 @@
 "BO","july","decentralized","In Season",50,1.28,50,0.072,5.03,1.99,201707
 "FLBS","july","centralized","In Season",39.4,10.3,39.4,0.809,1.914,0.555,201707
 "SJ","july","decentralized","In Season",53.1,10.9,53.1,0.586,2.087,0.477,201707
-"SL","july","decentralized","In Season",51.1,9.77,51.1,0.503,2.778,0.986,201707
+"SA","july","decentralized","In Season",51.1,9.77,51.1,0.503,2.778,0.986,201707
 "WB","july","decentralized","In Season",59.4,10.5,59.4,0.625,1.97,0.854,201707
 "YB","july","centralized","In Season",47.6,4.29,47.6,0.316,2.239,1.88,201707
 "FI","july","decentralized","In Season",50.2,1.71,50.2,0.105,2.356,0.808,201707
 "BD","july","decentralized","In Season",52.2,5.51,52.2,0.325,1.838,0.728,201707
-"FL","august","decentralized","In Season",30.2,7.57,30.2,0.628,2.222,0.927,201708
+"FLBS","august","centralized","In Season",30.2,7.57,30.2,0.628,2.222,0.927,201708
 "BD","august","decentralized","In Season",54.2,5.97,54.2,0.364,2.069,0.999,201708
 "WB","august","decentralized","In Season",56.7,4.24,56.7,0.2,2.156,0.859,201708
 "WF","august","centralized","In Season",61,6.26,61,0.383,2.178,1.34,201708
@@ -20,7 +20,7 @@
 "FI","august","decentralized","In Season",54.8,0.6,54.8,0.02,1.81,0.466,201708
 "BB","august","decentralized","In Season",50.9,4.85,50.9,0.284,2.084,1.05,201708
 "YB","august","centralized","In Season",54.5,3.78,54.5,0.234,1.458,1.1,201708
-"FL","september","decentralized","Out of Season",50.2,11.9,50.2,0.819,2.275,0.857,201709
+"FLBS","september","centralized","Out of Season",50.2,11.9,50.2,0.819,2.275,0.857,201709
 "YB","september","centralized","Out of Season",51.2,3.92,51.2,0.225,2.1,1.4,201709
 "WB","september","decentralized","Out of Season",54,5.47,54,0.299,1.957,0.721,201709
 "BO","september","decentralized","Out of Season",52.5,3.22,52.5,0.158,2.329,0.79,201709

@@ -396,6 +396,13 @@ write.csv(x = efa_prop_table,
           file = "../figures_tables/efa_summary_stats.csv", 
           row.names = FALSE)
 
+ggsave(filename = "../figures/combined_fatty_acid_boxplots.png", 
+       plot = ggarrange(plotlist = list(fatty_acid_type_boxplot,
+                                        efa_boxplot), ncol = 1, 
+                        labels = "AUTO", align = 'hv', common.legend = TRUE,
+                        legend = "right", font.label = list(size = 20)), 
+       width = 15, height = 10, bg = "white")
+
 # 4. Multivariate Analysis ------------------------------------------------
 
 ## First try NMDS with fatty acid data
